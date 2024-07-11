@@ -1,0 +1,88 @@
+# Avatar
+
+The Avatar component is used to represent a user or entity. It can display an image, initials, or a placeholder icon.
+
+```tsx
+import { Avatar } from '@/ui/components/Avatar';
+
+export default function Example() {
+  return (
+    <Avatar
+      initials="mh"
+      avatarUrl="https://github.com/raix.png"
+    />
+  );
+}
+```
+
+## Round
+
+```tsx
+import { Avatar } from '@/ui/components/Avatar';
+
+export default function Example() {
+  return (
+    <Avatar
+      initials="mh"
+      isRound
+      avatarUrl="https://github.com/maximus404.png"
+    />
+  );
+}
+```
+
+## Fallback
+
+```tsx
+import { Avatar } from '@/ui/components/Avatar';
+
+export default function Example() {
+  return (
+    <Avatar
+      initials="mh"
+      isRound
+      avatarUrl="https://foo.bar"
+    />
+  );
+}
+```
+
+## Size
+
+```tsx
+import { Avatar } from '@/ui/components/Avatar';
+
+export default function Example() {
+  return (
+    <div className="flex gap-2">
+      {["xs", "sm", "md", "lg"].map((size) => (
+        <Avatar
+          key={size}
+          size={size}
+          initials="mh"
+        />
+      ))}
+    </div>
+  );
+}
+```
+
+## Variant
+
+```tsx
+import { Avatar } from '@/ui/components/Avatar';
+
+export default function Example() {
+  return (
+    <div className="flex gap-2">
+      {["background", "primary", "secondary", "success", "warning", "danger", "info"].map((variant) => (
+        <Avatar
+          key={variant}
+          variant={variant}
+          initials="mh"
+        />
+      ))}
+    </div>
+  );
+}
+```

@@ -1,0 +1,103 @@
+# Tabs
+
+Tabs are used to organize content into different sections. They are commonly used in web applications to break up complex content into more manageable sections.
+
+```tsx
+import { Tabs, TabList, Tab, TabPanel } from '@/ui/components/Tabs';
+
+export default function Example() {
+  return (
+    <Tabs onSelectionChange={function Qa(){}}>
+      <TabList aria-label="History of Ancient Rome">
+        <Tab id="FoR">
+          Founding of Rome
+        </Tab>
+        <Tab id="MaR">
+          Monarchy and Republic
+        </Tab>
+        <Tab id="Emp">
+          Empire
+        </Tab>
+      </TabList>
+      <TabPanel id="FoR">
+        Arma virumque cano, Troiae qui primus ab oris.
+      </TabPanel>
+      <TabPanel id="MaR">
+        Senatus Populusque Romanus.
+      </TabPanel>
+      <TabPanel id="Emp">
+        Alea jacta est.
+      </TabPanel>
+    </Tabs>
+  );
+}
+```
+
+## Vertical
+
+```tsx
+import { Tabs, TabList, Tab, TabPanel } from '@/ui/components/Tabs';
+
+export default function Example() {
+  return (
+    <Tabs
+      orientation="vertical"
+      onSelectionChange={function Qa(){}}
+    >
+      <TabList aria-label="History of Ancient Rome">
+        <Tab id="FoR">
+          Founding of Rome
+        </Tab>
+        <Tab id="MaR">
+          Monarchy and Republic
+        </Tab>
+        <Tab id="Emp">
+          Empire
+        </Tab>
+      </TabList>
+      <TabPanel id="FoR">
+        Arma virumque cano, Troiae qui primus ab oris.
+      </TabPanel>
+      <TabPanel id="MaR">
+        Senatus Populusque Romanus.
+      </TabPanel>
+      <TabPanel id="Emp">
+        Alea jacta est.
+      </TabPanel>
+    </Tabs>
+  );
+}
+```
+
+## Disabled
+
+```tsx
+import { Tabs, TabList, Tab, TabPanel } from '@/ui/components/Tabs';
+
+export default function Example() {
+  return (
+    <Tabs onSelectionChange={function Qa(){}}>
+      <TabList aria-label="History of Ancient Rome">
+        <Tab id="FoR" isDisabled>
+          Founding of Rome
+        </Tab>
+        <Tab id="MaR">
+          Monarchy and Republic
+        </Tab>
+        <Tab id="Emp" isDisabled>
+          Empire
+        </Tab>
+      </TabList>
+      <TabPanel id="FoR">
+        Arma virumque cano, Troiae qui primus ab oris.
+      </TabPanel>
+      <TabPanel id="MaR">
+        Senatus Populusque Romanus.
+      </TabPanel>
+      <TabPanel id="Emp">
+        Alea jacta est.
+      </TabPanel>
+    </Tabs>
+  );
+}
+```

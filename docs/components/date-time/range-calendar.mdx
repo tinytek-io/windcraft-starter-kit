@@ -1,0 +1,120 @@
+# RangeCalendar
+
+The `RangeCalendar` component is a calendar that allows the user to select a range of dates. It is a controlled component, which means that it requires a `value` and an `onChange` prop.
+
+```tsx
+import {useLocale} from 'react-aria';
+import { isWeekend, today, getLocalTimeZone, parseDate } from '@internationalized/date';
+import { RangeCalendar } from '@/ui/components/RangeCalendar';
+
+export default function Example() {
+  const { locale } = useLocale();
+
+  return (
+    <RangeCalendar
+      aria-label="Select time range"
+      onChange={function(){}}
+      className="w-fit rounded-lg border border-border p-2"
+      defaultValue={{
+        start: parseDate('2020-02-03'),
+        end: parseDate('2020-02-12')
+      }}
+    />
+  );
+}
+```
+
+## Unavailable dates
+
+```tsx
+import {useLocale} from 'react-aria';
+import { isWeekend, today, getLocalTimeZone, parseDate } from '@internationalized/date';
+import { RangeCalendar } from '@/ui/components/RangeCalendar';
+
+export default function Example() {
+  const { locale } = useLocale();
+
+  return (
+    <RangeCalendar
+      aria-label="Time off request"
+      onChange={function(){}}
+      className="w-fit rounded-lg border border-border p-2"
+      isDateUnavailable={(date) => isWeekend(date, locale)}
+      allowsNonContiguousRanges
+      defaultValue={{
+        start: parseDate('2020-02-03'),
+        end: parseDate('2020-02-12')
+      }}
+    />
+  );
+}
+```
+
+## Date validation
+
+```tsx
+import {useLocale} from 'react-aria';
+import { RangeCalendar } from '@/ui/components/RangeCalendar';
+import { isWeekend, today, getLocalTimeZone, parseDate } from '@internationalized/date';
+
+export default function Example() {
+  const { locale } = useLocale();
+  const isDateUnavailable = (date: DateValue) =>
+    isWeekend(date, locale);
+  return (
+    <RangeCalendar
+      aria-label="Event date"
+      className="rounded-lg border border-border p-2"
+      isDateUnavailable={isDateUnavailable}
+      errorMessage="Maximum stay duration is 14 days"
+      defaultValue={{
+        start: parseDate('2020-02-03'),
+        end: parseDate('2020-02-17')
+      }}
+      isInvalid
+      isReadOnly
+    />
+  );
+}
+```
+
+```tsx
+import { parseDate } from '@internationalized/date';
+import { RangeCalendar } from '@/ui/components/RangeCalendar';
+
+export default function Example() {
+  return (
+    <RangeCalendar
+      aria-label="Event date"
+      onChange={function(){}}
+      visibleMonths={2}
+      className="rounded-lg border border-border p-2"
+      defaultValue={{
+        start: parseDate('2020-02-03'),
+        end: parseDate('2020-03-12')
+      }}
+    />
+  );
+}
+```
+
+```tsx
+import { parseDate } from '@internationalized/date';
+import { RangeCalendar } from '@/ui/components/RangeCalendar';
+
+export default function Example() {
+  return (
+    <RangeCalendar
+      aria-label="Event date"
+      onChange={function(){}}
+      className="rounded-lg border border-border p-2"
+      visibleMonths={3}
+      pageBehavior="single"
+      value={{
+        start: parseDate('2020-05-30'),
+        end: parseDate('2020-07-18')
+      }}
+    />
+  );
+}
+```

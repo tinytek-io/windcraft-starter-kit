@@ -1,0 +1,89 @@
+# IllustratedMessage
+
+The `IllustratedMessage` component is used to display a message with an illustration. It is used to provide a visual representation of a message to the user.
+
+```tsx
+import NoSearchResults from '@spectrum-icons/illustrations/NoSearchResults';
+import { IllustratedMessage, Heading, Content } from '@/ui/components/IllustratedMessage';
+
+export default function Example() {
+  return (
+    <IllustratedMessage>
+      <NoSearchResults />
+      <Heading>No matching results</Heading>
+      <Content>Try another search.</Content>
+    </IllustratedMessage>
+  );
+}
+```
+
+## Aria Labeling
+
+```tsx
+import NotFound from '@spectrum-icons/illustrations/NoSearchResults';
+import { IllustratedMessage } from '@/ui/components/IllustratedMessage';
+
+export default function Example() {
+  return (
+    <IllustratedMessage>
+      <NotFound aria-label="No results" />
+    </IllustratedMessage>
+  );
+}
+```
+
+## 403 Unauthorized
+
+```tsx
+import Unauthorized from '@spectrum-icons/illustrations/Unauthorized';
+import { IllustratedMessage, Heading, Content } from '@/ui/components/IllustratedMessage';
+
+export default function Example() {
+  return (
+    <IllustratedMessage>
+      <Unauthorized />
+      <Heading>Error 403: Access not allowed</Heading>
+      <Content>
+        You do not have permission to access this page. Try checking the URL or
+        visit a different page.
+      </Content>
+    </IllustratedMessage>
+  );
+}
+```
+
+## 404 Not Found
+
+```tsx
+import NotFound from '@spectrum-icons/illustrations/Unauthorized';
+import { IllustratedMessage, Heading, Content } from '@/ui/components/IllustratedMessage';
+
+export default function Example() {
+  return (
+  <IllustratedMessage>
+    <NotFound />
+    <Heading>Error 404: Page not found</Heading>
+    <Content>
+      This page isn't available. Try checking the URL or visit a different page.
+    </Content>
+  </IllustratedMessage>
+  );
+}
+```
+
+## 500 Internal Server Error
+
+```tsx
+import Error from '@spectrum-icons/illustrations/Unauthorized';
+import { IllustratedMessage, Heading, Content } from '@/ui/components/IllustratedMessage';
+
+export default function Example() {
+  return (
+    <IllustratedMessage>
+      <Error />
+      <Heading>Error 500: Internal server error</Heading>
+      <Content>Something went wrong. Please try again later.</Content>
+    </IllustratedMessage>
+  );
+}
+```

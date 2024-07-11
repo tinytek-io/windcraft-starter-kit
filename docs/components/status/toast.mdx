@@ -1,0 +1,137 @@
+# Toast [beta]
+
+:::info
+This component is currently in "beta" and is subject to change.
+:::
+
+```tsx
+import { GlobalToastRegion, toastQueue, ToastAction } from '@/ui/components/Toast';
+import { Button } from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <>
+      <Button
+        variant="outline"
+        onClick={() => {
+          toastQueue.add({
+            title: "Scheduled: Catch up ",
+            description: "Friday, February 10, 2023 at 5:57 PM",
+            action: (
+              <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
+            ),
+          }, {
+            timeout: 10000,
+          })
+        }}
+      >
+        Add to calendar
+      </Button>
+    </>
+  );
+}
+```
+
+## Variants
+
+```tsx
+import { GlobalToastRegion, toastQueue, ToastAction } from '@/ui/components/Toast';
+import { Button } from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <>
+      <Button
+        variant="outline"
+        onClick={() => {
+          toastQueue.add({
+            variant: "danger",
+            title: "Scheduled: Catch up ",
+            description: "Friday, February 10, 2023 at 5:57 PM",
+            action: (
+              <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
+            ),
+          }, {
+            timeout: 10000,
+          })
+        }}
+      >
+        Danger
+      </Button>
+      <Button
+        variant="outline"
+        onClick={() => {
+          toastQueue.add({
+            variant: "warning",
+            title: "Scheduled: Catch up ",
+            description: "Friday, February 10, 2023 at 5:57 PM",
+            action: (
+              <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
+            ),
+          }, {
+            timeout: 10000,
+          })
+        }}
+      >
+        Warning
+      </Button>
+      <Button
+        variant="outline"
+        onClick={() => {
+          toastQueue.add({
+            variant: "info",
+            title: "Scheduled: Catch up ",
+            description: "Friday, February 10, 2023 at 5:57 PM",
+            action: (
+              <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
+            ),
+          }, {
+            timeout: 10000,
+          })
+        }}
+      >
+        Information
+      </Button>
+      <Button
+        variant="outline"
+        onClick={() => {
+          toastQueue.add({
+            variant: "success",
+            title: "Scheduled: Catch up ",
+            description: "Friday, February 10, 2023 at 5:57 PM",
+            action: (
+              <ToastAction altText="Goto schedule to undo">Undo</ToastAction>
+            ),
+          }, {
+            timeout: 10000,
+          })
+        }}
+      >
+        Success
+      </Button>
+    </>
+  );
+}
+```
+
+## Custom toast
+
+```tsx
+import { GlobalToastRegion, toastQueue } from '@/ui/components/Toast';
+import { Button } from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <>
+      <Button onPress={() => toastQueue.add(<div>Toast is done!</div>, {
+        timeout: 10000,
+      })}>
+        Show toast
+      </Button>
+
+      {/* Add the Global Toast Region in your main index file */}
+      <GlobalToastRegion aria-label="Toast example" />
+    </>
+  );
+}
+```

@@ -1,0 +1,59 @@
+# Tooltip
+
+Tooltips display informative text when users hover over, focus on, or tap an element.
+
+```tsx
+import { Tooltip, TooltipTrigger } from '@/ui/components/Tooltip';
+import { Button } from '@/ui/components/Button';
+import { Pencil } from 'lucide-react';
+
+export default function Example() {
+  return (
+    <TooltipTrigger>
+      <Button variant="outline" size="icon" aria-label="Edit">
+        <Pencil className="h-4 w-4" />
+      </Button>
+      <Tooltip>Edit</Tooltip>
+    </TooltipTrigger>
+  );
+}
+```
+
+## Placement
+
+```tsx
+import { Tooltip, TooltipTrigger } from '@/ui/components/Tooltip';
+import { Button } from '@/ui/components/Button';
+import { Pencil } from 'lucide-react';
+
+export default function Example() {
+  return (
+    <div className="flex gap-4">
+      <TooltipTrigger>
+        <Button variant="outline">Left</Button>
+        <Tooltip placement="start">
+          <p>Add to library</p>
+        </Tooltip>
+      </TooltipTrigger>
+      <TooltipTrigger>
+        <Button variant="outline">Up</Button>
+        <Tooltip placement="top">
+          <p>Add to library</p>
+        </Tooltip>
+      </TooltipTrigger>
+      <TooltipTrigger>
+        <Button variant="outline">Down</Button>
+        <Tooltip placement="bottom">
+          <p>Add to library</p>
+        </Tooltip>
+      </TooltipTrigger>
+      <TooltipTrigger>
+        <Button variant="outline">Right</Button>
+        <Tooltip placement="end">
+          <p>Add to library</p>
+        </Tooltip>
+      </TooltipTrigger>
+    </div>
+  );
+}
+```

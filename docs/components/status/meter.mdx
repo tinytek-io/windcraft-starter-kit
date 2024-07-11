@@ -1,0 +1,94 @@
+# Meter
+
+The `Meter` component is used to display a value as a percentage of a total value. It can also display warning and danger indicators when the value exceeds certain thresholds.
+
+```tsx
+import { Meter } from '@/ui/components/Meter';
+
+export default function Example() {
+  return (
+    <Meter
+      label="Storage space"
+      value={80}
+    />
+  );
+}
+```
+
+```tsx
+import { Meter } from '@/ui/components/Meter';
+
+export default function Example() {
+  const usage = 54;
+  const total = 60;
+  return (
+    <Meter
+      label="Space used"
+      maxValue={total}
+      valueLabel={`${usage} of ${total} Gb`}
+      value={usage}
+    />
+  );
+}
+```
+
+```tsx
+import { Meter } from '@/ui/components/Meter';
+
+export default function Example() {
+  return (
+    <div className="flex flex-col gap-4">
+      <Meter
+        label="Storage space"
+        value={40}
+        warnAt={70}
+        dangerAt={80}
+      />
+      <Meter
+        label="Storage space"
+        value={70}
+        warnAt={70}
+        dangerAt={80}
+      />
+      <Meter
+        label="Storage space"
+        value={85}
+        warnAt={70}
+        dangerAt={80}
+      />
+    </div>
+  );
+}
+```
+
+```tsx
+import { Meter } from '@/ui/components/Meter';
+
+export default function Example() {
+  return (
+    <div className="flex flex-col gap-4">
+      <Meter
+        label="Storage space"
+        value={40}
+        warnAt={70}
+        dangerAt={80}
+        showIndicators
+      />
+      <Meter
+        label="Storage space"
+        value={70}
+        warnAt={70}
+        dangerAt={80}
+        showIndicators
+      />
+      <Meter
+        label="Storage space"
+        value={85}
+        warnAt={70}
+        dangerAt={80}
+        showIndicators
+      />
+    </div>
+  );
+}
+```

@@ -1,0 +1,56 @@
+# Accordion [beta]
+
+The accordion component is a vertically stacked list of items that utilizes a collapsible content area. It is useful for hiding content that is not immediately relevant to the user.
+
+:::info
+This component is currently in "beta" and is subject to change.
+:::
+
+```tsx
+import { Accordion, Item } from '@/ui/components/Accordion';
+
+export default function Example() {
+  return (
+    <Accordion
+      className="w-full max-w-xl"
+      disabledKeys={['last']}
+    >
+      <Item key="files" title="Your files">
+        Files
+      </Item>
+      <Item key="shared" title="Shared with you">
+        Shared
+      </Item>
+      <Item key="last" title="Last Item">
+        Last
+      </Item>
+    </Accordion>
+  );
+}
+```
+
+## With input
+
+```tsx
+import { Accordion, Item } from '@/ui/components/Accordion';
+import { Input } from '@/ui/components/Input';
+
+export default function Example() {
+  return (
+    <Accordion
+      className="w-full max-w-xl"
+      disabledKeys={['last']}
+    >
+      <Item key="step1" title="Shipping" hasChildItems={false}>
+        <Input />
+      </Item>
+      <Item key="step2" title="Billing" hasChildItems={false}>
+        <Input />
+      </Item>
+      <Item key="step3" title="Payment" hasChildItems={false}>
+        <Input />
+      </Item>
+    </Accordion>
+  );
+}
+```

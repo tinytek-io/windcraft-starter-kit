@@ -1,0 +1,164 @@
+# Button
+Buttons are used to trigger an action or event, such as submitting a form, opening a dialog, canceling an action, or performing a delete operation.
+
+```tsx preview
+import { BirdIcon } from "lucide-react"
+import {Button} from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="flex gap-2">
+        <Button size="sm" variant="primary">Primary</Button>
+        <Button size="sm" variant="secondary">Secondary</Button>
+        <Button size="sm" variant="destructive">Destructive</Button>
+        <Button size="sm" variant="link">Link</Button>
+        <Button size="sm" variant="ghost">Ghost</Button>
+        <Button size="sm" variant="outline">Outline</Button>
+      </div>
+      <div className="flex gap-2">
+        <Button variant="primary">Primary</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="destructive">Destructive</Button>
+        <Button variant="link">Link</Button>
+        <Button variant="ghost">Ghost</Button>
+        <Button variant="outline">Outline</Button>
+      </div>
+      <div className="flex gap-2">
+        <Button size="lg" variant="primary">Primary</Button>
+        <Button size="lg" variant="secondary">Secondary</Button>
+        <Button size="lg" variant="destructive">Destructive</Button>
+        <Button size="lg" variant="link">Link</Button>
+      </div>
+      <div className="flex gap-2">
+        <Button size="icon" variant="primary"><BirdIcon /></Button>
+        <Button size="icon" variant="secondary"><BirdIcon /></Button>
+        <Button size="icon" variant="destructive"><BirdIcon /></Button>
+        <Button size="icon" variant="link"><BirdIcon /></Button>
+        <Button size="icon" variant="ghost"><BirdIcon /></Button>
+        <Button size="icon" variant="outline"><BirdIcon /></Button>
+      </div>
+    </div>
+  );
+}
+```
+
+## Usage
+
+```tsx pure
+import {Button} from '@/ui/components/Button';
+```
+```tsx pure
+<Button variant="secondary">Secondary</Button>
+```
+
+<API moduleName="button" />
+
+# Destructive
+```tsx preview
+import {Button} from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <Button variant="destructive">Destructive</Button>
+  );
+}
+```
+
+## Outline
+```tsx preview
+import {Button} from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <Button variant="outline">Outline</Button>
+  );
+}
+```
+
+## Secondary
+```tsx preview
+import {Button} from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <Button variant="secondary">Secondary</Button>
+  );
+}
+```
+
+## Ghost
+```tsx preview
+import {Button} from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <Button variant="ghost">Ghost</Button>
+  );
+}
+```
+
+## Link
+```tsx preview
+import {Button} from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <Button variant="link">Link</Button>
+  );
+}
+```
+
+## Disabled
+```tsx preview
+import {Button} from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <Button isDisabled>Disabled</Button>
+  );
+}
+```
+
+## Icon
+```tsx preview
+import {Button} from '@/ui/components/Button';
+import { ChevronLeft } from "lucide-react";
+
+export default function Example() {
+  return (
+    <Button variant="outline" size="icon">
+      <ChevronLeft className="h-4 w-4" />
+    </Button>
+  );
+}
+```
+
+## Icon with Text
+```tsx preview
+import { Mail } from "lucide-react"
+ import { Button } from "@/ui/components/Button"
+ 
+export default function Example() {
+  return (
+    <Button>
+      <Mail className="mr-2 h-4 w-4" /> Login with Email
+    </Button>
+  )
+}
+```
+
+## Loading
+```tsx preview
+import { LoaderIcon } from "lucide-react"
+import { Button } from "@/ui/components/Button"
+ 
+export default function Example() {
+  return (
+    <Button disabled>
+      <LoaderIcon className="mr-2 h-4 w-4 animate-spin" />
+      Please wait
+    </Button>
+  )
+}
+```

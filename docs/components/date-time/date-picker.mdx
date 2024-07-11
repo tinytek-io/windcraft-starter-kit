@@ -1,0 +1,68 @@
+# DatePicker
+
+The DatePicker component is a text input that allows users to select a date from a calendar.
+
+```tsx
+import { DatePicker } from '@/ui/components/DatePicker';
+
+export default function Example() {
+  return (
+    <DatePicker
+      aria-label="Select time"
+      label="Date"
+    />
+  );
+}
+```
+
+```tsx
+import { DatePicker } from '@/ui/components/DatePicker';
+
+export default function Example() {
+  return (
+    <DatePicker
+      aria-label="Select date"
+      label="Date"
+      description="Enter the date of the event"
+    />
+  );
+}
+```
+
+## Disabled
+
+```tsx
+import { DatePicker } from '@/ui/components/DatePicker';
+
+export default function Example() {
+  return (
+    <DatePicker
+      aria-label="Select date"
+      label="Date"
+      onChange={function(){}}
+      onFocusChange={function(){}}
+      isDisabled
+    />
+  );
+}
+```
+
+## Invalid
+
+```tsx
+import { DatePicker } from '@/ui/components/DatePicker';
+
+export default function Example() {
+  return (
+    <DatePicker
+      aria-label="Select date"
+      label="Date"
+      onChange={function(){}}
+      onFocusChange={function(){}}
+      description="Enter the date of the event"
+      errorMessage="Please enter a valid date"
+      isInvalid
+    />
+  );
+}
+```

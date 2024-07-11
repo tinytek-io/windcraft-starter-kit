@@ -1,0 +1,47 @@
+# File trigger
+
+File triggers are used to trigger a file selection event. This is useful for uploading files or selecting files for other purposes.
+
+```tsx preview
+import { FileTrigger } from "react-aria-components"
+import { Button } from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <FileTrigger>
+      <Button>Select a file</Button>
+    </FileTrigger>
+  );
+}
+```
+
+## Button
+
+```tsx preview
+import { FileTrigger } from "react-aria-components"
+import { Button } from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <FileTrigger>
+      <Button>Select a file</Button>
+    </FileTrigger>
+  );
+}
+```
+
+## Input
+
+```tsx preview
+import { Input } from '@/ui/components/Input';
+import { Label } from '@/ui/components/Label';
+
+export default function Example() {
+  return (
+    <div className="grid w-full max-w-sm items-center gap-1.5">
+      <Label htmlFor="picture">Picture</Label>
+      <Input type="file" id="picture" />
+    </div>
+  );
+}
+```

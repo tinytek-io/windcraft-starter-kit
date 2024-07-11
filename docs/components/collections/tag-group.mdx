@@ -1,0 +1,154 @@
+# Tag Group
+
+Tag groups are used to display a group of tags. They are typically used to represent a collection of tags that are related to each other.
+
+```tsx
+import { TagGroup, Tag } from '@/ui/components/TagGroup';
+
+export default function Example() {
+  return (
+    <TagGroup
+      label="Ice cream flavor"
+      selectionMode="multiple"
+    >
+      <Tag>
+        Chocolate
+      </Tag>
+      <Tag>
+        Mint
+      </Tag>
+      <Tag>
+        Strawberry
+      </Tag>
+      <Tag>
+        Vanilla
+      </Tag>
+    </TagGroup>
+  );
+}
+```
+
+## Disabled
+
+```tsx
+import { TagGroup, Tag } from '@/ui/components/TagGroup';
+
+export default function Example() {
+  return (
+    <TagGroup
+      label="Ice cream flavor"
+      onRemove={function Qa(){}}
+      onSelectionChange={function Qa(){}}
+      selectionMode="single"
+      items={[]}
+      renderEmptyState={() => "No categories."}
+    >
+      <Tag>
+        Chocolate
+      </Tag>
+      <Tag isDisabled>
+        Mint
+      </Tag>
+      <Tag>
+        Strawberry
+      </Tag>
+      <Tag>
+        Vanilla
+      </Tag>
+    </TagGroup>
+  );
+}
+```
+
+## Empty selection
+
+```tsx
+import { TagGroup, Tag } from '@/ui/components/TagGroup';
+
+export default function Example() {
+  return (
+    <TagGroup
+      label="Ice cream flavor"
+      onRemove={function Qa(){}}
+      onSelectionChange={function Qa(){}}
+      selectionMode="single"
+      renderEmptyState={() => <span className="text-sm">No categories.</span>}
+    >
+    </TagGroup>
+  );
+}
+```
+
+## Error and Description
+
+```tsx
+import { useListData } from 'react-stately';
+import { Text } from "react-aria-components";
+import { TagGroup, Tag } from '@/ui/components/TagGroup';
+
+export default function Example() {
+  let list = useListData({
+    initialItems: [
+      { id: 1, name: 'Chocolate' },
+      { id: 2, name: 'Mint' },
+      { id: 3, name: 'Strawberry' },
+      { id: 4, name: 'Vanilla' }
+    ]
+  });
+
+  return (
+    <TagGroup
+      label="Ice cream flavor"
+      items={list.items}
+      onRemove={(keys) => list.remove(...keys)}
+      onSelectionChange={function Qa(){}}
+      selectionMode="multiple"
+      description="Select your favorite ice cream flavor."
+      errorMessage="Please select a flavor."
+      renderEmptyState={() => <span className="text-sm">No categories.</span>}
+    >
+      {(item) => <Tag>{item.name}</Tag>}
+    </TagGroup>
+  );
+}
+```
+
+## Variants
+
+```tsx
+import { TagGroup, Tag } from '@/ui/components/TagGroup';
+
+export default function Example() {
+  return (
+    <TagGroup
+      label="Ice cream flavor"
+      selectionMode="multiple"
+    >
+      <Tag variant="primary">
+        Primary
+      </Tag>
+      <Tag variant="secondary">
+        Secondary
+      </Tag>
+      <Tag variant="destructive">
+        Destructive
+      </Tag>
+      <Tag variant="outline">
+        Outline
+      </Tag>
+      <Tag variant="gray">
+        Gray
+      </Tag>
+      <Tag variant="green">
+        Green
+      </Tag>
+      <Tag variant="yellow">
+        Yellow
+      </Tag>
+      <Tag variant="blue">
+        Blue
+      </Tag>
+    </TagGroup>
+  );
+}
+```

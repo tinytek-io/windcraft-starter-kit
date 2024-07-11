@@ -1,0 +1,29 @@
+# Progress Bar
+
+The progress bar component is used to show the progress of a task.
+
+```tsx
+import { ProgressBar } from '@/ui/components/ProgressBar';
+
+export default function Example() {
+  return (
+    <ProgressBar
+      label="Loading…"
+      value={80}
+    />
+  );
+}
+```
+
+```tsx
+import { ProgressBar } from '@/ui/components/ProgressBar';
+
+export default function Example() {
+  return (
+    <ProgressBar
+      label="Loading…"
+      isIndeterminate
+    />
+  );
+}
+```

@@ -1,0 +1,65 @@
+# CheckboxGroup
+
+CheckboxGroup is a component that allows users to select multiple options from a list of options.
+
+```tsx
+import { Label } from '@/ui/components/Label';
+import { Checkbox, CheckboxGroup } from '@/ui/components/Checkbox';
+
+export default function Example() {
+  return (
+    <CheckboxGroup>
+      <Label>Favorite sports</Label>
+      <Checkbox value="soccer">
+        <div className="checkbox" aria-hidden="true">
+          <svg viewBox="0 0 18 18"><polyline points="1 9 7 14 15 4" /></svg>
+        </div>
+        Soccer
+      </Checkbox>
+      <Checkbox value="baseball">
+        <div className="checkbox" aria-hidden="true">
+          <svg viewBox="0 0 18 18"><polyline points="1 9 7 14 15 4" /></svg>
+        </div>
+        Baseball
+      </Checkbox>
+      <Checkbox value="basketball">
+        <div className="checkbox" aria-hidden="true">
+          <svg viewBox="0 0 18 18"><polyline points="1 9 7 14 15 4" /></svg>
+        </div>
+        Basketball
+      </Checkbox>
+    </CheckboxGroup>
+  );
+}
+```
+
+## CheckboxGroup
+
+```tsx
+import { Checkbox, CheckboxGroup } from '@/ui/components/Checkbox';
+
+export default function Example() {
+  return (
+    <CheckboxGroup
+      description=""
+      label="Cities"
+    >
+      <Checkbox value="sf">
+        San Francisco
+      </Checkbox>
+      <Checkbox value="ny">
+        New York
+      </Checkbox>
+      <Checkbox value="sydney">
+        Sydney
+      </Checkbox>
+      <Checkbox value="london">
+        London
+      </Checkbox>
+      <Checkbox value="tokyo">
+        Tokyo
+      </Checkbox>
+    </CheckboxGroup>
+  );
+}
+```

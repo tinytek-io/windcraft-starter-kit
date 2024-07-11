@@ -1,0 +1,58 @@
+# Badge
+
+```tsx
+import { Badge } from '@/ui/components/Badge';
+
+export default function Example() {
+  return (
+    <Badge variant="success">Licensed</Badge>
+  );
+}
+```
+
+## Icon + Label
+
+```tsx
+import {CircleCheckBig} from 'lucide-react';
+import { Badge } from '@/ui/components/Badge';
+import { Text } from '@/ui/components/Text';
+
+export default function Example() {
+  return (
+    <Badge variant="success">
+      <CircleCheckBig aria-label="Done" />
+      <Text>Icon + Label</Text>
+    </Badge>
+  );
+}
+```
+
+## Variants
+
+```tsx
+import { Badge } from '@/ui/components/Badge';
+
+export default function Example() {
+  return (
+    <div className="flex flex-col gap-4">
+      <Badge variant="success">
+        Green: Approved, Complete, Success, New, Purchased, Licensed
+      </Badge>
+      <Badge variant="info">Blue: Active, In Use, Live, Published</Badge>
+      <Badge variant="danger">Red: Error, Alert, Rejected, Failed</Badge>
+      <Badge variant="neutral">
+        Gray: Archived, Deleted, Paused, Draft, Not Started, Ended
+      </Badge>
+      <Badge variant="warning">
+        Yellow: Warning, Attention, Pending, In Progress
+      </Badge>
+      <Badge variant="primary">
+        Primary: Approved, Complete, Success, New, Purchased, Licensed
+      </Badge>
+      <Badge variant="secondary">
+        Secondary: Approved, Complete, Success, New, Purchased, Licensed
+      </Badge>
+    </div>
+  );
+}
+```

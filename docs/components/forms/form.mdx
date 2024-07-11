@@ -1,0 +1,43 @@
+# Form
+
+Forms are used to collect user input. The `Form` component is a wrapper for form elements like `Input`, `Select`, `Checkbox`, `Radio`, and `Button`.
+
+```tsx
+import { Form } from '@/ui/components/Form';
+import { TextField } from '@/ui/components/TextField';
+import { DateField } from '@/ui/components/DateField';
+import { Button } from '@/ui/components/Button';
+
+
+export default function Example() {
+  return (
+    <Form
+      onInvalid={function Qa(){}}
+      onReset={function Qa(){}}
+      onSubmit={function Qa(){}}
+    >
+      <TextField
+        isRequired
+        label="Email"
+        name="email"
+        type="email"
+      />
+      <DateField
+        isRequired
+        label="Birth date"
+      />
+      <div className="flex gap-2">
+        <Button type="submit">
+          Submit
+        </Button>
+        <Button
+          type="reset"
+          variant="secondary"
+        >
+          Reset
+        </Button>
+      </div>
+    </Form>
+  );
+}
+```

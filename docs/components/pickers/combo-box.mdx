@@ -1,0 +1,85 @@
+# ComboBox
+
+The ComboBox component is a composite component that combines a text input with a listbox. The listbox is displayed when the user interacts with the input, and the user can select an option from the listbox to populate the input.
+
+```tsx
+import { ComboBox, ComboBoxItem } from '@/ui/components/ComboBox';
+
+export default function Example() {
+  return (
+    <ComboBox
+      label="Ice cream flavor"
+      placeholder="Select a flavor"
+      description="Select your favorite flavor"
+    >
+      <ComboBoxItem>
+        Chocolate
+      </ComboBoxItem>
+      <ComboBoxItem id="mint">
+        Mint
+      </ComboBoxItem>
+      <ComboBoxItem isDisabled>
+        Strawberry
+      </ComboBoxItem>
+      <ComboBoxItem>
+        Vanilla
+      </ComboBoxItem>
+    </ComboBox>
+  );
+}
+```
+
+```tsx
+import { ComboBox, ComboBoxItem } from '@/ui/components/ComboBox';
+
+export default function Example() {
+  return (
+    <ComboBox
+      label="Ice cream flavor"
+      description="Select your favorite flavor"
+      isInvalid
+      errorMessage="Please select a flavor"
+    >
+      <ComboBoxItem>
+        Chocolate
+      </ComboBoxItem>
+      <ComboBoxItem id="mint">
+        Mint
+      </ComboBoxItem>
+      <ComboBoxItem>
+        Strawberry
+      </ComboBoxItem>
+      <ComboBoxItem>
+        Vanilla
+      </ComboBoxItem>
+    </ComboBox>
+  );
+}
+```
+
+```tsx
+import { ComboBox, ComboBoxItem } from '@/ui/components/ComboBox';
+
+export default function Example() {
+  return (
+    <ComboBox
+      label="Ice cream flavor"
+      description="Select your favorite flavor"
+      isDisabled
+    >
+      <ComboBoxItem>
+        Chocolate
+      </ComboBoxItem>
+      <ComboBoxItem id="mint">
+        Mint
+      </ComboBoxItem>
+      <ComboBoxItem>
+        Strawberry
+      </ComboBoxItem>
+      <ComboBoxItem>
+        Vanilla
+      </ComboBoxItem>
+    </ComboBox>
+  );
+}
+```

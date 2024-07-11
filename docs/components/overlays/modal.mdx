@@ -1,0 +1,39 @@
+# Modal
+
+The `Modal` component is a container for a dialog that is displayed on top of the rest of the page. It is used in conjunction with the `Dialog` and `DialogTrigger` components to create a modal dialog.
+
+```tsx
+import { Heading } from '@/ui/components/Heading';
+import { Dialog, DialogTrigger } from '@/ui/components/Dialog';
+import { Form } from '@/ui/components/Form';
+import { TextField } from '@/ui/components/TextField';
+import { Modal } from '@/ui/components/Modal';
+import { Button } from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <DialogTrigger>
+      <Button>Sign up…</Button>
+      <Modal>
+        <Dialog>
+          {({ close }) => (
+            <Form>
+              <Heading slot="title">Sign up</Heading>
+              <TextField
+                label="First Name"
+                autoFocus
+              />
+              <TextField
+                label="Last Name"
+              />
+              <Button onPress={close}>
+                Submit
+              </Button>
+            </Form>
+          )}
+        </Dialog>
+      </Modal>
+    </DialogTrigger>
+  );
+}
+```

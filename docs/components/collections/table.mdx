@@ -1,0 +1,241 @@
+# Table
+
+The Table component is used to display data in a tabular format.
+
+```tsx
+import { Cell, Column, Row, Table, TableBody, TableHeader } from '@/ui/components/Table';
+
+export default function Example() {
+  return (
+    <Table aria-label="Files" selectionMode="none">
+      <TableHeader>
+        <Column isRowHeader>Name</Column>
+        <Column>Type</Column>
+        <Column>Date Modified</Column>
+      </TableHeader>
+      <TableBody>
+        <Row>
+          <Cell>Games</Cell>
+          <Cell>File folder</Cell>
+          <Cell>6/7/2020</Cell>
+        </Row>
+        <Row>
+          <Cell>Program Files</Cell>
+          <Cell>File folder</Cell>
+          <Cell>4/7/2021</Cell>
+        </Row>
+        <Row>
+          <Cell>bootmgr</Cell>
+          <Cell>System file</Cell>
+          <Cell>11/20/2010</Cell>
+        </Row>
+        <Row>
+          <Cell>log.txt</Cell>
+          <Cell>Text Document</Cell>
+          <Cell>1/18/2016</Cell>
+        </Row>
+      </TableBody>
+    </Table>
+  );
+}
+```
+
+## Single
+
+```tsx
+import { Cell, Column, Row, Table, TableBody, TableHeader } from '@/ui/components/Table';
+
+export default function Example() {
+  return (
+    <Table aria-label="Files" selectionMode="single" selectionBehavior="replace">
+      <TableHeader>
+        <Column isRowHeader>Name</Column>
+        <Column>Type</Column>
+        <Column>Date Modified</Column>
+      </TableHeader>
+      <TableBody>
+        <Row>
+          <Cell>Games</Cell>
+          <Cell>File folder</Cell>
+          <Cell>6/7/2020</Cell>
+        </Row>
+        <Row>
+          <Cell>Program Files</Cell>
+          <Cell>File folder</Cell>
+          <Cell>4/7/2021</Cell>
+        </Row>
+        <Row>
+          <Cell>bootmgr</Cell>
+          <Cell>System file</Cell>
+          <Cell>11/20/2010</Cell>
+        </Row>
+        <Row>
+          <Cell>log.txt</Cell>
+          <Cell>Text Document</Cell>
+          <Cell>1/18/2016</Cell>
+        </Row>
+      </TableBody>
+    </Table>
+  );
+}
+```
+
+## Multiple
+
+```tsx
+import { Cell, Column, Row, Table, TableBody, TableHeader } from '@/ui/components/Table';
+
+export default function Example() {
+  return (
+    <Table aria-label="Files" selectionMode="multiple" selectionBehavior="toggle">
+      <TableHeader>
+        <Column isRowHeader>Name</Column>
+        <Column>Type</Column>
+        <Column>Date Modified</Column>
+      </TableHeader>
+      <TableBody>
+        <Row>
+          <Cell>Games</Cell>
+          <Cell>File folder</Cell>
+          <Cell>6/7/2020</Cell>
+        </Row>
+        <Row>
+          <Cell>Program Files</Cell>
+          <Cell>File folder</Cell>
+          <Cell>4/7/2021</Cell>
+        </Row>
+        <Row>
+          <Cell>bootmgr</Cell>
+          <Cell>System file</Cell>
+          <Cell>11/20/2010</Cell>
+        </Row>
+        <Row>
+          <Cell>log.txt</Cell>
+          <Cell>Text Document</Cell>
+          <Cell>1/18/2016</Cell>
+        </Row>
+      </TableBody>
+    </Table>
+  );
+}
+```
+
+## Disabled
+
+```tsx
+import { Cell, Column, Row, Table, TableBody, TableHeader } from '@/ui/components/Table';
+
+export default function Example() {
+  return (
+    <Table aria-label="Files" selectionMode="multiple" >
+      <TableHeader>
+        <Column isRowHeader>Name</Column>
+        <Column>Type</Column>
+        <Column>Date Modified</Column>
+      </TableHeader>
+      <TableBody>
+        <Row>
+          <Cell>Games</Cell>
+          <Cell>File folder</Cell>
+          <Cell>6/7/2020</Cell>
+        </Row>
+        <Row isDisabled>
+          <Cell>Program Files</Cell>
+          <Cell>File folder</Cell>
+          <Cell>4/7/2021</Cell>
+        </Row>
+        <Row>
+          <Cell>bootmgr</Cell>
+          <Cell>System file</Cell>
+          <Cell>11/20/2010</Cell>
+        </Row>
+        <Row>
+          <Cell>log.txt</Cell>
+          <Cell>Text Document</Cell>
+          <Cell>1/18/2016</Cell>
+        </Row>
+      </TableBody>
+    </Table>
+  );
+}
+```
+
+## Scroll
+
+```tsx
+import { Cell, Column, Row, Table, TableBody, TableHeader } from '@/ui/components/Table';
+
+export default function Example() {
+  return (
+    <Table
+      aria-label="Files"
+      selectionMode="multiple"
+      disabledBehavior="all" 
+      disabledKeys={[1,3]}
+      defaultSelectedKeys={[2]}
+      sortDescriptor={{
+        column: 'name',
+        direction: 'ascending'
+      }}
+    >
+      <TableHeader>
+        <Column id="name" isRowHeader allowsSorting>Name</Column>
+        <Column>Type</Column>
+        <Column>Date Modified</Column>
+      </TableHeader>
+      <TableBody>
+        <Row id={0}>
+          <Cell>Games</Cell>
+          <Cell>File folder</Cell>
+          <Cell>6/7/2020</Cell>
+        </Row>
+        <Row id={1}>
+          <Cell>Program Files</Cell>
+          <Cell>File folder</Cell>
+          <Cell>4/7/2021</Cell>
+        </Row>
+        <Row id={2}>
+          <Cell>bootmgr</Cell>
+          <Cell>System file</Cell>
+          <Cell>11/20/2010</Cell>
+        </Row>
+        <Row id={3}>
+          <Cell>log.txt</Cell>
+          <Cell>Text Document</Cell>
+          <Cell>1/18/2016</Cell>
+        </Row>
+        <Row id={4}>
+          <Cell>log.txt</Cell>
+          <Cell>Text Document</Cell>
+          <Cell>1/18/2016</Cell>
+        </Row>
+        <Row id={5}>
+          <Cell>log.txt</Cell>
+          <Cell>Text Document</Cell>
+          <Cell>1/18/2016</Cell>
+        </Row>
+        <Row id={6}>
+          <Cell>log.txt</Cell>
+          <Cell>Text Document</Cell>
+          <Cell>1/18/2016</Cell>
+        </Row>
+        <Row id={7}>
+          <Cell>log.txt</Cell>
+          <Cell>Text Document</Cell>
+          <Cell>1/18/2016</Cell>
+        </Row>
+        <Row id={8}>
+          <Cell>log.txt</Cell>
+          <Cell>Text Document</Cell>
+          <Cell>1/18/2016</Cell>
+        </Row>
+        <Row id={9}>
+          <Cell>log.txt</Cell>
+          <Cell>Text Document</Cell>
+          <Cell>1/18/2016</Cell>
+        </Row>
+      </TableBody>
+    </Table>
+  );
+}
+```

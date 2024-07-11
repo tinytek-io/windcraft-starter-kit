@@ -1,0 +1,84 @@
+# Slider
+
+Sliders allow users to select a value from a range of values.
+
+```tsx
+import { Slider } from '@/ui/components/Slider';
+
+export default function Example() {
+  return (
+    <Slider
+      defaultValue={[
+        30,
+      ]}
+      label="Range"
+      onChange={function Qa(){}}
+      onChangeEnd={function Qa(){}}
+      thumbLabels={[
+        'value',
+      ]}
+    />
+  );
+}
+```
+
+```tsx
+import { Slider } from '@/ui/components/Slider';
+
+export default function Example() {
+  return (
+    <Slider
+      defaultValue={[
+        30,
+        60
+      ]}
+      label="Range"
+      onChange={function Qa(){}}
+      onChangeEnd={function Qa(){}}
+      thumbLabels={[
+        'start',
+        'end'
+      ]}
+    />
+  );
+}
+```
+
+```tsx
+import { Slider } from '@/ui/components/Slider';
+
+export default function Example() {
+  return (
+    <Slider
+      orientation="vertical"
+      defaultValue={[
+        30,
+      ]}
+      thumbLabels={[
+        'value',
+      ]}
+    />
+  );
+}
+```
+
+```tsx
+import { Slider } from '@/ui/components/Slider';
+
+export default function Example() {
+  return (
+    <Slider
+      defaultValue={[
+        30,
+      ]}
+      label="Range"
+      onChange={function Qa(){}}
+      onChangeEnd={function Qa(){}}
+      thumbLabels={[
+        'value',
+      ]}
+      isDisabled
+    />
+  );
+}
+```

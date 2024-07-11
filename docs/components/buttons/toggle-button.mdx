@@ -1,0 +1,120 @@
+# Toggle Button
+
+The ToggleButton component is a button that toggles between two states. It can be used to represent an on/off state, or a selected/unselected state.
+
+```tsx preview
+import { Fragment } from 'react';
+import { ToggleButton } from '@/ui/components/ToggleButton';
+
+export default function Example() {
+  return (
+    <div className="grid grid-cols-9 gap-2">
+      {['primary', 'secondary', 'destructive', 'outline', 'ghost']
+        .map((variant) => ["sm", "md", "lg"].map((size) => (
+          <Fragment key={variant+size}>
+          <ToggleButton key={variant+size+"_01"} variant={variant} size={size}>
+            Pin
+          </ToggleButton>
+          <ToggleButton key={variant+size+"selected"} variant={variant} size={size} isSelected>
+            Pin
+          </ToggleButton>
+          <ToggleButton key={variant+size+"disabled"} variant={variant} size={size} isDisabled>
+            Pin
+          </ToggleButton>
+        </Fragment>
+      ))).flat()}
+    </div>
+  );
+}
+```
+
+## Default
+
+```tsx preview
+import { BoldIcon } from "lucide-react"
+import { ToggleButton } from '@/ui/components/ToggleButton';
+
+export default function Example() {
+  return (
+    <ToggleButton aria-label="Toggle italic">
+      <BoldIcon className="h-4 w-4" />
+    </ToggleButton>
+  );
+}
+```
+
+## Outline
+
+```tsx preview
+import { ItalicIcon } from "lucide-react"
+import { ToggleButton } from '@/ui/components/ToggleButton';
+
+export default function Example() {
+  return (
+    <ToggleButton variant="outline" aria-label="Toggle italic">
+      <ItalicIcon className="h-4 w-4" />
+    </ToggleButton>
+  );
+}
+```
+
+## With Text
+
+```tsx preview
+import { ItalicIcon } from "lucide-react"
+import { ToggleButton } from '@/ui/components/ToggleButton';
+
+export default function Example() {
+  return (
+    <ToggleButton aria-label="Toggle italic">
+      <ItalicIcon className="h-4 w-4" />
+      Italic
+    </ToggleButton>
+  );
+}
+```
+
+## Small
+
+```tsx preview
+import { ItalicIcon } from "lucide-react"
+import { ToggleButton } from '@/ui/components/ToggleButton';
+
+export default function Example() {
+  return (
+    <ToggleButton size="sm" aria-label="Toggle italic">
+      <ItalicIcon className="h-4 w-4" />
+    </ToggleButton>
+  );
+}
+```
+
+## Large
+
+```tsx preview
+import { ItalicIcon } from "lucide-react"
+import { ToggleButton } from '@/ui/components/ToggleButton';
+
+export default function Example() {
+  return (
+    <ToggleButton size="lg" aria-label="Toggle italic">
+      <ItalicIcon className="h-4 w-4" />
+    </ToggleButton>
+  );
+}
+```
+
+## Disabled
+
+```tsx preview
+import { UnderlineIcon } from "lucide-react"
+import { ToggleButton } from '@/ui/components/ToggleButton';
+
+export default function Example() {
+  return (
+    <ToggleButton aria-label="Toggle italic" isDisabled>
+      <UnderlineIcon className="h-4 w-4" />
+    </ToggleButton>
+  );
+}
+```

@@ -1,0 +1,60 @@
+# Toolbar
+
+The toolbar is a container for buttons and other controls that are used to perform actions or change settings. It is typically used in applications to group related controls together.
+
+```tsx
+import { BoldIcon, ItalicIcon, UnderlineIcon } from "lucide-react"
+import { Toolbar, ToolbarGroup } from '@/ui/components/Toolbar';
+import { ToggleButton } from '@/ui/components/ToggleButton';
+import { Button } from '@/ui/components/Button';
+import { Separator } from '@/ui/components/Separator';
+import { Checkbox } from '@/ui/components/Checkbox';
+
+export default function Example() {
+  return (
+    <Toolbar aria-label="Text formatting">
+      <ToolbarGroup
+        aria-label="Style"
+        className="contents"
+      >
+        <ToggleButton
+          aria-label="Bold"
+          className="p-2.5"
+        >
+          <BoldIcon className="w-4 h-4" />
+        </ToggleButton>
+        <ToggleButton
+          aria-label="Italic"
+          className="p-2.5"
+        >
+          <ItalicIcon className="w-4 h-4" />
+        </ToggleButton>
+        <ToggleButton
+          aria-label="Underline"
+          className="p-2.5"
+        >
+          <UnderlineIcon className="w-4 h-4" />
+        </ToggleButton>
+      </ToolbarGroup>
+      <Separator orientation="vertical" />
+      <ToolbarGroup
+        aria-label="Clipboard"
+        className="contents"
+      >
+        <Button variant="secondary">
+          Copy
+        </Button>
+        <Button variant="secondary">
+          Paste
+        </Button>
+        <Button variant="secondary">
+          Cut
+        </Button>
+      </ToolbarGroup>
+      <Separator orientation="vertical" />
+      <Checkbox>
+        Night Mode
+      </Checkbox>
+    </Toolbar>
+  );
+}

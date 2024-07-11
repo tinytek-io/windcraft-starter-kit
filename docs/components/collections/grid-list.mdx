@@ -1,0 +1,197 @@
+# Grid List
+
+The grid list component is a layout component that arranges its children in a grid layout.
+
+```tsx preview
+import {GridList, GridListItem} from '@/ui/components/GridList';
+
+export default function Example() {
+  return (
+    <GridList aria-label="Favorite pokemon" selectionMode="multiple">
+      <GridListItem textValue="Charizard">
+        Charizard
+      </GridListItem>
+      <GridListItem textValue="Blastoise">
+        Blastoise
+      </GridListItem>
+      <GridListItem textValue="Venusaur">
+        Venusaur
+      </GridListItem>
+      <GridListItem textValue="Pikachu" isDisabled>
+        Pikachu
+      </GridListItem>
+    </GridList>
+  );
+}
+```
+
+## Default
+
+```tsx preview
+import {GridList, GridListItem} from '@/ui/components/GridList';
+
+export default function Example() {
+  return (
+    <GridList aria-label="Favorite pokemon">
+      <GridListItem textValue="Charizard">
+        Charizard
+      </GridListItem>
+      <GridListItem textValue="Blastoise">
+        Blastoise
+      </GridListItem>
+      <GridListItem textValue="Venusaur">
+        Venusaur
+      </GridListItem>
+      <GridListItem textValue="Pikachu">
+        Pikachu
+      </GridListItem>
+    </GridList>
+  );
+}
+```
+
+## Single Selection
+
+```tsx preview
+import {GridList, GridListItem} from '@/ui/components/GridList';
+
+export default function Example() {
+  return (
+    <GridList aria-label="Favorite pokemon" selectionMode="single">
+      <GridListItem textValue="Charizard">
+        Charizard
+      </GridListItem>
+      <GridListItem textValue="Blastoise">
+        Blastoise
+      </GridListItem>
+      <GridListItem textValue="Venusaur">
+        Venusaur
+      </GridListItem>
+      <GridListItem textValue="Pikachu">
+        Pikachu
+      </GridListItem>
+    </GridList>
+  );
+}
+```
+
+## Multiple Selection
+
+```tsx preview
+import {GridList, GridListItem} from '@/ui/components/GridList';
+
+export default function Example() {
+  return (
+    <GridList aria-label="Favorite pokemon" selectionMode="multiple">
+      <GridListItem textValue="Charizard">
+        Charizard
+      </GridListItem>
+      <GridListItem textValue="Blastoise">
+        Blastoise
+      </GridListItem>
+      <GridListItem textValue="Venusaur">
+        Venusaur
+      </GridListItem>
+      <GridListItem textValue="Pikachu">
+        Pikachu
+      </GridListItem>
+    </GridList>
+  );
+}
+```
+
+## Disabled
+
+```tsx preview
+import {GridList, GridListItem} from '@/ui/components/GridList';
+
+export default function Example() {
+  return (
+    <GridList aria-label="Favorite pokemon" selectionMode="multiple">
+      <GridListItem textValue="Charizard">
+        Charizard
+      </GridListItem>
+      <GridListItem textValue="Blastoise">
+        Blastoise
+      </GridListItem>
+      <GridListItem textValue="Venusaur">
+        Venusaur
+      </GridListItem>
+      <GridListItem textValue="Pikachu" isDisabled>
+        Pikachu
+      </GridListItem>
+    </GridList>
+  );
+}
+```
+
+## Drag and Drop
+
+```tsx preview
+import {useListData} from 'react-stately';
+import {useDragAndDrop} from 'react-aria-components';
+import {GridList, GridListItem} from '@/ui/components/GridList';
+
+export default function Example() {
+  let list = useListData({
+    initialItems: [
+      { id: 1, name: 'Charizard' },
+      { id: 2, name: 'Blastoise' },
+      { id: 3, name: 'Venusaur' },
+      { id: 4, name: 'Pikachu' }
+    ]
+  });
+
+  let { dragAndDropHooks } = useDragAndDrop({
+    getItems: (keys) =>
+      [...keys].map((key) => ({ 'text/plain': list.getItem(key).name })),
+    onReorder(e) {
+      if (e.target.dropPosition === 'before') {
+        list.moveBefore(e.target.key, e.keys);
+      } else if (e.target.dropPosition === 'after') {
+        list.moveAfter(e.target.key, e.keys);
+      }
+    }
+  });
+
+  return (
+    <GridList
+      aria-label="Favorite pokemon"
+      selectionMode="multiple"
+      items={list.items}
+      dragAndDropHooks={dragAndDropHooks}
+    >
+      {(item) => <GridListItem>{item.name}</GridListItem>}
+    </GridList>
+  );
+}
+```
+
+
+## Drag and Drop list
+
+```tsx preview
+import {DndGridList} from '@/ui/components/DndGridList';
+
+export default function Example() {
+  return (
+    <div className="grid grid-cols-2 gap-12 h-48 w-96">
+      <DndGridList
+        dataTypeId="pokemon"
+        initialItems={[
+          { id: 1, name: 'Charizard' },
+          { id: 2, name: 'Blastoise' },
+          { id: 3, name: 'Venusaur' },
+          { id: 4, name: 'Pikachu' }
+        ]}
+        aria-label="From pokemon list"
+      />
+      <DndGridList
+        dataTypeId="pokemon"
+        initialItems={[]}
+        aria-label="To pokemon list"
+      />
+    </div>
+  );
+}
+```

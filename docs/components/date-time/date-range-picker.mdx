@@ -1,0 +1,63 @@
+# DateRangePicker
+
+The DateRangePicker component is a form component that allows users to select a range of dates.
+
+```tsx
+import { DateRangePicker } from '@/ui/components/DateRangePicker';
+
+export default function Example() {
+  return (
+    <DateRangePicker
+      aria-label="Select date"
+      label="Date"
+    />
+  );
+}
+```
+
+```tsx
+import { DateRangePicker } from '@/ui/components/DateRangePicker';
+
+export default function Example() {
+  return (
+    <DateRangePicker
+      aria-label="Select date"
+      label="Date"
+      description="Select a date range"
+    />
+  );
+}
+```
+
+## Is disabled
+
+```tsx
+import { DateRangePicker } from '@/ui/components/DateRangePicker';
+
+export default function Example() {
+  return (
+    <DateRangePicker
+      aria-label="Select date"
+      label="Date"
+      isDisabled
+    />
+  );
+}
+```
+
+## Is invalid
+
+```tsx
+import { DateRangePicker } from '@/ui/components/DateRangePicker';
+
+export default function Example() {
+  return (
+    <DateRangePicker
+      aria-label="Select date"
+      label="Date"
+      errorMessage="Please select a valid date"
+      isInvalid
+    />
+  );
+}
+```

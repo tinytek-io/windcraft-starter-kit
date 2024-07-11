@@ -1,0 +1,58 @@
+[
+  "introduction",
+  {
+    "type": "dir",
+    "label": "Buttons",
+    "name": "buttons"
+  },
+  {
+    "type": "dir",
+    "label": "Collections",
+    "name": "collections"
+  },
+  {
+    "type": "dir",
+    "label": "Color",
+    "name": "color"
+  },
+  {
+    "type": "dir",
+    "label": "Date and Time",
+    "name": "date-time"
+  },
+  {
+    "type": "dir",
+    "label": "Drag and Drop",
+    "name": "drag-drop"
+  },
+  {
+    "type": "dir",
+    "label": "Forms",
+    "name": "forms"
+  },
+  {
+    "type": "dir",
+    "label": "Navigation",
+    "name": "navigation"
+  },
+  {
+    "type": "dir",
+    "label": "Overlays",
+    "name": "overlays"
+  },
+  {
+    "type": "dir",
+    "label": "Pickers",
+    "name": "pickers"
+  },
+  {
+    "type": "dir",
+    "label": "Status",
+    "name": "status"
+  },
+  {
+    "type": "dir",
+    "label": "Content",
+    "name": "content"
+  }
+]

@@ -1,0 +1,53 @@
+# NumberField
+
+NumberField is a component that allows users to input numbers. It is a wrapper around the native input element with additional styling and functionality.
+
+```tsx
+import { NumberField } from '@/ui/components/NumberField';
+
+export default function Example() {
+  return (
+    <NumberField
+      label="Cookies"
+      placeholder="Enter a number"
+      description="Enter a number between 0 and 100"
+    />
+  );
+}
+```
+
+## Invalid
+
+```tsx
+import { NumberField } from '@/ui/components/NumberField';
+
+export default function Example() {
+  return (
+    <NumberField
+      label="Cookies"
+      placeholder="Enter a number"
+      description="Enter a number between 0 and 100"
+      value="150"
+      isInvalid
+      errorMessage="Please enter a valid number"
+    />
+  );
+}
+```
+
+## Disabled
+
+```tsx
+import { NumberField } from '@/ui/components/NumberField';
+
+export default function Example() {
+  return (
+    <NumberField
+      label="Cookies"
+      placeholder="Enter a number"
+      description="Enter a number between 0 and 100"
+      isDisabled
+    />
+  );
+}
+```

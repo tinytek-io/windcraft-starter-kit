@@ -1,0 +1,396 @@
+# Menu
+
+Menu components are used to create dropdown menus.
+
+```tsx preview
+import {
+  ChevronRight,
+  Cloud,
+  CreditCard,
+  Github,
+  Keyboard,
+  LifeBuoy,
+  LogOut,
+  Mail,
+  MessageSquare,
+  Plus,
+  PlusCircle,
+  Settings,
+  User,
+  UserPlus,
+  Users,
+} from "lucide-react"
+import { Popover } from '@/ui/components/Popover';
+import { Button } from "@/ui/components/Button"
+import {
+  Menu,
+  MenuHeader,
+  MenuItem,
+  MenuKeyboard,
+  MenuSection,
+  MenuSeparator,
+  MenuTrigger,
+  SubmenuTrigger,
+} from "@/ui/components/Menu"
+
+export default function Example() {
+  return (
+    <MenuTrigger>
+      <Button variant="outline">Open</Button>
+      <Popover>
+        <Menu className="w-56">
+          <MenuSection>
+            <MenuHeader separator>My Accounts</MenuHeader>
+            <MenuItem>
+              <User className="mr-2 h-4 w-4" />
+              <span>Profile</span>
+              <MenuKeyboard>⇧⌘P</MenuKeyboard>
+            </MenuItem>
+            <MenuItem>
+              <CreditCard className="mr-2 h-4 w-4" />
+              <span>Billing</span>
+              <MenuKeyboard>⌘B</MenuKeyboard>
+            </MenuItem>
+            <MenuItem>
+              <Settings className="mr-2 h-4 w-4" />
+              <span>Settings</span>
+              <MenuKeyboard>⌘S</MenuKeyboard>
+            </MenuItem>
+            <MenuItem>
+              <Keyboard className="mr-2 h-4 w-4" />
+              <span>Keyboard shortcuts</span>
+              <MenuKeyboard>⌘K</MenuKeyboard>
+            </MenuItem>
+          </MenuSection>
+          <MenuSeparator />
+          <MenuSection>
+            <MenuItem>
+              <Users className="mr-2 h-4 w-4" />
+              <span>Team</span>
+            </MenuItem>
+            <SubmenuTrigger>
+              <MenuItem>
+                <UserPlus className="mr-2 h-4 w-4" />
+                <span>Invite users</span>
+                <ChevronRight className="ml-auto h-4 w-4" />
+              </MenuItem>
+              <Popover>
+                <Menu>
+                  <MenuItem>
+                    <Mail className="mr-2 h-4 w-4" />
+                    <span>Email</span>
+                  </MenuItem>
+                  <MenuItem>
+                    <MessageSquare className="mr-2 h-4 w-4" />
+                    <span>Message</span>
+                  </MenuItem>
+                  <MenuSeparator />
+                  <MenuItem>
+                    <PlusCircle className="mr-2 h-4 w-4" />
+                    <span>More...</span>
+                  </MenuItem>
+                </Menu>
+              </Popover>
+            </SubmenuTrigger>
+            <MenuItem>
+              <Plus className="mr-2 h-4 w-4" />
+              <span>New Team</span>
+              <MenuKeyboard>⌘+T</MenuKeyboard>
+            </MenuItem>
+          </MenuSection>
+          <MenuSeparator />
+          <MenuItem>
+            <Github className="mr-2 h-4 w-4" />
+            <span>GitHub</span>
+          </MenuItem>
+          <MenuItem>
+            <LifeBuoy className="mr-2 h-4 w-4" />
+            <span>Support</span>
+          </MenuItem>
+          <MenuItem>
+            <Cloud className="mr-2 h-4 w-4" />
+            <span>API</span>
+          </MenuItem>
+          <MenuSeparator />
+          <MenuItem>
+            <LogOut className="mr-2 h-4 w-4" />
+            <span>Log out</span>
+            <MenuKeyboard>⇧⌘Q</MenuKeyboard>
+          </MenuItem>
+        </Menu>
+      </Popover>
+    </MenuTrigger>
+  );
+}
+```
+
+.
+
+## Disabled items
+
+```tsx preview
+import { MoreHorizontalIcon } from "lucide-react"
+import { MenuTrigger } from 'react-aria-components';
+import { Popover } from '@/ui/components/Popover';
+import { Menu, MenuItem, MenuSeparator } from '@/ui/components/Menu';
+import { Button } from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <MenuTrigger aria-label="Favorite animal" selectionMode="multiple">
+      <Button
+        className="px-2"
+        variant="secondary"
+      >
+        <MoreHorizontalIcon className="w-5 h-5" />
+      </Button>
+      <Menu
+        onAction={function Qa(){}}
+        onClose={function Qa(){}}
+        onScroll={function Qa(){}}
+        onSelectionChange={function Qa(){}}
+      >
+        <MenuItem id="new">
+          New…
+        </MenuItem>
+        <MenuItem id="open">
+          Open…
+        </MenuItem>
+        <MenuSeparator />
+        <MenuItem id="save" isDisabled>
+          Save
+        </MenuItem>
+        <MenuItem id="saveAs">
+          Save as…
+        </MenuItem>
+        <MenuSeparator />
+        <MenuItem id="print">
+          Print…
+        </MenuItem>
+      </Menu>
+    </MenuTrigger>
+  );
+}
+```
+
+## Sections
+
+```tsx preview
+import { MoreHorizontalIcon } from "lucide-react"
+import { MenuTrigger } from 'react-aria-components';
+import { Popover } from '@/ui/components/Popover';
+import { Menu, MenuItem, MenuSection } from '@/ui/components/Menu';
+import { Button } from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <MenuTrigger aria-label="Favorite animal" selectionMode="multiple">
+      <Button
+        className="px-2"
+        variant="secondary"
+      >
+        <MoreHorizontalIcon className="w-5 h-5" />
+      </Button>
+      <Menu>
+        <MenuSection title="Your Content">
+          <MenuItem id="repos">
+            Repositories
+          </MenuItem>
+          <MenuItem id="projects">
+            Projects
+          </MenuItem>
+          <MenuItem id="organizations">
+            Organizations
+          </MenuItem>
+          <MenuItem id="stars">
+            Stars
+          </MenuItem>
+          <MenuItem id="sponsors">
+            Sponsors
+          </MenuItem>
+        </MenuSection>
+        <MenuSection title="Your Account">
+          <MenuItem id="profile">
+            Profile
+          </MenuItem>
+          <MenuItem id="status">
+            Set status
+          </MenuItem>
+          <MenuItem id="sign-out">
+            Sign out
+          </MenuItem>
+        </MenuSection>
+      </Menu>
+    </MenuTrigger>
+  );
+}
+```
+
+## Submenu
+
+```tsx preview
+import { MoreHorizontalIcon } from "lucide-react"
+import { MenuTrigger, SubmenuTrigger } from 'react-aria-components';
+import { Popover } from '@/ui/components/Popover';
+import { Menu, MenuItem, MenuSection, MenuSeparator } from '@/ui/components/Menu';
+import { Button } from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <MenuTrigger aria-label="Favorite animal" selectionMode="multiple">
+      <Button
+        className="px-2"
+        variant="secondary"
+      >
+        <MoreHorizontalIcon className="w-5 h-5" />
+      </Button>
+      <Menu>
+        <MenuItem id="new">
+          New…
+        </MenuItem>
+        <SubmenuTrigger>
+          <MenuItem id="open">
+            Open
+          </MenuItem>
+          <Popover>
+            <Menu>
+              <MenuItem id="open-new">
+                Open in New Window
+              </MenuItem>
+              <MenuItem id="open-current">
+                Open in Current Window
+              </MenuItem>
+            </Menu>
+          </Popover>
+        </SubmenuTrigger>
+        <MenuSeparator />
+        <MenuItem id="print">
+          Print…
+        </MenuItem>
+        <SubmenuTrigger>
+          <MenuItem id="share">
+            Share
+          </MenuItem>
+          <Popover>
+            <Menu>
+              <MenuItem id="sms">
+                SMS
+              </MenuItem>
+              <MenuItem id="twitter">
+                Twitter
+              </MenuItem>
+              <SubmenuTrigger>
+                <MenuItem id="email">
+                  Email
+                </MenuItem>
+                <Popover>
+                  <Menu>
+                    <MenuItem id="work">
+                      Work
+                    </MenuItem>
+                    <MenuItem id="personal">
+                      Personal
+                    </MenuItem>
+                  </Menu>
+                </Popover>
+              </SubmenuTrigger>
+            </Menu>
+          </Popover>
+        </SubmenuTrigger>
+      </Menu>
+    </MenuTrigger>
+  );
+}
+```
+
+## Text slots
+
+```tsx preview
+import { MoreHorizontalIcon } from "lucide-react"
+import { MenuTrigger, Keyboard, Text } from 'react-aria-components';
+import { Menu, MenuItem } from '@/ui/components/Menu';
+import { Button } from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <MenuTrigger aria-label="Favorite animal" selectionMode="multiple">
+      <Button
+        className="px-2"
+        variant="secondary"
+      >
+        <MoreHorizontalIcon className="w-5 h-5" />
+      </Button>
+      <Menu>
+        <MenuItem textValue="Copy">
+          <Text slot="label">Copy</Text>
+          <Text slot="description">Copy the selected text</Text>
+          <Keyboard>⌘C</Keyboard>
+        </MenuItem>
+        <MenuItem textValue="Cut">
+          <Text slot="label">Cut</Text>
+          <Text slot="description">Cut the selected text</Text>
+          <Keyboard>⌘X</Keyboard>
+        </MenuItem>
+        <MenuItem textValue="Paste">
+          <Text slot="label">Paste</Text>
+          <Text slot="description">Paste the copied text</Text>
+          <Keyboard>⌘V</Keyboard>
+        </MenuItem>
+      </Menu>
+    </MenuTrigger>
+  );
+}
+```
+
+## Test
+
+```tsx preview
+import { useState } from 'react';
+import { UserIcon } from "lucide-react"
+import { MenuTrigger, SubmenuTrigger, DialogTrigger } from 'react-aria-components';
+import { Popover } from '@/ui/components/Popover';
+import { Menu, MenuItem, MenuSection } from '@/ui/components/Menu';
+import { Button } from '@/ui/components/Button';
+
+import { AlertDialog } from '@/ui/components/AlertDialog';
+import { Modal } from '@/ui/components/Modal';
+
+export default function Example() {
+  const [isOpen, setIsOpen] = useState(false)
+  return (
+    <>
+      <MenuTrigger aria-label="Favorite animal" selectionMode="multiple">
+        <Button
+          className="px-2"
+          variant="secondary"
+        >
+          <UserIcon className="w-5 h-5" />
+          User profile
+        </Button>
+        <Menu>
+          <MenuItem id="profile">
+            Profile
+          </MenuItem>
+          <MenuItem id="account" onAction={() => setIsOpen(true)}>
+            Account
+          </MenuItem>
+          <MenuItem id="logout">
+            Logout
+          </MenuItem>
+        </Menu>
+      </MenuTrigger>
+      <Modal isOpen={isOpen} onOpenChange={setIsOpen} isDismissable>
+        <AlertDialog
+          actionLabel="Delete"
+          onAction={() => alert("Deleted!")}
+          role="dialog"
+          title="Delete folder"
+          variant="destructive"
+        >
+          Are you sure you want to delete "Documents"? All contents will be permanently destroyed.
+        </AlertDialog>
+      </Modal>
+    </>
+  );
+}
+```

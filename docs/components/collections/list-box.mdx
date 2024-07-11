@@ -1,0 +1,58 @@
+# List Box
+
+The List Box component is a simple list of items where the user can select one or more items from the list.
+
+```tsx preview
+import { ListBox, ListBoxItem } from '@/ui/components/ListBox';
+
+export default function Example() {
+  return (
+    <ListBox aria-label="Favorite animal" selectionMode="multiple">
+      <ListBoxItem>Aardvark</ListBoxItem>
+      <ListBoxItem>Cat</ListBoxItem>
+      <ListBoxItem>Dog</ListBoxItem>
+      <ListBoxItem>Kangaroo</ListBoxItem>
+      <ListBoxItem>Panda</ListBoxItem>
+      <ListBoxItem>Snake</ListBoxItem>
+    </ListBox>
+  );
+}
+```
+
+## Single selection
+
+```tsx preview
+import { ListBox, ListBoxItem } from '@/ui/components/ListBox';
+
+export default function Example() {
+  return (
+    <ListBox aria-label="Favorite animal" selectionMode="single">
+      <ListBoxItem>Aardvark</ListBoxItem>
+      <ListBoxItem>Cat</ListBoxItem>
+      <ListBoxItem>Dog</ListBoxItem>
+      <ListBoxItem>Kangaroo</ListBoxItem>
+      <ListBoxItem>Panda</ListBoxItem>
+      <ListBoxItem>Snake</ListBoxItem>
+    </ListBox>
+  );
+}
+```
+
+## Disabled items
+
+```tsx preview
+import { ListBox, ListBoxItem } from '@/ui/components/ListBox';
+
+export default function Example() {
+  return (
+    <ListBox aria-label="Favorite animal" selectionMode="single">
+      <ListBoxItem>Aardvark</ListBoxItem>
+      <ListBoxItem>Cat</ListBoxItem>
+      <ListBoxItem isDisabled>Dog</ListBoxItem>
+      <ListBoxItem>Kangaroo</ListBoxItem>
+      <ListBoxItem>Panda</ListBoxItem>
+      <ListBoxItem>Snake</ListBoxItem>
+    </ListBox>
+  );
+}
+```

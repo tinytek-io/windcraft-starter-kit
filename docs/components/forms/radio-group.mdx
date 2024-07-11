@@ -1,0 +1,84 @@
+# RadioGroup
+
+RadioGroup is a component that allows users to select one option from a set of options.
+
+```tsx
+import { RadioGroup, Radio } from '@/ui/components/RadioGroup';
+
+export default function Example() {
+  return (
+    <RadioGroup
+      description=""
+      label="Favorite sport"
+      description="Select your favorite sport"
+      onChange={function Qa(){}}
+    >
+      <Radio value="soccer">
+        Soccer
+      </Radio>
+      <Radio value="baseball">
+        Baseball
+      </Radio>
+      <Radio value="basketball">
+        Basketball
+      </Radio>
+    </RadioGroup>
+  );
+}
+```
+
+## Invalid
+
+```tsx
+import { RadioGroup, Radio } from '@/ui/components/RadioGroup';
+
+export default function Example() {
+  return (
+    <RadioGroup
+      description=""
+      label="Favorite sport"
+      description="Select your favorite sport"
+      errorMessage="Please select a sport"
+      onChange={function Qa(){}}
+      isInvalid
+    >
+      <Radio value="soccer">
+        Soccer
+      </Radio>
+      <Radio value="baseball">
+        Baseball
+      </Radio>
+      <Radio value="basketball">
+        Basketball
+      </Radio>
+    </RadioGroup>
+  );
+}
+```
+
+## Disabled
+
+```tsx
+import { RadioGroup, Radio } from '@/ui/components/RadioGroup';
+
+export default function Example() {
+  return (
+    <RadioGroup
+      description=""
+      label="Favorite sport"
+      onChange={function Qa(){}}
+      isDisabled
+    >
+      <Radio value="soccer">
+        Soccer
+      </Radio>
+      <Radio value="baseball">
+        Baseball
+      </Radio>
+      <Radio value="basketball">
+        Basketball
+      </Radio>
+    </RadioGroup>
+  );
+}
+```

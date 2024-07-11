@@ -1,0 +1,60 @@
+# Drop Zone
+
+The Drop Zone component is a container that can receive draggable items. It is used in conjunction with the [Draggable](/components/drag-drop/draggable) component.
+
+```tsx
+import React from "react";
+import { Text } from "react-aria-components";
+import { DropZone } from '@/ui/components/DropZone';
+
+export default function Example() {
+  const [dropped, setDropped] = React.useState(false);
+
+  return (
+    <DropZone onDrop={() => setDropped(true)}>
+      <Text slot="label">
+        {dropped ? "Successful drop!" : "Drop files here"}
+      </Text>
+    </DropZone>
+  );
+}
+```
+
+## File Trigger
+
+```tsx
+import React from "react";
+import { Text, FileTrigger } from "react-aria-components";
+import { DropZone } from '@/ui/components/DropZone';
+import { Button } from '@/ui/components/Button';
+
+export default function Example() {
+  const [files, setFiles] = React.useState<string>()
+
+  return (
+    <DropZone
+      onDrop={(event) => {
+        const files = event.items.filter(
+          (file) => file.kind === "file"
+        ) as FileDropItem[]
+        const filenames = files.map((file) => file.name)
+        setFiles(filenames.join(", "))
+      }}
+    >
+      <FileTrigger
+        allowsMultiple
+        onSelect={(event) => {
+          const files = Array.from(event)
+          const filenames = files.map((file) => file.name)
+          setFiles(filenames.join(", "))
+        }}
+      >
+        <Button variant="outline">Select files</Button>
+      </FileTrigger>
+      <Text slot="label" style={{ display: "block" }}>
+        {files || "Drop files here"}
+      </Text>
+    </DropZone>
+  );
+}
+```

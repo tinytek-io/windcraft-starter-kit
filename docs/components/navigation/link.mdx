@@ -1,0 +1,70 @@
+# Link
+
+Links are used to navigate between pages or sections of a page.
+
+```tsx
+import { Link } from '@/ui/components/Link';
+
+export default function Example() {
+  return (
+    <Link href="/">Link</Link>
+  );
+}
+```
+
+## Variants
+
+```tsx
+import { Link } from '@/ui/components/Link';
+
+export default function Example() {
+  return (
+    <div className="flex flex-col gap-4">
+      <Link href="/" variant="primary">primary</Link>
+      <Link href="/" variant="secondary">secondary</Link>
+      <Link href="/" variant="destructive">destructive</Link>
+      <Link href="/" variant="ghost">ghost</Link>
+    </div>
+  );
+}
+```
+
+## Sizes
+
+```tsx
+import { Link } from '@/ui/components/Link';
+
+export default function Example() {
+  return (
+    <div className="flex flex-col gap-4">
+      <Link href="/" size="sm">Small</Link>
+      <Link href="/" size="md">Medium</Link>
+      <Link href="/" size="lg">Large</Link>
+    </div>
+  );
+}
+```
+
+## Disabled
+
+```tsx
+import { Link } from '@/ui/components/Link';
+
+export default function Example() {
+  return (
+    <Link href="/" isDisabled>Link</Link>
+  );
+}
+```
+
+## Underline
+
+```tsx
+import { Link } from '@/ui/components/Link';
+
+export default function Example() {
+  return (
+    <Link href="/" underline>Link</Link>
+  );
+}
+```

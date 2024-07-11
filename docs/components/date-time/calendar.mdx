@@ -1,0 +1,76 @@
+# Calendar
+
+The Calendar component is a date picker that allows users to select a date from a calendar view.
+
+```tsx
+import { Calendar } from '@/ui/components/Calendar';
+
+export default function Example() {
+  return (
+    <Calendar
+      aria-label="Event date"
+      onChange={function(){}}
+      onFocusChange={function(){}}
+      className="rounded-lg border border-border p-2"
+    />
+  );
+}
+```
+
+## Date validation
+
+```tsx
+import {useLocale} from 'react-aria';
+import { Calendar } from '@/ui/components/Calendar';
+import { isWeekend, today, getLocalTimeZone } from '@internationalized/date';
+
+export default function Example() {
+  const { locale } = useLocale();
+  const isDateUnavailable = (date: DateValue) =>
+    isWeekend(date, locale);
+  return (
+    <Calendar
+      aria-label="Event date"
+      defaultValue={today(getLocalTimeZone())}
+      minValue={today(getLocalTimeZone())}
+      onChange={function(){}}
+      onFocusChange={function(){}}
+      className="rounded-lg border border-border p-2"
+      isDateUnavailable={isDateUnavailable}
+      errorMessage="Weekends are unavailable"
+    />
+  );
+}
+```
+
+```tsx
+import { Calendar } from '@/ui/components/Calendar';
+
+export default function Example() {
+  return (
+    <Calendar
+      aria-label="Event date"
+      onChange={function(){}}
+      onFocusChange={function(){}}
+      visibleMonths={2}
+      className="rounded-lg border border-border p-2"
+    />
+  );
+}
+```
+
+```tsx
+import { Calendar } from '@/ui/components/Calendar';
+
+export default function Example() {
+  return (
+    <Calendar
+      aria-label="Event date"
+      onChange={function(){}}
+      onFocusChange={function(){}}
+      className="rounded-lg border border-border p-2"
+      visibleMonths={3}
+    />
+  );
+}
+```

@@ -1,0 +1,23 @@
+# Group
+
+The group component is used to group related controls together. It is typically used in components like the toolbar to group buttons and other controls together.
+
+```tsx
+import { TextField } from '@/ui/components/TextField';
+import { Group } from '@/ui/components/Group';
+import { Label } from '@/ui/components/Label';
+import { Input } from '@/ui/components/Input';
+import { Button } from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <TextField>
+      <Label>Email</Label>
+      <Group>
+        <Input isEmbedded />
+        <Button size="sm" variant="icon" aria-label="Add email">+</Button>
+      </Group>
+    </TextField>
+  );
+}
+```

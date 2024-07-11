@@ -1,0 +1,49 @@
+# SearchField
+
+The SearchField component is a text input field that allows users to search for content.
+
+```tsx
+import { SearchField } from '@/ui/components/SearchField';
+
+export default function Example() {
+  return (
+    <SearchField
+      label="Search"
+      placeholder="Search for content"
+      description="Enter a search term to find content"
+    />
+  );
+}
+```
+
+## Invalid
+
+```tsx
+import { SearchField } from '@/ui/components/SearchField';
+
+export default function Example() {
+  return (
+    <SearchField
+      label="Search"
+      isInvalid
+      description="Enter a search term to find content"
+      errorMessage="Please enter a valid search term"
+    />
+  );
+}
+```
+
+## Disabled
+
+```tsx
+import { SearchField } from '@/ui/components/SearchField';
+
+export default function Example() {
+  return (
+    <SearchField
+      label="Search"
+      isDisabled
+    />
+  );
+}
+```

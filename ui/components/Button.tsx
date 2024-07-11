@@ -1,0 +1,61 @@
+import { Button as AriaButton, type ButtonProps as AriaButtonProps, composeRenderProps } from "react-aria-components";
+import { tv } from "tailwind-variants";
+import { focusRing } from "./focusRing";
+
+export interface ButtonProps extends AriaButtonProps, React.RefAttributes<HTMLButtonElement> {
+  /**
+   * The variant of the button.
+   * @default primary
+   */
+  variant?: "primary" | "secondary" | "destructive" | "outline" | "ghost" | "link";
+  /**
+   * The size of the button.
+   * @default md
+   */
+  size?: "xs" | "sm" | "md" | "lg" | "icon";
+}
+
+const button = tv({
+  extend: focusRing,
+  base: "inline-flex gap-1 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+  variants: {
+    variant: {
+      primary: "bg-primary text-primary-foreground hover:bg-primary/90 pressed:bg-primary/80",
+      secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 pressed:bg-secondary/70",
+      destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 pressed:bg-destructive/80",
+      outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground pressed:bg-accent/80",
+      ghost: "hover:bg-accent hover:text-accent-foreground pressed:bg-accent/80",
+      link: "text-primary underline-offset-4 hover:underline pressed:text-primary/80"
+    },
+    size: {
+      xs: "h-6 w-6",
+      sm: "h-9 rounded-md px-3",
+      md: "h-10 px-4 py-2",
+      lg: "h-11 rounded-md px-8",
+      icon: "h-10 w-10"
+    },
+    isDisabled: {
+      true: "pointer-events-none opacity-50"
+    }
+  },
+  defaultVariants: {
+    variant: "primary",
+    size: "md"
+  }
+});
+
+export function Button({ className, variant, size, ...props }: Readonly<ButtonProps>) {
+  return (
+    <AriaButton
+      {...props}
+      className={composeRenderProps(className, (className, renderProps) =>
+        button({
+          ...renderProps,
+          size,
+          variant,
+          className
+        })
+      )}
+    />
+  );
+}

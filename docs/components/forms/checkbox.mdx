@@ -1,0 +1,141 @@
+# Checkbox
+
+Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.
+
+```tsx
+import { Checkbox } from '@/ui/components/Checkbox';
+
+export default function Example() {
+  return (
+    <div className="flex flex-col gap-2">
+      <Checkbox
+        onChange={function(){}}
+      >
+        Checkbox
+      </Checkbox>
+
+      <div className="flex gap-2">
+        {/* Selected */}
+        <Checkbox
+          isSelected={true}
+          isDisabled={false}
+          isInvalid={false}
+          onChange={function(){}}
+        >
+          Checkbox
+        </Checkbox>
+        <Checkbox
+          isSelected={true}
+          isDisabled={true}
+          isInvalid={false}
+          onChange={function(){}}
+        >
+          Checkbox
+        </Checkbox>
+        <Checkbox
+          isSelected={true}
+          isDisabled={false}
+          isInvalid={true}
+          onChange={function(){}}
+        >
+          Checkbox
+        </Checkbox>
+        <Checkbox
+          isSelected={true}
+          isDisabled={true}
+          isInvalid={true}
+          onChange={function(){}}
+        >
+          Checkbox
+        </Checkbox>
+      </div>
+      <div className="flex gap-2">
+        {/* Not selected */}
+        <Checkbox
+          isSelected={false}
+          isDisabled={false}
+          isInvalid={false}
+          onChange={function(){}}
+        >
+          Checkbox
+        </Checkbox>
+        <Checkbox
+          isSelected={false}
+          isDisabled={true}
+          isInvalid={false}
+          onChange={function(){}}
+        >
+          Checkbox
+        </Checkbox>
+        <Checkbox
+          isSelected={false}
+          isDisabled={false}
+          isInvalid={true}
+          onChange={function(){}}
+        >
+          Checkbox
+        </Checkbox>
+        <Checkbox
+          isSelected={false}
+          isDisabled={true}
+          isInvalid={true}
+          onChange={function(){}}
+        >
+          Checkbox
+        </Checkbox>
+      </div>
+    </div>
+  );
+}
+```
+
+## Selected
+
+```tsx
+import { Checkbox } from '@/ui/components/Checkbox';
+
+export default function Example() {
+  return (
+    <Checkbox
+      isSelected={true}
+      onChange={function(){}}
+    >
+      Checkbox
+    </Checkbox>
+  );
+}
+```
+
+## Disabled
+
+```tsx
+import { Checkbox } from '@/ui/components/Checkbox';
+
+export default function Example() {
+  return (
+    <Checkbox
+      isDisabled={true}
+      onChange={function(){}}
+    >
+      Checkbox
+    </Checkbox>
+  );
+}
+```
+
+## Invalid
+
+```tsx
+import { Checkbox } from '@/ui/components/Checkbox';
+
+export default function Example() {
+  return (
+    <Checkbox
+      isInvalid={true}
+      onChange={function(){}}
+    >
+      Checkbox
+    </Checkbox>
+  );
+}
+```

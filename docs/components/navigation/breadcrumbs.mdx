@@ -1,0 +1,23 @@
+# BreadCrumbs
+
+Breadcrumbs are a navigational aid that helps users understand where they are in the application and how to navigate back to previous pages.
+
+```tsx
+import { Breadcrumbs, Breadcrumb } from '@/ui/components/Breadcrumbs';
+
+export default function Example() {
+  return (
+  <Breadcrumbs onAction={function Qa(){}}>
+    <Breadcrumb href="/">
+      Home
+    </Breadcrumb>
+    <Breadcrumb href="/react-aria">
+      React Aria
+    </Breadcrumb>
+    <Breadcrumb>
+      Breadcrumbs
+    </Breadcrumb>
+  </Breadcrumbs>
+  );
+}
+```

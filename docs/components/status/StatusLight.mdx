@@ -1,0 +1,88 @@
+# StatusLight
+
+The `StatusLight` component is used to display a status light with a text label. The light can be one of five colors: neutral, success, warning, danger, or info.
+
+```tsx
+import { StatusLight } from '@/ui/components/StatusLight';
+
+export default function Example() {
+  return (
+    <StatusLight variant="success">
+      Ready
+    </StatusLight>
+  );
+}
+```
+
+## Disabled
+
+```tsx
+import { StatusLight } from '@/ui/components/StatusLight';
+
+export default function Example() {
+  return (
+    <StatusLight variant="success" isDisabled>
+      Ready
+    </StatusLight>
+  );
+}
+```
+
+## Sizes
+
+```tsx
+import { StatusLight } from '@/ui/components/StatusLight';
+
+export default function Example() {
+  return (
+    <div className="flex flex-col gap-4">
+      <StatusLight variant="success" size="sm">
+        Small
+      </StatusLight>
+      <StatusLight variant="success" size="md">
+        Medium
+      </StatusLight>
+      <StatusLight variant="success" size="lg">
+        Large
+      </StatusLight>
+      <StatusLight variant="success" size="xl">
+        Extra Large
+      </StatusLight>
+    </div>
+  );
+}
+```
+
+## Variants
+
+```tsx
+import { StatusLight } from '@/ui/components/StatusLight';
+
+export default function Example() {
+  return (
+    <div className="flex flex-col gap-4">
+      <StatusLight variant="neutral">
+        Neutral: Archived, Deleted, Paused, Draft, Not Started, Ended
+      </StatusLight>
+      <StatusLight variant="success">
+        Success: Approved, Complete, Success, New, Purchased, Licensed
+      </StatusLight>
+      <StatusLight variant="warning">
+        Warning: Needs Approval, Pending, Scheduled, Syncing, Indexing, Processing
+      </StatusLight>
+      <StatusLight variant="danger">
+        Danger: Error, Alert, Rejected, Failed
+      </StatusLight>
+      <StatusLight variant="info">
+        Info: Active, In Use, Live, Published
+      </StatusLight>
+      <StatusLight variant="primary">
+        Primary: Active, In Use, Live, Published
+      </StatusLight>
+      <StatusLight variant="secondary">
+        Secondary: Active, In Use, Live, Published
+      </StatusLight>
+    </div>
+  );
+}
+```

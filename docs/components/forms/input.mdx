@@ -1,0 +1,52 @@
+# Input
+
+The `Input` component is a simple text input field.
+
+```tsx
+import { TextField } from 'react-aria-components';
+import { Label } from '@/ui/components/Label';
+import { Input } from '@/ui/components/Input';
+
+export default function Example() {
+  return (
+    <TextField className="grid gap-1.5">
+      <Label>First name</Label>
+      <Input type="text" placeholder="Enter first name" autoComplete="username"/>
+    </TextField>
+  );
+}
+```
+
+## Invalid
+
+```tsx
+import { TextField } from 'react-aria-components';
+import { Label } from '@/ui/components/Label';
+import { Input } from '@/ui/components/Input';
+
+export default function Example() {
+  return (
+    <TextField className="grid gap-1.5" isInvalid>
+      <Label>First name</Label>
+      <Input />
+    </TextField>
+  );
+}
+```
+
+## Disabled
+
+```tsx
+import { TextField } from 'react-aria-components';
+import { Label } from '@/ui/components/Label';
+import { Input } from '@/ui/components/Input';
+
+export default function Example() {
+  return (
+    <TextField className="grid gap-1.5" isDisabled>
+      <Label>First name</Label>
+      <Input />
+    </TextField>
+  );
+}
+```

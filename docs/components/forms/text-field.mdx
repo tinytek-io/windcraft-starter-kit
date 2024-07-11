@@ -1,0 +1,57 @@
+# TextField
+
+The `TextField` component is a wrapper component that groups a `Label` and an `Input` component together. It is used to create a text field input.
+
+```tsx
+import { TextField } from '@/ui/components/TextField';
+
+export default function Example() {
+  return (
+    <TextField
+      label="First name"
+      placeholder="Enter first name"
+      autocomplete="username"
+      errorMessage="First name is required"
+      description="Enter your first name"
+    />
+  );
+}
+```
+
+## Invalid
+
+```tsx
+import { TextField } from '@/ui/components/TextField';
+
+export default function Example() {
+  return (
+    <TextField
+      label="First name"
+      placeholder="Enter first name"
+      autocomplete="username"
+      errorMessage="First name is required"
+      description="Enter your first name"
+      isInvalid
+    />
+  );
+}
+```
+
+## Disabled
+
+```tsx
+import { TextField } from '@/ui/components/TextField';
+
+export default function Example() {
+  return (
+    <TextField
+      label="First name"
+      placeholder="Enter first name"
+      autocomplete="username"
+      errorMessage="First name is required"
+      description="Enter your first name"
+      isDisabled
+    />
+  );
+}
+```

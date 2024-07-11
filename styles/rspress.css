@@ -1,0 +1,88 @@
+/**
+* Rspress theme variables
+*/
+
+:root {
+  --rp-nav-height: 57px;
+  --rp-sidebar-width: 216px;
+  --rp-aside-width: 300px;
+}
+
+:root {
+  --rp-c-brand: hsl(var(--primary) / 50%);
+  --rp-c-brand-light: hsl(var(--primary) / 60%);
+  --rp-c-brand-lighter: hsl(var(--primary) / 70%);
+  --rp-c-brand-dark: hsl(var(--primary) / 50%);
+  --rp-c-brand-darker: hsl(var(--primary) / 40%);
+  --rp-c-brand-tint: hsl(var(--primary) / 16%);
+
+  --rp-radius-large: var(--radius);
+  --rp-radius: calc(var(--radius) - 2px);
+  --rp-radius-small: calc(var(--radius) - 4px);
+
+  --rp-z-index-local-nav: 10;
+  --rp-z-index-nav: 20;
+  --rp-z-index-backdrop: 30;
+  --rp-z-index-sidebar: 40;
+
+  --rp-shadow-1: 0 1px 4px rgba(0, 0, 0, 0.02), 0 1px 0 rgba(0, 0, 0, 0.06);
+  --rp-shadow-2: 0 3px 12px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.07);
+  --rp-shadow-3: 0 12px 32px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
+  --rp-shadow-4: 0 14px 44px rgba(0, 0, 0, 0.12), 0 3px 9px rgba(0, 0, 0, 0.12);
+  --rp-shadow-5: 0 18px 56px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.16);
+}
+
+/**
+* Rspress theme mode variables
+*/
+:root {
+  --rp-c-bg: hsl(var(--background));
+  --rp-c-bg-soft: hsl(var(--secondary));
+  --rp-c-bg-mute: hsl(var(--muted-background));
+
+  --rp-c-divider: hsl(var(--border));
+  --rp-c-divider-light: hsl(var(--border));
+
+  --rp-c-text-1: hsl(var(--foreground));
+  --rp-c-text-2: hsl(var(--foreground));
+  --rp-c-text-3: hsl(var(--foreground));
+  --rp-c-text-4: hsl(var(--foreground));
+
+  --rp-c-text-code: hsl(var(--secondary-foreground));
+  --rp-c-text-code-bg: hsl(var(--secondary));
+
+  --rp-c-link: hsl(var(--muted-foreground));
+}
+
+/**
+*
+*/
+
+.rspress-preview-card {
+  height: 370px;
+}
+
+.rspress-preview-card > .rspress-preview-operations.web {
+  align-items: start;
+}
+
+.rspress-preview-card > :first-child {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px
+}
+
+button.outline {
+  outline: solid;
+}
+button.outline-2 {
+  outline-width: 2px;
+}
+button.outline-1 {
+  outline-width: 1px;
+}
+button.outline-0 {
+  outline-width: 0px;
+}

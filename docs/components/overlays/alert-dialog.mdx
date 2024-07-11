@@ -1,0 +1,29 @@
+# AlertDialog
+
+The AlertDialog component is a modal dialog that interrupts the user's workflow to display information or ask for input. It is a type of modal window that provides feedback to the user.
+
+```tsx
+import { DialogTrigger } from 'react-aria-components';
+import { AlertDialog } from '@/ui/components/AlertDialog';
+import { Button } from '@/ui/components/Button';
+import { Modal } from '@/ui/components/Modal';
+
+export default function Example() {
+  return (
+    <DialogTrigger>
+      <Button variant="secondary">Delete…</Button>
+      <Modal>
+        <AlertDialog
+          actionLabel="Delete"
+          onAction={() => alert("Deleted!")}
+          role="dialog"
+          title="Delete folder"
+          variant="destructive"
+        >
+          Are you sure you want to delete "Documents"? All contents will be permanently destroyed.
+        </AlertDialog>
+      </Modal>
+    </DialogTrigger>
+  );
+}
+```
