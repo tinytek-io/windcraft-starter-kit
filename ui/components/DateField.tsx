@@ -1,3 +1,11 @@
+/**
+ * This WindCraft component is based off the React Aria Components Tailwind Starter Kit.
+ * Most files are heavily modified adding more styles, variants and theming
+ * to make it more versatile and closer to the Shadcn-ui theme and simple design tokens.
+ *
+ * Please include the RAC license when reusing this component, give due credit
+ * and support the Open Source Community :)
+ */
 import {
   DateField as AriaDateField,
   type DateFieldProps as AriaDateFieldProps,
@@ -20,7 +28,12 @@ export interface DateFieldProps<T extends DateValue> extends AriaDateFieldProps<
   errorMessage?: string | ((validation: ValidationResult) => string);
 }
 
-export function DateField<T extends DateValue>({ label, description, errorMessage, ...props }: Readonly<DateFieldProps<T>>) {
+export function DateField<T extends DateValue>({
+  label,
+  description,
+  errorMessage,
+  ...props
+}: Readonly<DateFieldProps<T>>) {
   return (
     <AriaDateField {...props} className={composeTailwindRenderProps(props.className, "flex flex-col gap-1")}>
       {label && <Label>{label}</Label>}

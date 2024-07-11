@@ -1,3 +1,10 @@
+/**
+ * Status: [Beta]
+ * This WindCraft component is styled close to the Shadcn-ui theme and
+ * simple design tokens.
+ *
+ * Please give due credit and support the Open Source Community :)
+ */
 import type { AriaToastProps, AriaToastRegionProps } from "@react-aria/toast";
 import { useToast, useToastRegion } from "@react-aria/toast";
 import { ToastQueue, type ToastState, useToastQueue } from "@react-stately/toast";

@@ -1,3 +1,11 @@
+/**
+ * This WindCraft component is based off the React Aria Components Tailwind Starter Kit.
+ * Most files are heavily modified adding more styles, variants and theming
+ * to make it more versatile and closer to the Shadcn-ui theme and simple design tokens.
+ *
+ * Please include the RAC license when reusing this component, give due credit
+ * and support the Open Source Community :)
+ */
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useMemo } from "react";
 import {
@@ -51,7 +59,11 @@ export interface CalendarProps<T extends DateValue> extends Omit<AriaCalendarPro
   visibleMonths?: number;
 }
 
-export function Calendar<T extends DateValue>({ errorMessage, visibleMonths = 1, ...props }: Readonly<CalendarProps<T>>) {
+export function Calendar<T extends DateValue>({
+  errorMessage,
+  visibleMonths = 1,
+  ...props
+}: Readonly<CalendarProps<T>>) {
   const durationInterval = useMemo(() => Array.from(Array(visibleMonths).keys()), [visibleMonths]);
   return (
     <AriaCalendar {...props} visibleDuration={{ months: visibleMonths }}>

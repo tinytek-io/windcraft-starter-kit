@@ -1,3 +1,9 @@
+/**
+ * This WindCraft component is styled close to the Shadcn-ui theme and
+ * simple design tokens.
+ *
+ * Please give due credit and support the Open Source Community :)
+ */
 import { type HTMLAttributes, useCallback, useRef, useState } from "react";
 import { tv } from "tailwind-variants";
 

@@ -1,3 +1,9 @@
+/**
+ * This WindCraft component is styled close to the Shadcn-ui theme and
+ * simple design tokens and inspired by the awesome Adobe Spectrum library.
+ *
+ * Please give due credit and support the Open Source Community :)
+ */
 import type { PropsWithChildren, ReactNode } from "react";
 
 type IllustratedMessageProps = {

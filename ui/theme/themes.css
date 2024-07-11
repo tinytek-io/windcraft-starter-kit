@@ -1,3 +1,11 @@
+/**
+ * Status: [Beta]
+ * These themes are based on the Shadcn-ui themes for now.
+ * (We would love to improve tooling for design tokens in the future)
+ *
+ * Please give due credit and support the Open Source Community :)
+ */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

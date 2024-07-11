@@ -1,3 +1,9 @@
+/**
+ * This WindCraft component is styled close to the Shadcn-ui theme and
+ * simple design tokens.
+ *
+ * Please give due credit and support the Open Source Community :)
+ */
 import { DropZone as AriaDropZone, composeRenderProps } from "react-aria-components";
 import type { DropZoneProps } from "react-aria-components";
 import { tv } from "tailwind-variants";
