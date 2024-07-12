@@ -7,7 +7,8 @@ import { Input as AriaInput, composeRenderProps } from "react-aria-components";
 import { tv } from "tailwind-variants";
 import { focusRing } from "./focusRing";
 
-export interface InputProps extends AriaInputProps {
+export interface InputProps extends Omit<AriaInputProps, "disabled"> {
+  isDisabled?: boolean;
   isEmbedded?: boolean;
 }
 
@@ -30,17 +31,19 @@ const inputStyles = tv({
   }
 });
 
-export function Input({ className, type, isEmbedded, ...props }: Readonly<InputProps>) {
+export function Input({ className, type, isEmbedded, isDisabled, ...props }: Readonly<InputProps>) {
   return (
     <AriaInput
       {...props}
+      disabled={isDisabled}
       type={type}
-      className={composeRenderProps(className, (className, { isFocusVisible, ...renderProps }) =>
+      className={composeRenderProps(className, (className, { isFocusVisible, isDisabled, ...renderProps }) =>
         inputStyles({
           ...renderProps,
           isFile: type === "file",
           isFocusVisible: isEmbedded ? false : isFocusVisible,
           isEmbedded,
+          isDisabled,
           className
         })
       )}
