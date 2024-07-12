@@ -7,8 +7,8 @@ import { Form } from "../components/Form";
 import { Link } from "../components/Link";
 import { OneTimeCodeInput } from "../components/OneTimeCodeInput";
 import { useExpirationTimeout } from "../hooks/useExpiration";
-import logoMarkUrl from "./images/logo-mark.png";
-import poweredByUrl from "./images/powered-by.png";
+import logoMarkUrl from "./images/logo-mark.svg";
+import poweredByUrl from "./images/powered-by.svg";
 
 export function VerifyCodeForm() {
   const { expiresInString } = useExpirationTimeout(new Date(Date.now() + 1000 * 60 * 5));
