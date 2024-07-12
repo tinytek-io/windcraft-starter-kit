@@ -14,7 +14,7 @@ export function LoginForm() {
     <Form className="flex w-full max-w-sm flex-col items-center gap-4 space-y-3 px-6 pt-8 pb-4">
       <img src={logoMarkUrl} className="h-12 w-12" alt="logo mark" />
       <Heading className="text-2xl">Hi! Welcome back</Heading>
-      <div className="text-center text-gray-500 text-sm">Enter your email below to sign in</div>
+      <div className="text-center text-muted-foreground text-sm">Enter your email below to sign in</div>
       <TextField className="flex w-full flex-col">
         <Label>Email</Label>
         <Input
@@ -31,7 +31,7 @@ export function LoginForm() {
         Continue
       </Button>
       <p className="text-muted-foreground text-xs">
-        Don't have an account? <Link href="/register">Create one</Link>
+        Don't have an account? <Link href="/templates/user-management/account-registration-form.html">Create one</Link>
       </p>
       <img src={poweredByUrl} alt="powered by" />
     </Form>
