@@ -27,7 +27,7 @@ export function VerifyCodeForm() {
         <div className="flex w-full flex-col gap-4">
           <OneTimeCodeInput name="oneTimePassword" digitPattern={DigitPattern.DigitsAndChars} length={6} autoFocus />
           <div className="text-center text-neutral-500 text-xs">
-            <Link href="/">Did't receive the code? Resend</Link>{" "}
+            <Link href="/templates/user-management/verify-code-form.html">Didn't receive the code? Resend</Link>{" "}
             <span className="font-normal tabular-nums leading-none">({expiresInString})</span>
           </div>
         </div>
