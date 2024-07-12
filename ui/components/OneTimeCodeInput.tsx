@@ -7,9 +7,16 @@ export interface OneTimeCodeInputProps {
   length?: number;
   digitPattern?: DigitPattern;
   name?: string;
+  autoFocus?: boolean;
 }
 
-export function OneTimeCodeInput({ digitPattern, disabled, length = 6, name = "code" }: OneTimeCodeInputProps) {
+export function OneTimeCodeInput({
+  digitPattern,
+  disabled,
+  length = 6,
+  name = "code",
+  autoFocus
+}: OneTimeCodeInputProps) {
   const [digits, setDigits] = useState<string[]>(Array(length).fill(""));
   const id = useId();
   const digitRefs = useMemo(
@@ -23,8 +30,11 @@ export function OneTimeCodeInput({ digitPattern, disabled, length = 6, name = "c
 
   const setFocus = useCallback(
     (i: number) => {
+      const formEl = (document.getElementById(digitRefs[0]) as HTMLInputElement | null)?.form as HTMLFormElement | null;
+      if (formEl === null) return;
+
       if (i >= digitRefs.length) {
-        const el = document.querySelectorAll("button[type=submit]")[0] as HTMLInputElement | null;
+        const el = formEl.querySelectorAll("button[type=submit]")[0] as HTMLInputElement | null;
         el?.focus();
       } else {
         const el = document.getElementById(digitRefs[i]) as HTMLInputElement | null;
@@ -49,18 +59,17 @@ export function OneTimeCodeInput({ digitPattern, disabled, length = 6, name = "c
     setFocus(nextFocusIndex);
   };
   return (
-    <div className="flex flex-row gap-4">
+    <div className="flex flex-row gap-4" aria-label="One time code">
       {digits.map((digit, i) => (
         <Digit
           // biome-ignore lint/suspicious/noArrayIndexKey: The index is used as a unique key for the digit
           key={i}
           id={digitRefs[i]}
-          tabIndex={i + 1}
           value={digit}
           digitPattern={digitPattern}
           autoComplete={i === 0 ? "one-time-code" : undefined}
           onChange={(value) => onChangeHandler(value, i)}
-          autoFocus={i === inputValue.length}
+          autoFocus={i === inputValue.length && autoFocus}
           disabled={disabled}
         />
       ))}

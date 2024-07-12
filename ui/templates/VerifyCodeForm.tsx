@@ -1,3 +1,6 @@
+/**
+ * ref: https://github.com/platformplatform/PlatformPlatform
+ */
 import { Button } from "../components/Button";
 import { DigitPattern } from "../components/Digit";
 import { Form } from "../components/Form";
@@ -22,7 +25,7 @@ export function VerifyCodeForm() {
           <span className="font-semibold">olivia@companyx.com</span>
         </div>
         <div className="flex w-full flex-col gap-4">
-          <OneTimeCodeInput name="oneTimePassword" digitPattern={DigitPattern.DigitsAndChars} length={6} />
+          <OneTimeCodeInput name="oneTimePassword" digitPattern={DigitPattern.DigitsAndChars} length={6} autoFocus />
           <div className="text-center text-neutral-500 text-xs">
             <Link href="/">Did't receive the code? Resend</Link>{" "}
             <span className="font-normal tabular-nums leading-none">({expiresInString})</span>
