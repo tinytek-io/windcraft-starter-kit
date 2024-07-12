@@ -1,5 +1,5 @@
 ![](docs/public/windcraft-logo-text.webp)
-# WindCraft UI
+# WindCraft Starter Kit
 
 This repository is a collection of components to get started with a new project. It's based of the React Aria Components Tailwind Starter Kit and modified to use the Shadcn-ui Themes.
 
@@ -7,13 +7,25 @@ This repository is a collection of components to get started with a new project.
 * [TypeScript](https://www.typescriptlang.org/)
 * [Tailwind CSS](https://tailwindcss.com/)
 * [React Aria Components](https://react-spectrum.adobe.com/react-aria/getting-started.html)
-* [Shadcn Themes](https://ui.shadcn.com)
+* [Shadcn](https://ui.shadcn.com)
 
 ## Why?
 
-We want to share the work we have done in our projects, these components are part of the setup in [PlatformPlatform](https://github.com/platformplatform/PlatformPlatform) an enterprise grade platform for building web applications. Due to the 
+We want to share the work we have done in our projects, these components are part of the setup in [PlatformPlatform](https://github.com/platformplatform/PlatformPlatform) an enterprise grade platform for building web applications.
 
-We are inspired by the work of [Adobe Spectrum](https://react-spectrum.adobe.com/react-aria/getting-started.html), [Tailwind CSS](https://tailwindcss.com/) and last but not least [Shadcn Themes](https://ui.shadcn.com) 🤩
+We are heavily inspired by the work of:
+* [React Aria Tailwind Starter](https://react-spectrum.adobe.com/react-aria/getting-started.html)
+* [Fluent UI](https://react.fluentui.dev/?path=/docs/concepts-introduction--page)
+* [Radix UI](https://www.radix-ui.com/)
+* [Adobe Spectrum](https://react-spectrum.adobe.com/react-spectrum/index.html)
+* [Shadcn/ui](https://ui.shadcn.com)
+* [Material ui](https://mui.com/material-ui)
+* [Design Tokens](https://tr.designtokens.org/format/)
+* [Evilmartians color magic](https://evilmartians.com/chronicles/better-dynamic-themes-in-tailwind-with-oklch-color-magic)
+* [Leonardo Color](https://leonardocolor.io/theme.html#)
+* [Viridis Color maps](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
+* [Tailwind UI](https://tailwindui.com/)
+
 
 ## Getting Started
 
@@ -21,10 +33,12 @@ We have included licenses for all the dependencies, please make sure to include 
 
 ### Installation
 
-Copy the components from `src` you need into your project, we are working on a way to make this easier.
+This project is `Copy and Own it` you can use it as a starting point for your project.
 
-For now we use the Shadcn-ui Themes check out the [Shadcn Guide](https://ui.shadcn.com/docs/installation/manual) for more information.
+Copy the components from `ui` you need into your project, we are working on a way to make this easier.
+
+For now we use the Shadcn-ui Tailwind themes check out the [Shadcn Guide](https://ui.shadcn.com/docs/installation/manual) for more information.
 
 ## Contributing
 
-We are open to contributions, please make sure to reachoutfollow the [Code of Conduct](.github/CODE_OF_CONDUCT.md) and the [Contributing Guidelines](.github/CONTRIBUTING.md).
+We are open to contributions, please make sure to follow the [Code of Conduct](.github/CODE_OF_CONDUCT.md) and the [Contributing Guidelines](.github/CONTRIBUTING.md).

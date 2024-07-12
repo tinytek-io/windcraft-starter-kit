@@ -1,8 +1,6 @@
 /**
- * This WindCraft component is styled close to the Shadcn-ui theme and
- * simple design tokens.
- *
- * Please give due credit and support the Open Source Community :)
+ * ref: https://react.fluentui.dev/?path=/docs/components-badge-badge--default
+ * ref: https://ui.shadcn.com/docs/components/badge
  */
 import type { PropsWithChildren } from "react";
 import { tv } from "tailwind-variants";

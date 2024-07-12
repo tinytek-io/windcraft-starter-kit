@@ -1,10 +1,6 @@
 /**
- * This WindCraft component is based off the React Aria Components Tailwind Starter Kit.
- * Most files are heavily modified adding more styles, variants and theming
- * to make it more versatile and closer to the Shadcn-ui theme and simple design tokens.
- *
- * Please include the RAC license when reusing this component, give due credit
- * and support the Open Source Community :)
+ * ref: https://react-spectrum.adobe.com/react-aria-tailwind-starter/?path=/docs/select--docs
+ * ref: https://ui.shadcn.com/docs/components/select
  */
 import { ChevronDown } from "lucide-react";
 import type React from "react";

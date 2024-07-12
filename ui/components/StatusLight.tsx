@@ -1,8 +1,6 @@
 /**
- * This WindCraft component is styled close to the Shadcn-ui theme and
- * simple design tokens.
- *
- * Please give due credit and support the Open Source Community :)
+ * ref: https://react-spectrum.adobe.com/react-spectrum/StatusLight.html
+ * ref: https://react.fluentui.dev/?path=/docs/components-badge-presencebadge--default
  */
 import type { PropsWithChildren } from "react";
 import { tv } from "tailwind-variants";

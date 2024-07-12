@@ -2,7 +2,7 @@
 pageType: home
 
 hero:
-  name: WindCraftUI
+  name: WindCraft Starter Kit
   text: React Template Components
   tagline: |
     "Copy and own" React template components"
@@ -17,7 +17,7 @@ hero:
       link: https://github.com/tinytek-io/windcraft-ui
   image:
     src: /windcraft-logo.webp
-    alt: WindCraftUI Logo
+    alt: WindCraft Logo
 features:
   - title: Crafted for Startups
     details: Boost your “Time to first feature” with our React template components and focus on building your product.

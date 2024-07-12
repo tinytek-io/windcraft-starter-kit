@@ -1,8 +1,6 @@
 /**
- * This WindCraft component is styled close to the Shadcn-ui theme and
- * simple design tokens.
- *
- * Please give due credit and support the Open Source Community :)
+ * ref: https://react.fluentui.dev/?path=/docs/components-avatar--default
+ * ref: https://ui.shadcn.com/docs/components/avatar
  */
 import { type HTMLAttributes, useCallback, useRef, useState } from "react";
 import { tv } from "tailwind-variants";
@@ -73,15 +71,9 @@ export function Avatar({ initials, avatarUrl, size, variant, isRound, className,
   return (
     <div {...props} className={backgroundStyles({ isRound, size, variant, className })}>
       {avatarUrl && imageFailed === false ? (
-        <img
-          ref={imgRef}
-          className=""
-          src={avatarUrl}
-          alt="User avatar"
-          onError={handleError}
-        />
+        <img ref={imgRef} className="" src={avatarUrl} alt="User avatar" onError={handleError} />
       ) : (
-          initials?.slice(0, 2)
+        initials?.slice(0, 2)
       )}
     </div>
   );

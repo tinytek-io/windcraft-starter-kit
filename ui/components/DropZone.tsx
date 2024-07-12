@@ -1,8 +1,6 @@
 /**
- * This WindCraft component is styled close to the Shadcn-ui theme and
- * simple design tokens.
- *
- * Please give due credit and support the Open Source Community :)
+ * ref: https://react-spectrum.adobe.com/react-aria/DropZone.html
+ * ref: https://ui.shadcn.com/docs/components/input
  */
 import { DropZone as AriaDropZone, composeRenderProps } from "react-aria-components";
 import type { DropZoneProps } from "react-aria-components";

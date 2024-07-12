@@ -1,9 +1,7 @@
 /**
- * Status: [Beta]
- * This WindCraft component is styled close to the Shadcn-ui theme and
- * simple design tokens.
- *
- * Please give due credit and support the Open Source Community :)
+ * Status: Beta
+ * ref: https://react-spectrum.adobe.com/react-spectrum
+ * ref: https://ui.shadcn.com/docs/components/accordion
  */
 import type { AccordionItemAriaProps, AriaAccordionProps } from "@react-aria/accordion";
 import { useAccordion, useAccordionItem } from "@react-aria/accordion";

@@ -1,8 +1,5 @@
 /**
- * This WindCraft component is styled close to the Shadcn-ui theme and
- * simple design tokens and inspired by the awesome Adobe Spectrum library.
- *
- * Please give due credit and support the Open Source Community :)
+ * ref: https://react-spectrum.adobe.com/react-spectrum/IllustratedMessage.html
  */
 import type { PropsWithChildren, ReactNode } from "react";
 
