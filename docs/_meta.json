@@ -1,12 +1,17 @@
 [
   {
     "text": "Guide",
-    "link": "/guide/",
+    "link": "/guide/introduction",
     "activeMatch": "/guide/"
   },
   {
     "text": "Components",
     "link": "/components/introduction",
     "activeMatch": "/components/"
+  },
+  {
+    "text": "Templates",
+    "link": "/templates/introduction",
+    "activeMatch": "/templates/"
   }
 ]

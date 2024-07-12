@@ -1,1 +1,13 @@
-["index"]
+[
+  "introduction",
+  {
+    "type": "custom-link",
+    "link": "/components/introduction",
+    "label": "Components"
+  },
+  {
+    "type": "custom-link",
+    "link": "/templates/introduction",
+    "label": "Templates"
+  }
+]
