@@ -26,7 +26,7 @@ const buttonStyles = tv({
   extend: focusRing,
   base: [
     "flex items-center text-start gap-4 w-full min-w-[150px] cursor-default pl-3 pr-2 py-2 transition",
-    "border-2 border-border shadow-md rounded-md text-foreground"
+    "border-2 border-border rounded-md text-foreground"
   ],
   variants: {
     isInvalid: {
