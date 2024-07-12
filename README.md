@@ -26,6 +26,8 @@ We are heavily inspired by the work of:
 * [Viridis Color maps](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
 * [Tailwind UI](https://tailwindui.com/)
 
+[Why React Aria Components?](https://argos-ci.com/blog/react-aria-migration)
+
 
 ## Getting Started
 
