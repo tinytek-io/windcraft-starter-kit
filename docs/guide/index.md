@@ -1,6 +1,6 @@
 # Getting Started
 
-We have included licenses for all the dependencies, please make sure to include them in your project and give due credit. Also consider supporting the projects that have made this possible 🙏
+We have included references for inspiration and licenses, please make sure to include them in your project and give due credit. Also consider supporting the projects that have made this possible 🙏
 
 ## Installation
 

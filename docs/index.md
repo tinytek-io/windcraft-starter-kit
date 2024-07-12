@@ -5,7 +5,7 @@ hero:
   name: WindCraft Starter Kit
   text: React Template Components
   tagline: |
-    "Copy and own" React template components"
+    "Copy and own" React template components
     React Aria components + Tailwind CSS + Tailwind Variants + Inspiration by Shadcn UI
     + ❤️
   actions:
