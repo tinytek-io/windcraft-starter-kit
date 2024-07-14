@@ -13,11 +13,22 @@ import {
   SliderOutput,
   SliderTrack
 } from "react-aria-components";
+import { type ChartTheme, chartThemes } from "./chartThemes";
 import { type Theme, type ThemePanelOpacity, type ThemeRadius, themes } from "./theme";
 
 export function ThemeModeSelector() {
-  const { theme, setTheme, themeRadius, setThemeRadius, panelOpacity, setPanelOpacity, hue, setHue } =
-    useThemeContext();
+  const {
+    theme,
+    setTheme,
+    themeRadius,
+    setThemeRadius,
+    panelOpacity,
+    setPanelOpacity,
+    hue,
+    setHue,
+    chartTheme,
+    setChartTheme
+  } = useThemeContext();
 
   return (
     <div className="flex h-full w-full flex-col gap-4 px-2">
@@ -25,6 +36,8 @@ export function ThemeModeSelector() {
       <Separator orientation="horizontal" />
       <ThemePicker theme={theme} onChange={setTheme} />
       {/*<ThemeHueSelector label="Hue" channel="hue" value={hue} onChange={setHue} defaultValue="hsl(0, 100%, 50%)" /> */}
+      <Separator orientation="horizontal" />
+      <ChartThemePicker chartTheme={chartTheme} onChange={setChartTheme} />
       <Separator orientation="horizontal" />
       <ThemeRadiusPicker radius={themeRadius} onChange={setThemeRadius} />
       <Separator orientation="horizontal" />
@@ -210,5 +223,42 @@ function ThemeHueSelector({ label, ...props }: Readonly<ThemeHueSelectorProps>) 
         />
       </SliderTrack>
     </ColorSlider>
+  );
+}
+
+type ChartThemePickerProps = {
+  chartTheme: ChartTheme;
+  onChange: (theme: ChartTheme) => void;
+};
+
+function ChartThemePicker({ chartTheme, onChange }: Readonly<ChartThemePickerProps>) {
+  return (
+    <>
+      <span className="text-sm">Chart</span>
+      <div className="grid w-full grid-cols-5 gap-1">
+        {chartThemes.map((t) => (
+          <Button
+            key={t}
+            onPress={() => onChange(t)}
+            variant={"outline"}
+            size={"sm"}
+            className={`flex h-16 flex-col items-center ${chartTheme === t ? "border-2 border-primary" : ""}`}
+          >
+            <div className={`${t} grid w-fit shrink-0 grid-cols-3`}>
+              <div className="h-2 w-2" style={{ background: "var(--chart-1)" }} />
+              <div className="h-2 w-2" style={{ background: "var(--chart-2)" }} />
+              <div className="h-2 w-2" style={{ background: "var(--chart-3)" }} />
+              <div className="h-2 w-2" style={{ background: "var(--chart-4)" }} />
+              <div className="h-2 w-2" style={{ background: "var(--chart-5)" }} />
+              <div className="h-2 w-2" style={{ background: "var(--chart-6)" }} />
+              <div className="h-2 w-2" style={{ background: "var(--chart-7)" }} />
+              <div className="h-2 w-2" style={{ background: "var(--chart-8)" }} />
+              <div className="h-2 w-2" style={{ background: "var(--chart-9)" }} />
+            </div>
+            <div className="text-xs">{t.slice(6)}</div>
+          </Button>
+        ))}
+      </div>
+    </>
   );
 }

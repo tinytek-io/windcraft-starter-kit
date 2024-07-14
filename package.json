@@ -40,6 +40,7 @@
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-react-aria-components": "^1.1.3",
     "typescript": "^5.5.3",
+    "viridis": "^1.1.4",
     "zod": "^3.23.8"
   }
 }

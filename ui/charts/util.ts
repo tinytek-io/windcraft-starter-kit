@@ -9,7 +9,7 @@ function getColorIndex(index: number, length: number) {
   return (length === 1 ? 1 : Math.ceil((index * 8) / (length - 1)) + 1) as ColorIndex;
 }
 
-const getChartColorHSL = (colorIndex: ColorIndex) => `hsl(var(--chart-${colorIndex}))`;
+const getChartColorHSL = (colorIndex: ColorIndex) => `var(--chart-${colorIndex})`;
 
 export function getChartColor(index: number, length: number) {
   return getChartColorHSL(getColorIndex(index, length));

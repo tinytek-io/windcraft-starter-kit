@@ -1,0 +1,460 @@
+.chart-viridis {
+  --chart-1: rgba(90,194,99,100%); /* dark */
+  --chart-2: rgba(50,175,122,100%); /* light */
+  --chart-3: rgba(36,154,134,100%); /* light */
+  --chart-4: rgba(39,133,139,100%); /* light */
+  --chart-5: rgba(46,110,140,100%); /* light */
+  --chart-6: rgba(56,86,137,100%); /* light */
+  --chart-7: rgba(65,61,130,100%); /* light */
+  --chart-8: rgba(66,31,107,100%); /* light */
+  --chart-9: rgba(68,1,84,100%); /* light */
+}
+
+.dark.chart-viridis {
+  --chart-2: rgba(193,221,57,100%); /* dark */
+  --chart-3: rgba(133,211,77,100%); /* dark */
+  --chart-4: rgba(90,194,99,100%); /* dark */
+  --chart-5: rgba(50,175,122,100%); /* light */
+  --chart-6: rgba(36,154,134,100%); /* light */
+  --chart-7: rgba(39,133,139,100%); /* light */
+  --chart-8: rgba(46,110,140,100%); /* light */
+  --chart-9: rgba(56,86,137,100%); /* light */
+}
+
+.chart-inferno {
+  --chart-1: rgba(240,134,27,100%); /* dark */
+  --chart-2: rgba(226,96,49,100%); /* dark */
+  --chart-3: rgba(200,69,70,100%); /* light */
+  --chart-4: rgba(167,49,90,100%); /* light */
+  --chart-5: rgba(132,32,103,100%); /* light */
+  --chart-6: rgba(95,20,103,100%); /* light */
+  --chart-7: rgba(60,9,94,100%); /* light */
+  --chart-8: rgba(30,4,49,100%); /* light */
+  --chart-9: rgba(0,0,4,100%); /* light */
+}
+
+.dark.chart-inferno {
+  --chart-2: rgba(252,214,94,100%); /* dark */
+  --chart-3: rgba(252,173,24,100%); /* dark */
+  --chart-4: rgba(240,134,27,100%); /* dark */
+  --chart-5: rgba(226,96,49,100%); /* dark */
+  --chart-6: rgba(200,69,70,100%); /* light */
+  --chart-7: rgba(167,49,90,100%); /* light */
+  --chart-8: rgba(132,32,103,100%); /* light */
+  --chart-9: rgba(95,20,103,100%); /* light */
+}
+
+.chart-magma {
+  --chart-1: rgba(242,127,107,100%); /* dark */
+  --chart-2: rgba(227,88,104,100%); /* dark */
+  --chart-3: rgba(199,64,110,100%); /* light */
+  --chart-4: rgba(162,49,122,100%); /* light */
+  --chart-5: rgba(125,36,125,100%); /* light */
+  --chart-6: rgba(88,24,118,100%); /* light */
+  --chart-7: rgba(53,13,102,100%); /* light */
+  --chart-8: rgba(26,6,53,100%); /* light */
+  --chart-9: rgba(0,0,4,100%); /* light */
+}
+
+.dark.chart-magma {
+  --chart-2: rgba(252,210,153,100%); /* dark */
+  --chart-3: rgba(253,167,116,100%); /* dark */
+  --chart-4: rgba(242,127,107,100%); /* dark */
+  --chart-5: rgba(227,88,104,100%); /* dark */
+  --chart-6: rgba(199,64,110,100%); /* light */
+  --chart-7: rgba(162,49,122,100%); /* light */
+  --chart-8: rgba(125,36,125,100%); /* light */
+  --chart-9: rgba(88,24,118,100%); /* light */
+}
+
+.chart-plasma {
+  --chart-1: rgba(242,142,70,100%); /* dark */
+  --chart-2: rgba(229,112,90,100%); /* dark */
+  --chart-3: rgba(211,84,110,100%); /* dark */
+  --chart-4: rgba(190,57,131,100%); /* light */
+  --chart-5: rgba(164,34,148,100%); /* light */
+  --chart-6: rgba(131,15,159,100%); /* light */
+  --chart-7: rgba(97,0,165,100%); /* light */
+  --chart-8: rgba(55,4,150,100%); /* light */
+  --chart-9: rgba(13,8,135,100%); /* light */
+}
+
+.dark.chart-plasma {
+  --chart-2: rgba(245,211,42,100%); /* dark */
+  --chart-3: rgba(250,173,52,100%); /* dark */
+  --chart-4: rgba(242,142,70,100%); /* dark */
+  --chart-5: rgba(229,112,90,100%); /* dark */
+  --chart-6: rgba(211,84,110,100%); /* dark */
+  --chart-7: rgba(190,57,131,100%); /* light */
+  --chart-8: rgba(164,34,148,100%); /* light */
+  --chart-9: rgba(131,15,159,100%); /* light */
+}
+
+.chart-grayscale {
+  --chart-1: rgba(189,189,189,100%); /* dark */
+  --chart-2: rgba(170,170,170,100%); /* dark */
+  --chart-3: rgba(151,151,151,100%); /* dark */
+  --chart-4: rgba(132,132,132,100%); /* dark */
+  --chart-5: rgba(113,113,113,100%); /* light */
+  --chart-6: rgba(94,94,94,100%); /* light */
+  --chart-7: rgba(75,75,75,100%); /* light */
+  --chart-8: rgba(56,56,56,100%); /* light */
+  --chart-9: rgba(37,37,37,100%); /* light */
+}
+
+.dark.chart-grayscale {
+  --chart-2: rgba(227,227,227,100%); /* dark */
+  --chart-3: rgba(208,208,208,100%); /* dark */
+  --chart-4: rgba(189,189,189,100%); /* dark */
+  --chart-5: rgba(170,170,170,100%); /* dark */
+  --chart-6: rgba(151,151,151,100%); /* dark */
+  --chart-7: rgba(132,132,132,100%); /* dark */
+  --chart-8: rgba(113,113,113,100%); /* light */
+  --chart-9: rgba(94,94,94,100%); /* light */
+}
+
+.chart-parula {
+  --chart-1: rgba(145,212,163,100%); /* dark */
+  --chart-2: rgba(114,197,161,100%); /* dark */
+  --chart-3: rgba(84,181,160,100%); /* dark */
+  --chart-4: rgba(53,165,158,100%); /* light */
+  --chart-5: rgba(19,149,154,100%); /* light */
+  --chart-6: rgba(5,132,147,100%); /* light */
+  --chart-7: rgba(0,115,140,100%); /* light */
+  --chart-8: rgba(1,98,129,100%); /* light */
+  --chart-9: rgba(4,82,117,100%); /* light */
+}
+
+.dark.chart-parula {
+  --chart-2: rgba(212,240,169,100%); /* dark */
+  --chart-3: rgba(177,227,164,100%); /* dark */
+  --chart-4: rgba(145,212,163,100%); /* dark */
+  --chart-5: rgba(114,197,161,100%); /* dark */
+  --chart-6: rgba(84,181,160,100%); /* dark */
+  --chart-7: rgba(53,165,158,100%); /* light */
+  --chart-8: rgba(19,149,154,100%); /* light */
+  --chart-9: rgba(5,132,147,100%); /* light */
+}
+
+.chart-emerald {
+  --chart-1: rgba(123,204,143,100%); /* dark */
+  --chart-2: rgba(102,185,137,100%); /* dark */
+  --chart-3: rgba(84,165,132,100%); /* dark */
+  --chart-4: rgba(64,146,127,100%); /* light */
+  --chart-5: rgba(40,128,122,100%); /* light */
+  --chart-6: rgba(26,109,113,100%); /* light */
+  --chart-7: rgba(17,91,102,100%); /* light */
+  --chart-8: rgba(11,77,91,100%); /* light */
+  --chart-9: rgba(7,64,80,100%); /* light */
+}
+
+.dark.chart-emerald {
+  --chart-2: rgba(178,232,155,100%); /* dark */
+  --chart-3: rgba(147,222,149,100%); /* dark */
+  --chart-4: rgba(123,204,143,100%); /* dark */
+  --chart-5: rgba(102,185,137,100%); /* dark */
+  --chart-6: rgba(84,165,132,100%); /* dark */
+  --chart-7: rgba(64,146,127,100%); /* light */
+  --chart-8: rgba(40,128,122,100%); /* light */
+  --chart-9: rgba(26,109,113,100%); /* light */
+}
+
+.chart-mint {
+  --chart-1: rgba(152,201,190,100%); /* dark */
+  --chart-2: rgba(130,187,178,100%); /* dark */
+  --chart-3: rgba(109,173,166,100%); /* dark */
+  --chart-4: rgba(90,158,154,100%); /* dark */
+  --chart-5: rgba(73,144,142,100%); /* light */
+  --chart-6: rgba(57,130,130,100%); /* light */
+  --chart-7: rgba(42,116,117,100%); /* light */
+  --chart-8: rgba(27,102,106,100%); /* light */
+  --chart-9: rgba(13,88,95,100%); /* light */
+}
+
+.dark.chart-mint {
+  --chart-2: rgba(201,227,213,100%); /* dark */
+  --chart-3: rgba(176,214,202,100%); /* dark */
+  --chart-4: rgba(152,201,190,100%); /* dark */
+  --chart-5: rgba(130,187,178,100%); /* dark */
+  --chart-6: rgba(109,173,166,100%); /* dark */
+  --chart-7: rgba(90,158,154,100%); /* dark */
+  --chart-8: rgba(73,144,142,100%); /* light */
+  --chart-9: rgba(57,130,130,100%); /* light */
+}
+
+.chart-sunset {
+  --chart-1: rgba(248,173,128,100%); /* dark */
+  --chart-2: rgba(245,154,127,100%); /* dark */
+  --chart-3: rgba(238,136,131,100%); /* dark */
+  --chart-4: rgba(227,120,137,100%); /* dark */
+  --chart-5: rgba(211,106,144,100%); /* dark */
+  --chart-6: rgba(189,97,151,100%); /* dark */
+  --chart-7: rgba(164,90,158,100%); /* light */
+  --chart-8: rgba(129,86,162,100%); /* light */
+  --chart-9: rgba(92,83,165,100%); /* light */
+}
+
+.dark.chart-sunset {
+  --chart-2: rgba(246,211,142,100%); /* dark */
+  --chart-3: rgba(249,192,131,100%); /* dark */
+  --chart-4: rgba(248,173,128,100%); /* dark */
+  --chart-5: rgba(245,154,127,100%); /* dark */
+  --chart-6: rgba(238,136,131,100%); /* dark */
+  --chart-7: rgba(227,120,137,100%); /* dark */
+  --chart-8: rgba(211,106,144,100%); /* dark */
+  --chart-9: rgba(189,97,151,100%); /* dark */
+}
+
+.chart-dusk {
+  --chart-1: rgba(243,133,112,100%); /* dark */
+  --chart-2: rgba(237,109,110,100%); /* dark */
+  --chart-3: rgba(230,89,110,100%); /* dark */
+  --chart-4: rgba(225,73,113,100%); /* dark */
+  --chart-5: rgba(221,61,117,100%); /* light */
+  --chart-6: rgba(207,49,120,100%); /* light */
+  --chart-7: rgba(188,38,121,100%); /* light */
+  --chart-8: rgba(157,33,117,100%); /* light */
+  --chart-9: rgba(124,29,111,100%); /* light */
+}
+
+.dark.chart-dusk {
+  --chart-2: rgba(250,190,135,100%); /* dark */
+  --chart-3: rgba(249,159,117,100%); /* dark */
+  --chart-4: rgba(243,133,112,100%); /* dark */
+  --chart-5: rgba(237,109,110,100%); /* dark */
+  --chart-6: rgba(230,89,110,100%); /* dark */
+  --chart-7: rgba(225,73,113,100%); /* dark */
+  --chart-8: rgba(221,61,117,100%); /* light */
+  --chart-9: rgba(207,49,120,100%); /* light */
+}
+
+.chart-chroma {
+  --chart-1: rgba(91,201,159,100%); /* dark */
+  --chart-2: rgba(66,180,170,100%); /* dark */
+  --chart-3: rgba(67,157,169,100%); /* dark */
+  --chart-4: rgba(85,134,159,100%); /* light */
+  --chart-5: rgba(99,111,142,100%); /* light */
+  --chart-6: rgba(104,88,116,100%); /* light */
+  --chart-7: rgba(105,67,90,100%); /* light */
+  --chart-8: rgba(91,52,64,100%); /* light */
+  --chart-9: rgba(77,37,39,100%); /* light */
+}
+
+.dark.chart-chroma {
+  --chart-2: rgba(175,234,130,100%); /* dark */
+  --chart-3: rgba(121,220,147,100%); /* dark */
+  --chart-4: rgba(91,201,159,100%); /* dark */
+  --chart-5: rgba(66,180,170,100%); /* dark */
+  --chart-6: rgba(67,157,169,100%); /* dark */
+  --chart-7: rgba(85,134,159,100%); /* light */
+  --chart-8: rgba(99,111,142,100%); /* light */
+  --chart-9: rgba(104,88,116,100%); /* light */
+}
+
+.chart-spectral {
+  --chart-1: rgba(252,171,107,100%); /* dark */
+  --chart-2: rgba(253,208,129,100%); /* dark */
+  --chart-3: rgba(247,229,142,100%); /* dark */
+  --chart-4: rgba(236,239,148,100%); /* dark */
+  --chart-5: rgba(216,239,151,100%); /* dark */
+  --chart-6: rgba(181,224,149,100%); /* dark */
+  --chart-7: rgba(143,206,151,100%); /* dark */
+  --chart-8: rgba(96,171,170,100%); /* dark */
+  --chart-9: rgba(50,136,189,100%); /* light */
+}
+
+.dark.chart-spectral {
+  --chart-2: rgba(230,97,83,100%); /* dark */
+  --chart-3: rgba(248,133,88,100%); /* dark */
+  --chart-4: rgba(252,171,107,100%); /* dark */
+  --chart-5: rgba(253,208,129,100%); /* dark */
+  --chart-6: rgba(247,229,142,100%); /* dark */
+  --chart-7: rgba(236,239,148,100%); /* dark */
+  --chart-8: rgba(216,239,151,100%); /* dark */
+  --chart-9: rgba(181,224,149,100%); /* dark */
+}
+
+.chart-cool {
+  --chart-1: rgba(50,231,141,100%); /* dark */
+  --chart-2: rgba(33,221,159,100%); /* dark */
+  --chart-3: rgba(36,202,178,100%); /* dark */
+  --chart-4: rgba(38,184,196,100%); /* dark */
+  --chart-5: rgba(41,165,215,100%); /* dark */
+  --chart-6: rgba(52,145,217,100%); /* light */
+  --chart-7: rgba(67,123,210,100%); /* light */
+  --chart-8: rgba(82,103,203,100%); /* light */
+  --chart-9: rgba(98,82,197,100%); /* light */
+}
+
+.dark.chart-cool {
+  --chart-2: rgba(101,241,105,100%); /* dark */
+  --chart-3: rgba(75,236,123,100%); /* dark */
+  --chart-4: rgba(50,231,141,100%); /* dark */
+  --chart-5: rgba(33,221,159,100%); /* dark */
+  --chart-6: rgba(36,202,178,100%); /* dark */
+  --chart-7: rgba(38,184,196,100%); /* dark */
+  --chart-8: rgba(41,165,215,100%); /* dark */
+  --chart-9: rgba(52,145,217,100%); /* light */
+}
+
+.chart-warm {
+  --chart-1: rgba(244,143,62,100%); /* dark */
+  --chart-2: rgba(254,122,70,100%); /* dark */
+  --chart-3: rgba(251,106,91,100%); /* dark */
+  --chart-4: rgba(248,91,113,100%); /* dark */
+  --chart-5: rgba(245,75,134,100%); /* dark */
+  --chart-6: rgba(227,68,148,100%); /* dark */
+  --chart-7: rgba(199,65,158,100%); /* light */
+  --chart-8: rgba(173,63,168,100%); /* light */
+  --chart-9: rgba(146,61,179,100%); /* light */
+}
+
+.dark.chart-warm {
+  --chart-2: rgba(213,190,60,100%); /* dark */
+  --chart-3: rgba(229,167,61,100%); /* dark */
+  --chart-4: rgba(244,143,62,100%); /* dark */
+  --chart-5: rgba(254,122,70,100%); /* dark */
+  --chart-6: rgba(251,106,91,100%); /* dark */
+  --chart-7: rgba(248,91,113,100%); /* dark */
+  --chart-8: rgba(245,75,134,100%); /* dark */
+  --chart-9: rgba(227,68,148,100%); /* dark */
+}
+
+.chart-turquoise {
+  --chart-1: rgba(171,196,160,100%); /* dark */
+  --chart-2: rgba(151,186,154,100%); /* dark */
+  --chart-3: rgba(131,176,148,100%); /* dark */
+  --chart-4: rgba(112,163,141,100%); /* dark */
+  --chart-5: rgba(92,147,132,100%); /* light */
+  --chart-6: rgba(72,131,123,100%); /* light */
+  --chart-7: rgba(56,114,116,100%); /* light */
+  --chart-8: rgba(42,97,109,100%); /* light */
+  --chart-9: rgba(29,81,103,100%); /* light */
+}
+
+.dark.chart-turquoise {
+  --chart-2: rgba(211,226,191,100%); /* dark */
+  --chart-3: rgba(191,210,174,100%); /* dark */
+  --chart-4: rgba(171,196,160,100%); /* dark */
+  --chart-5: rgba(151,186,154,100%); /* dark */
+  --chart-6: rgba(131,176,148,100%); /* dark */
+  --chart-7: rgba(112,163,141,100%); /* dark */
+  --chart-8: rgba(92,147,132,100%); /* light */
+  --chart-9: rgba(72,131,123,100%); /* light */
+}
+
+.chart-purplish {
+  --chart-1: rgba(170,207,246,100%); /* dark */
+  --chart-2: rgba(146,179,235,100%); /* dark */
+  --chart-3: rgba(123,151,225,100%); /* dark */
+  --chart-4: rgba(108,124,210,100%); /* dark */
+  --chart-5: rgba(100,97,192,100%); /* light */
+  --chart-6: rgba(92,69,174,100%); /* light */
+  --chart-7: rgba(83,46,147,100%); /* light */
+  --chart-8: rgba(74,25,117,100%); /* light */
+  --chart-9: rgba(66,4,87,100%); /* light */
+}
+
+.dark.chart-purplish {
+  --chart-2: rgba(211,236,252,100%); /* dark */
+  --chart-3: rgba(191,223,250,100%); /* dark */
+  --chart-4: rgba(170,207,246,100%); /* dark */
+  --chart-5: rgba(146,179,235,100%); /* dark */
+  --chart-6: rgba(123,151,225,100%); /* dark */
+  --chart-7: rgba(108,124,210,100%); /* dark */
+  --chart-8: rgba(100,97,192,100%); /* light */
+  --chart-9: rgba(92,69,174,100%); /* light */
+}
+
+.chart-dirt {
+  --chart-1: rgba(193,153,67,100%); /* dark */
+  --chart-2: rgba(175,133,59,100%); /* dark */
+  --chart-3: rgba(158,115,52,100%); /* light */
+  --chart-4: rgba(139,97,46,100%); /* light */
+  --chart-5: rgba(121,80,39,100%); /* light */
+  --chart-6: rgba(101,64,32,100%); /* light */
+  --chart-7: rgba(82,49,25,100%); /* light */
+  --chart-8: rgba(63,35,17,100%); /* light */
+  --chart-9: rgba(44,22,10,100%); /* light */
+}
+
+.dark.chart-dirt {
+  --chart-2: rgba(225,194,83,100%); /* dark */
+  --chart-3: rgba(210,173,74,100%); /* dark */
+  --chart-4: rgba(193,153,67,100%); /* dark */
+  --chart-5: rgba(175,133,59,100%); /* dark */
+  --chart-6: rgba(158,115,52,100%); /* light */
+  --chart-7: rgba(139,97,46,100%); /* light */
+  --chart-8: rgba(121,80,39,100%); /* light */
+  --chart-9: rgba(101,64,32,100%); /* light */
+}
+
+.chart-lime {
+  --chart-1: rgba(146,192,99,100%); /* dark */
+  --chart-2: rgba(119,172,95,100%); /* dark */
+  --chart-3: rgba(95,153,90,100%); /* light */
+  --chart-4: rgba(73,133,85,100%); /* light */
+  --chart-5: rgba(54,114,78,100%); /* light */
+  --chart-6: rgba(39,94,69,100%); /* light */
+  --chart-7: rgba(25,75,59,100%); /* light */
+  --chart-8: rgba(16,57,47,100%); /* light */
+  --chart-9: rgba(7,40,36,100%); /* light */
+}
+
+.dark.chart-lime {
+  --chart-2: rgba(209,229,106,100%); /* dark */
+  --chart-3: rgba(175,211,102,100%); /* dark */
+  --chart-4: rgba(146,192,99,100%); /* dark */
+  --chart-5: rgba(119,172,95,100%); /* dark */
+  --chart-6: rgba(95,153,90,100%); /* light */
+  --chart-7: rgba(73,133,85,100%); /* light */
+  --chart-8: rgba(54,114,78,100%); /* light */
+  --chart-9: rgba(39,94,69,100%); /* light */
+}
+
+.chart-teal {
+  --chart-1: rgba(71,184,151,100%); /* dark */
+  --chart-2: rgba(54,164,144,100%); /* light */
+  --chart-3: rgba(44,144,134,100%); /* light */
+  --chart-4: rgba(39,124,123,100%); /* light */
+  --chart-5: rgba(35,104,109,100%); /* light */
+  --chart-6: rgba(33,85,93,100%); /* light */
+  --chart-7: rgba(31,66,77,100%); /* light */
+  --chart-8: rgba(26,49,60,100%); /* light */
+  --chart-9: rgba(21,33,43,100%); /* light */
+}
+
+.dark.chart-teal {
+  --chart-2: rgba(115,226,159,100%); /* dark */
+  --chart-3: rgba(90,204,157,100%); /* dark */
+  --chart-4: rgba(71,184,151,100%); /* dark */
+  --chart-5: rgba(54,164,144,100%); /* light */
+  --chart-6: rgba(44,144,134,100%); /* light */
+  --chart-7: rgba(39,124,123,100%); /* light */
+  --chart-8: rgba(35,104,109,100%); /* light */
+  --chart-9: rgba(33,85,93,100%); /* light */
+}
+
+.chart-bee {
+  --chart-1: rgba(243,227,127,100%); /* dark */
+  --chart-2: rgba(230,199,95,100%); /* dark */
+  --chart-3: rgba(216,171,63,100%); /* dark */
+  --chart-4: rgba(196,142,41,100%); /* dark */
+  --chart-5: rgba(168,113,28,100%); /* light */
+  --chart-6: rgba(140,84,16,100%); /* light */
+  --chart-7: rgba(112,64,12,100%); /* light */
+  --chart-8: rgba(85,48,12,100%); /* light */
+  --chart-9: rgba(58,32,12,100%); /* light */
+}
+
+.dark.chart-bee {
+  --chart-2: rgba(247,242,190,100%); /* dark */
+  --chart-3: rgba(247,237,158,100%); /* dark */
+  --chart-4: rgba(243,227,127,100%); /* dark */
+  --chart-5: rgba(230,199,95,100%); /* dark */
+  --chart-6: rgba(216,171,63,100%); /* dark */
+  --chart-7: rgba(196,142,41,100%); /* dark */
+  --chart-8: rgba(168,113,28,100%); /* light */
+  --chart-9: rgba(140,84,16,100%); /* light */
+}
+
