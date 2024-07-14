@@ -10,6 +10,11 @@
     "activeMatch": "/components/"
   },
   {
+    "text": "Charts",
+    "link": "/charts/introduction",
+    "activeMatch": "/charts/"
+  },
+  {
     "text": "Templates",
     "link": "/templates/introduction",
     "activeMatch": "/templates/"

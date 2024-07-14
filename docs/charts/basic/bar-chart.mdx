@@ -1,0 +1,58 @@
+# BarChart
+
+BarChart is a component that displays data in a bar chart format.
+
+```tsx preview
+import { BarChart } from '@/ui/charts/BarChart';
+
+const data: GroupedData<"uv" | "pv" | "av">[] = [
+  {
+    name: "Page A",
+    uv: 4000,
+    pv: 2400,
+    av: 2400
+  },
+  {
+    name: "Page B",
+    uv: 3000,
+    pv: 1398,
+    av: 2400
+  },
+  {
+    name: "Page C",
+    uv: 2000,
+    pv: 9800,
+    av: 2400
+  },
+  {
+    name: "Page D",
+    uv: 2780,
+    pv: 3908,
+    av: 2400
+  },
+  {
+    name: "Page E",
+    uv: 1890,
+    pv: 4800,
+    av: 2400
+  },
+  {
+    name: "Page F",
+    uv: 2390,
+    pv: 3800,
+    av: 2400
+  },
+  {
+    name: "Page G",
+    uv: 3490,
+    pv: 4300,
+    av: 2400
+  }
+];
+
+export default function Example() {
+  return (
+    <BarChart data={data} />
+  );
+}
+```
