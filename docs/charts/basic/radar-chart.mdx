@@ -1,0 +1,47 @@
+# RadarChart
+
+RadarChart is a component that displays data in a bar chart format.
+
+```tsx preview
+import { RadarChart } from '@/ui/charts/RadarChart';
+
+const data: GroupedData<"uv" | "pv" | "amt">[] = [
+  {
+    name: 'Math',
+    Mike: 120,
+    Lily: 110,
+  },
+  {
+    name: 'Chinese',
+    Mike: 98,
+    Lily: 130,
+  },
+  {
+    name: 'English',
+    Mike: 86,
+    Lily: 130,
+  },
+  {
+    name: 'Geography',
+    Mike: 99,
+    Lily: 100,
+    fullMark: 150,
+  },
+  {
+    name: 'Physics',
+    Mike: 85,
+    Lily: 90,
+  },
+  {
+    name: 'History',
+    Mike: 65,
+    Lily: 85,
+  },
+];
+
+export default function Example() {
+  return (
+    <RadarChart data={data} domain={[0, 150]} />
+  );
+}
+```

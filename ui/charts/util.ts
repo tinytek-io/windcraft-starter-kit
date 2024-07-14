@@ -1,3 +1,5 @@
+export type GroupedData<T extends string> = { name: string } & Record<T, number>;
+
 type ColorIndex = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
 function getColorIndex(index: number, length: number) {

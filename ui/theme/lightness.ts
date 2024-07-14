@@ -1,6 +1,8 @@
 // Ref: https://evilmartians.com/chronicles/better-dynamic-themes-in-tailwind-with-oklch-color-magic
 // Ref: https://leonardocolor.io/theme.html#
 // Ref: https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html
+// Ref: https://sjmgarnier.github.io/viridis/
+// Ref: https://www.npmjs.com/package/viridis https://npm.nicfv.com/viridis/
 
 export const lightness = [97.78, 93.56, 88.11, 82.67, 74.22, 64.78, 57.33, 46.89, 39.44, 32, 23.78];
 
