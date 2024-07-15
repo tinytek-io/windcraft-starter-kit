@@ -5,6 +5,7 @@ import { pluginPreview } from "@rspress/plugin-preview";
 import { defineConfig } from "rspress/config";
 
 export default defineConfig({
+  ssg: false,
   globalStyles: path.join(__dirname, "styles", "index.css"),
   root: path.join(__dirname, "docs"),
   route: {
