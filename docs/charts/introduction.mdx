@@ -1,2 +1,9 @@
 # Charts
 
+import { Card } from '@/ui/components/Card';
+import { chartDataMedium } from "@/docs/charts/_lib/data";
+import { BarChart } from '@/ui/charts/BarChart';
+
+<Card className="h-64 w-96">
+  <BarChart data={chartDataMedium} isAnimationActive={false} />
+</Card>
