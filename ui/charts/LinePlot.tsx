@@ -5,9 +5,10 @@ import { type GroupedData, getChartColor } from "./util";
 
 type LinePlotProps<T extends string> = {
   data: GroupedData<T>[];
+  isAnimationActive?: boolean;
 };
 
-export function LinePlot<T extends string>({ data }: LinePlotProps<T>) {
+export function LinePlot<T extends string>({ data, isAnimationActive }: LinePlotProps<T>) {
   const dataKeys = Object.keys(data[0]).filter((key) => key !== "name") as T[];
   return (
     <ResponsiveContainer width="100%" height="100%">
@@ -22,6 +23,7 @@ export function LinePlot<T extends string>({ data }: LinePlotProps<T>) {
             stroke={getChartColor(index, dataKeys.length)}
             className="!stroke-border"
             activeDot={{ r: 4 }}
+            isAnimationActive={isAnimationActive}
           />
         ))}
         <XAxis dataKey="name" className="!text-sm" stroke="hsl(var(--muted-foreground))" />

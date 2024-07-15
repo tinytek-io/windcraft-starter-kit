@@ -5,43 +5,79 @@ RadarChart is a component that displays data in a bar chart format.
 ```tsx preview
 import { RadarChart } from '@/ui/charts/RadarChart';
 
-const data: GroupedData<"uv" | "pv" | "amt">[] = [
+export const data: GroupedData<"Mike" | "Lily">[] = [
   {
-    name: 'Math',
+    name: "Math",
     Mike: 120,
-    Lily: 110,
+    Lily: 100
   },
   {
-    name: 'Chinese',
-    Mike: 98,
-    Lily: 130,
+    name: "Chinese",
+    Mike: 100,
+    Lily: 120
   },
   {
-    name: 'English',
-    Mike: 86,
-    Lily: 130,
+    name: "English",
+    Mike: 110,
+    Lily: 100
   },
   {
-    name: 'Geography',
-    Mike: 99,
-    Lily: 100,
-    fullMark: 150,
+    name: "Geography",
+    Mike: 120,
+    Lily: 100
   },
   {
-    name: 'Physics',
-    Mike: 85,
-    Lily: 90,
+    name: "Physics",
+    Mike: 100,
+    Lily: 120
   },
   {
-    name: 'History',
-    Mike: 65,
-    Lily: 85,
-  },
+    name: "History",
+    Mike: 110,
+    Lily: 100
+  }
 ];
 
 export default function Example() {
   return (
     <RadarChart data={data} domain={[0, 150]} />
+  );
+}
+```
+
+```tsx preview
+import { radarDataMedium } from "@/docs/charts/basic/data";
+import { RadarChart } from '@/ui/charts/RadarChart';
+
+export default function Example() {
+  return (
+    <RadarChart data={radarDataMedium} domain={[0, 150]} isAnimationActive={false} />
+  );
+}
+```
+
+## Large data series
+
+```tsx preview
+import { radarDataLarge } from "@/docs/charts/basic/data";
+import { RadarChart } from '@/ui/charts/RadarChart';
+
+export default function Example() {
+  return (
+    <RadarChart data={radarDataLarge} domain={[0, 150]} isAnimationActive={false} />
+  );
+}
+```
+
+## Maximum data series
+
+```tsx preview
+import { radarDataBig } from "@/docs/charts/basic/data";
+import { RadarChart } from '@/ui/charts/RadarChart';
+
+export default function Example() {
+  return (
+    <RadarChart data={radarDataBig} domain={[0, 150]} isAnimationActive={false} />
   );
 }
 ```

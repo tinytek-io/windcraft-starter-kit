@@ -16,17 +16,28 @@ import { type GroupedData, getChartColor } from "./util";
 type RadarChartProps<T extends string> = {
   data: GroupedData<T>[];
   domain: AxisDomain;
+  isAnimationActive?: boolean;
+  fillOpacity?: number;
 };
 
-export function RadarChart<T extends string>({ data, domain }: RadarChartProps<T>) {
+export function RadarChart<T extends string>({
+  data,
+  domain,
+  isAnimationActive,
+  fillOpacity = 0.3
+}: RadarChartProps<T>) {
   const dataKeys = Object.keys(data[0]).filter((key) => key !== "name") as T[];
-  const angle = 360 / dataKeys.length;
   return (
     <ResponsiveContainer width="100%" height="100%">
       <ReRadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
         <PolarGrid />
         <PolarAngleAxis dataKey="name" className="!text-sm" stroke="hsl(var(--foreground))" />
-        <PolarRadiusAxis angle={angle} domain={domain} className="!text-sm" stroke="hsl(var(--muted-foreground))" />
+        <PolarRadiusAxis
+          angle={360 / data.length}
+          domain={domain}
+          className="!text-sm"
+          stroke="hsl(var(--muted-foreground))"
+        />
 
         <Tooltip />
         {dataKeys.map((key, index) => (
@@ -35,8 +46,9 @@ export function RadarChart<T extends string>({ data, domain }: RadarChartProps<T
             dataKey={key}
             stroke={getChartColor(index, dataKeys.length)}
             fill={getChartColor(index, dataKeys.length)}
-            fillOpacity={0.3}
+            fillOpacity={fillOpacity}
             strokeWidth={2}
+            isAnimationActive={isAnimationActive}
           />
         ))}
         <Legend stroke="hsl(var(--muted-foreground))" />

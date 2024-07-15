@@ -5,9 +5,10 @@ import { type GroupedData, getChartColor } from "./util";
 
 type BarChartProps<T extends string> = {
   data: GroupedData<T>[];
+  isAnimationActive?: boolean;
 };
 
-export function BarChart<T extends string>({ data }: BarChartProps<T>) {
+export function BarChart<T extends string>({ data, isAnimationActive }: BarChartProps<T>) {
   const dataKeys = Object.keys(data[0]).filter((key) => key !== "name") as T[];
   return (
     <ResponsiveContainer width="100%" height="100%">
@@ -15,7 +16,13 @@ export function BarChart<T extends string>({ data }: BarChartProps<T>) {
         <CartesianGrid />
         <Tooltip />
         {dataKeys.map((key, index) => (
-          <Bar key={key} dataKey={key} fill={getChartColor(index, dataKeys.length)} className="!stroke-border" />
+          <Bar
+            key={key}
+            dataKey={key}
+            fill={getChartColor(index, dataKeys.length)}
+            className="!stroke-border"
+            isAnimationActive={isAnimationActive}
+          />
         ))}
         <XAxis dataKey="name" className="!text-sm" stroke="hsl(var(--muted-foreground))" />
         <YAxis className="!text-sm" stroke="hsl(var(--muted-foreground))" />

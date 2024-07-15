@@ -56,3 +56,42 @@ export default function Example() {
   );
 }
 ```
+
+## Animation Disabled
+
+```tsx preview
+import { chartDataMedium } from "@/docs/charts/basic/data";
+import { PieChart } from '@/ui/charts/PieChart';
+
+export default function Example() {
+  return (
+    <PieChart data={chartDataMedium} isAnimationActive={false} />
+  );
+}
+```
+
+## Large data series
+
+```tsx preview
+import { chartDataLarge } from "@/docs/charts/basic/data";
+import { PieChart } from '@/ui/charts/PieChart';
+
+export default function Example() {
+  return (
+    <PieChart data={chartDataLarge} isAnimationActive={false} />
+  );
+}
+```
+
+## Maximum data series
+
+```tsx preview
+import { chartDataMaximum } from "@/docs/charts/basic/data";
+import { PieChart } from '@/ui/charts/PieChart';
+
+export default function Example() {
+  return (
+    <PieChart data={chartDataMaximum} isAnimationActive={false} />
+  );
+}
+```

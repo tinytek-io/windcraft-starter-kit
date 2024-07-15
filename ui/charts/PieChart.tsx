@@ -4,6 +4,7 @@ import { type GroupedData, getChartColor } from "./util";
 
 type PieChartProps<T extends string> = {
   data: GroupedData<T>[];
+  isAnimationActive?: boolean;
 };
 
 type Radius = {
@@ -23,7 +24,7 @@ const radius: Radius[] = [
   { innerRadius: 280, outerRadius: 300 }
 ];
 
-export function PieChart<T extends string>({ data }: PieChartProps<T>) {
+export function PieChart<T extends string>({ data, isAnimationActive }: PieChartProps<T>) {
   const dataKeys = Object.keys(data[0]).filter((key) => key !== "name") as T[];
   return (
     <ResponsiveContainer width="100%" height="100%">
@@ -41,6 +42,7 @@ export function PieChart<T extends string>({ data }: PieChartProps<T>) {
             {...radius[index]}
             className="!stroke-border"
             paddingAngle={1}
+            isAnimationActive={isAnimationActive}
           />
         ))}
         <Legend
