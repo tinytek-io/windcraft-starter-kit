@@ -7,6 +7,9 @@ import { defineConfig } from "rspress/config";
 export default defineConfig({
   globalStyles: path.join(__dirname, "styles", "index.css"),
   root: path.join(__dirname, "docs"),
+  route: {
+    exclude: ["**/_lib/*.*"]
+  },
   title: "WindCraftUI",
   description: "React Template Components",
   icon: "/windcraft-logo.webp",
