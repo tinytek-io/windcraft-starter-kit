@@ -136,6 +136,22 @@ export default function Home() {
         <h2 className="font-semibold text-4xl">Components</h2>
 
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
+          <ComponentExample name="AreaChart" href="/charts/basic/area-chart.html" responsive>
+            <AreaChart data={chartDataMedium} isAnimationActive={false} />
+          </ComponentExample>
+          <ComponentExample name="BarChart" href="/charts/basic/bar-chart.html" responsive>
+            <BarChart data={chartDataMedium} isAnimationActive={false} />
+          </ComponentExample>
+          <ComponentExample name="LinePlot" href="/charts/basic/line-plot.html" responsive>
+            <LinePlot data={chartDataMedium} isAnimationActive={false} />
+          </ComponentExample>
+          <ComponentExample name="PieChart" href="/charts/basic/pie-chart.html" responsive>
+            <PieChart data={chartDataMedium} isAnimationActive={false} />
+          </ComponentExample>
+          <ComponentExample name="RadarChart" href="/charts/basic/radar-chart.html" responsive>
+            <RadarChart data={radarDataMedium} domain={[0, 150]} isAnimationActive={false} />
+          </ComponentExample>
+
           <ComponentExample name="Button" href="/components/buttons/button.html">
             <Button>Button</Button>
           </ComponentExample>
@@ -531,21 +547,6 @@ export default function Home() {
             >
               Add to calendar
             </Button>
-          </ComponentExample>
-          <ComponentExample name="AreaChart" href="/charts/basic/area-chart.html" responsive>
-            <AreaChart data={chartDataMedium} isAnimationActive={false} />
-          </ComponentExample>
-          <ComponentExample name="BarChart" href="/charts/basic/bar-chart.html" responsive>
-            <BarChart data={chartDataMedium} isAnimationActive={false} />
-          </ComponentExample>
-          <ComponentExample name="LinePlot" href="/charts/basic/line-plot.html" responsive>
-            <LinePlot data={chartDataMedium} isAnimationActive={false} />
-          </ComponentExample>
-          <ComponentExample name="PieChart" href="/charts/basic/pie-chart.html" responsive>
-            <PieChart data={chartDataMedium} isAnimationActive={false} />
-          </ComponentExample>
-          <ComponentExample name="RadarChart" href="/charts/basic/radar-chart.html" responsive>
-            <RadarChart data={radarDataMedium} domain={[0, 150]} isAnimationActive={false} />
           </ComponentExample>
         </div>
       </section>
