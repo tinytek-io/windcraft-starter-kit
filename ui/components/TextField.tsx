@@ -25,7 +25,9 @@ const inputStyles = tv({
   }
 });
 
-export interface TextFieldProps extends AriaTextFieldProps,  Partial<Pick<HTMLInputElement, "autocomplete" | "placeholder">> {
+export interface TextFieldProps
+  extends AriaTextFieldProps,
+    Partial<Pick<HTMLInputElement, "autocomplete" | "placeholder">> {
   label?: string;
   description?: string;
   errorMessage?: string | ((validation: ValidationResult) => string);
