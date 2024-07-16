@@ -579,6 +579,7 @@ function ComponentExample({ href, name, responsive, children }: Readonly<Compone
       title={`Navigate to ${name}`}
     >
       <div style={style}>{children}</div>
+      <div className="absolute top-0 right-0 bottom-0 left-0" />
       <div className="absolute right-0 bottom-0 left-0 bg-background/20 text-center backdrop-blur-2xl">{name}</div>
     </a>
   );
