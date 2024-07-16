@@ -568,7 +568,7 @@ function ComponentExample({ href, name, children }: Readonly<ComponentExamplePro
       aria-label={`Navigate to ${name}`}
       title={`Navigate to ${name}`}
     >
-      <div className="hover:105 relative flex aspect-square h-[200%] scale-50 items-center justify-center transition-all hover:scale-75">
+      <div className="hover:105 relative flex aspect-square h-[180%] scale-50 items-center justify-center transition-all hover:scale-75">
         {children}
         <div className="absolute top-0 right-0 bottom-0 left-0" />
       </div>
