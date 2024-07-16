@@ -1,9 +1,34 @@
 # Charts
 
-import { Card } from '@/ui/components/Card';
-import { chartDataMedium } from "@/docs/charts/_lib/data";
-import { BarChart } from '@/ui/charts/BarChart';
+Charts are powerful visual representations of data that help us understand patterns, trends, and relationships. In this library, we provide a variety of chart components that you can use to display data in different formats.
 
-<Card className="h-64 w-96">
-  <BarChart data={chartDataMedium} isAnimationActive={false} />
-</Card>
+import { Card } from '@/ui/components/Card';
+import { chartDataMedium, radarDataMedium } from "@/docs/charts/_lib/data";
+import { AreaChart } from '@/ui/charts/AreaChart';
+import { BarChart } from '@/ui/charts/BarChart';
+import { LinePlot } from '@/ui/charts/LinePlot';
+import { PieChart } from '@/ui/charts/PieChart';
+import { RadarChart } from '@/ui/charts/RadarChart';
+
+<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full'>
+  <Card className='w-full aspect-square'>
+    <AreaChart data={chartDataMedium} isAnimationActive={false} />
+  </Card>
+  
+  <Card className='w-full aspect-square'>
+    <BarChart data={chartDataMedium} isAnimationActive={false} />
+  </Card>
+  
+  <Card className='w-full aspect-square'>
+    <LinePlot data={chartDataMedium} isAnimationActive={false} />
+  </Card>
+  
+  <Card className='w-full aspect-square'>
+    <PieChart data={chartDataMedium} isAnimationActive={false} />
+  </Card>
+  
+  <Card className='w-full aspect-square'>
+    <RadarChart data={radarDataMedium} domain={[0, 150]} isAnimationActive={false} />
+  </Card>
+</div>
+
