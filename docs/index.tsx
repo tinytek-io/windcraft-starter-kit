@@ -136,19 +136,19 @@ export default function Home() {
         <h2 className="font-semibold text-4xl">Components</h2>
 
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
-          <ComponentExample name="AreaChart" href="/charts/basic/area-chart.html" responsive>
+          <ComponentExample name="AreaChart" href="/charts/basic/area-chart.html">
             <AreaChart data={chartDataMedium} isAnimationActive={false} />
           </ComponentExample>
-          <ComponentExample name="BarChart" href="/charts/basic/bar-chart.html" responsive>
+          <ComponentExample name="BarChart" href="/charts/basic/bar-chart.html">
             <BarChart data={chartDataMedium} isAnimationActive={false} />
           </ComponentExample>
-          <ComponentExample name="LinePlot" href="/charts/basic/line-plot.html" responsive>
+          <ComponentExample name="LinePlot" href="/charts/basic/line-plot.html">
             <LinePlot data={chartDataMedium} isAnimationActive={false} />
           </ComponentExample>
-          <ComponentExample name="PieChart" href="/charts/basic/pie-chart.html" responsive>
+          <ComponentExample name="PieChart" href="/charts/basic/pie-chart.html">
             <PieChart data={chartDataMedium} isAnimationActive={false} />
           </ComponentExample>
-          <ComponentExample name="RadarChart" href="/charts/basic/radar-chart.html" responsive>
+          <ComponentExample name="RadarChart" href="/charts/basic/radar-chart.html">
             <RadarChart data={radarDataMedium} domain={[0, 150]} isAnimationActive={false} />
           </ComponentExample>
 
@@ -557,29 +557,21 @@ export default function Home() {
 type ComponentExampleProps = {
   href: string;
   name: string;
-  responsive?: boolean;
   children: ReactNode;
 };
 
-function ComponentExample({ href, name, responsive, children }: Readonly<ComponentExampleProps>) {
-  const style = responsive
-    ? {
-        zoom: "50%",
-        width: 300,
-        height: 300
-      }
-    : {
-        zoom: "50%"
-      };
+function ComponentExample({ href, name, children }: Readonly<ComponentExampleProps>) {
   return (
     <a
       href={href}
-      className="relative flex aspect-square max-w-80 cursor-pointer items-center justify-center overflow-hidden rounded-md border-2 border-border p-2"
+      className="relative flex aspect-square max-w-80 cursor-pointer items-center justify-center overflow-hidden rounded-md border-2 border-border p-4"
       aria-label={`Navigate to ${name}`}
       title={`Navigate to ${name}`}
     >
-      <div style={style}>{children}</div>
-      <div className="absolute top-0 right-0 bottom-0 left-0" />
+      <div className="hover:105 relative flex aspect-square h-[200%] scale-50 items-center justify-center transition-all hover:scale-75">
+        {children}
+        <div className="absolute top-0 right-0 bottom-0 left-0" />
+      </div>
       <div className="absolute right-0 bottom-0 left-0 bg-background/20 text-center backdrop-blur-2xl">{name}</div>
     </a>
   );
