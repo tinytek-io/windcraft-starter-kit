@@ -26,6 +26,7 @@ export interface ComboBoxProps<T extends object> extends Omit<AriaComboBoxProps<
   description?: string | null;
   errorMessage?: string | ((validation: ValidationResult) => string);
   isOpen?: boolean;
+  placeholder?: string;
   children: React.ReactNode | ((item: T) => React.ReactNode);
 }
 

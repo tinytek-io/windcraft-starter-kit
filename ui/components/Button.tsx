@@ -11,7 +11,7 @@ export interface ButtonProps extends AriaButtonProps, React.RefAttributes<HTMLBu
    * The variant of the button.
    * @default primary
    */
-  variant?: "primary" | "secondary" | "destructive" | "outline" | "ghost" | "link";
+  variant?: "primary" | "secondary" | "destructive" | "outline" | "ghost" | "link" | "icon";
   /**
    * The size of the button.
    * @default md
@@ -29,7 +29,8 @@ const button = tv({
       destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 pressed:bg-destructive/80",
       outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground pressed:bg-accent/80",
       ghost: "hover:bg-accent hover:text-accent-foreground pressed:bg-accent/80",
-      link: "text-primary underline-offset-4 hover:underline pressed:text-primary/80"
+      link: "text-primary underline-offset-4 hover:underline pressed:text-primary/80",
+      icon: "h-10 w-10 border border-input bg-background hover:bg-accent hover:text-accent-foreground pressed:bg-accent/80"
     },
     size: {
       xs: "h-6 w-6",

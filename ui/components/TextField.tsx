@@ -1,3 +1,4 @@
+import type { Attributes, HtmlHTMLAttributes } from "react";
 /**
  * ref: https://react-spectrum.adobe.com/react-aria-tailwind-starter/?path=/docs/textfield--docs
  */
@@ -24,24 +25,33 @@ const inputStyles = tv({
   }
 });
 
-export interface TextFieldProps extends AriaTextFieldProps {
+export interface TextFieldProps extends AriaTextFieldProps,  Partial<Pick<HTMLInputElement, "autocomplete" | "placeholder">> {
   label?: string;
   description?: string;
   errorMessage?: string | ((validation: ValidationResult) => string);
 }
 
-export function TextField({ label, description, errorMessage, children, ...props }: Readonly<TextFieldProps>) {
+export function TextField({
+  label,
+  description,
+  errorMessage,
+  placeholder,
+  autocomplete,
+  children,
+  className,
+  ...props
+}: Readonly<TextFieldProps>) {
   if (children) {
     return (
-      <AriaTextField {...props} className={composeTailwindRenderProps(props.className, "flex flex-col gap-1")}>
+      <AriaTextField {...props} className={composeTailwindRenderProps(className, "flex flex-col gap-1")}>
         {children}
       </AriaTextField>
     );
   }
   return (
-    <AriaTextField {...props} className={composeTailwindRenderProps(props.className, "flex flex-col gap-1")}>
+    <AriaTextField {...props} className={composeTailwindRenderProps(className, "flex flex-col gap-1")}>
       {label && <Label>{label}</Label>}
-      <Input className={inputStyles} />
+      <Input className={inputStyles} placeholder={placeholder} autoComplete={autocomplete} />
       {description && <Description>{description}</Description>}
       <FieldError>{errorMessage}</FieldError>
     </AriaTextField>

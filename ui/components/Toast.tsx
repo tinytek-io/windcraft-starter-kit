@@ -162,6 +162,7 @@ const toastActionStyles = tv({
 });
 
 type ToastActionProps = {
+  altText?: string;
   children: React.ReactNode;
 };
 

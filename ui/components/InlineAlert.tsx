@@ -58,14 +58,14 @@ const alertIcon: Record<Variant, LucideIcon | null> = {
 };
 
 type InlineAlertProps = {
-  variant: Variant;
+  variant?: Variant;
   autoFocus?: boolean;
   className?: string;
   children: React.ReactNode;
 };
 
 export function InlineAlert({ variant, autoFocus, className, children }: InlineAlertProps) {
-  const Icon = alertIcon[variant];
+  const Icon = variant != null ? alertIcon[variant] : null;
   return (
     // biome-ignore lint/a11y/noAutofocus: This is a design system component, and the `autoFocus` prop is intentional.
     <div role="alert" className={styles({ variant, className })} autoFocus={autoFocus}>
