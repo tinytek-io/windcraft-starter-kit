@@ -13,7 +13,7 @@ type AvatarProps = {
   /**
    * The URL of the image to display.
    */
-  avatarUrl?: string;
+  avatarUrl?: string | null;
   /**
    * The size of the avatar.
    */
