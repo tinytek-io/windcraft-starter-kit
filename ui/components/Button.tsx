@@ -27,10 +27,10 @@ const button = tv({
       primary: "bg-primary text-primary-foreground hover:bg-primary/90 pressed:bg-primary/80",
       secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 pressed:bg-secondary/70",
       destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 pressed:bg-destructive/80",
-      outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground pressed:bg-accent/80",
+      outline: "border border-input hover:bg-accent hover:text-accent-foreground pressed:bg-accent/80",
       ghost: "hover:bg-accent hover:text-accent-foreground pressed:bg-accent/80",
       link: "text-primary underline-offset-4 hover:underline pressed:text-primary/80",
-      icon: "h-10 w-10 border border-input bg-background hover:bg-accent hover:text-accent-foreground pressed:bg-accent/80"
+      icon: "h-10 w-10 border border-input hover:bg-accent hover:text-accent-foreground pressed:bg-accent/80"
     },
     size: {
       xs: "h-6 w-6",
