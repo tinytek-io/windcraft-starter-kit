@@ -2,13 +2,13 @@
  * ref: https://react-spectrum.adobe.com/react-aria-tailwind-starter/?path=/docs/alertdialog--docs
  * ref: https://ui.shadcn.com/docs/components/alert-dialog
  */
-import { Dialog } from "@/ui/components/Dialog";
 import { AlertCircleIcon, InfoIcon } from "lucide-react";
 import type { ReactNode } from "react";
 import { chain } from "react-aria";
 import type { DialogProps } from "react-aria-components";
 import { tv } from "tailwind-variants";
 import { Button } from "./Button";
+import { Dialog } from "./Dialog";
 import { Heading } from "./Heading";
 
 interface AlertDialogProps extends Omit<DialogProps, "children"> {
