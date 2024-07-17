@@ -24,9 +24,13 @@ const alertDialogContents = tv({
   base: "w-6 h-6 absolute right-6 top-6 stroke-2",
   variants: {
     variant: {
+      neutral: "hidden",
       destructive: "text-destructive",
       info: "text-primary"
     }
+  },
+  defaultVariants: {
+    variant: "neutral"
   }
 });
 
