@@ -39,5 +39,6 @@
   "githubIssues.issueBranchTitle": "${issueNumber}-${sanitizedLowercaseIssueTitle}",
   "githubPullRequests.assignCreated": "${user}",
   "biome.searchInPath": false,
-  "biome.enabled": true
+  "biome.enabled": true,
+  "github-actions.workflows.pinned.workflows": [".github/workflows/pages.yml"]
 }
