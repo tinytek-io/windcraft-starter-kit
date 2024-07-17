@@ -29,8 +29,7 @@ const button = tv({
       destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 pressed:bg-destructive/80",
       outline: "border border-input hover:bg-accent hover:text-accent-foreground pressed:bg-accent/80",
       ghost: "hover:bg-accent hover:text-accent-foreground pressed:bg-accent/80",
-      link: "text-primary underline-offset-4 hover:underline pressed:text-primary/80",
-      icon: "h-10 w-10 border border-input hover:bg-accent hover:text-accent-foreground pressed:bg-accent/80"
+      link: "text-primary underline-offset-4 hover:underline pressed:text-primary/80"
     },
     size: {
       xs: "h-6 w-6",
@@ -56,8 +55,8 @@ export function Button({ className, variant, size, ...props }: Readonly<ButtonPr
       className={composeRenderProps(className, (className, renderProps) =>
         button({
           ...renderProps,
-          size,
-          variant,
+          size: variant === "icon" ? "icon" : size,
+          variant: variant === "icon" ? "outline" : variant,
           className
         })
       )}
