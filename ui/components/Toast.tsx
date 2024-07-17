@@ -7,7 +7,7 @@ import type { AriaToastProps, AriaToastRegionProps } from "@react-aria/toast";
 import { useToast, useToastRegion } from "@react-aria/toast";
 import { ToastQueue, type ToastState, useToastQueue } from "@react-stately/toast";
 import { XIcon } from "lucide-react";
-import { createContext, isValidElement, useContext, useRef } from "react";
+import { type RefObject, createContext, isValidElement, useContext, useRef } from "react";
 import { Button as AriaButton } from "react-aria-components";
 import { createPortal } from "react-dom";
 import { tv } from "tailwind-variants";
@@ -43,8 +43,8 @@ interface ToastRegionProps<T> extends AriaToastRegionProps {
   state: ToastState<T>;
 }
 
-function ToastRegion<T extends ToastContents>({ state, ...props }: ToastRegionProps<T>) {
-  const ref = useRef(null);
+function ToastRegion<T extends ToastContents>({ state, ...props }: Readonly<ToastRegionProps<T>>) {
+  const ref = useRef<HTMLDivElement>(null) as RefObject<HTMLDivElement>; // Note(raix): Remove when fixed in react-aria
   const { regionProps } = useToastRegion(props, state, ref);
 
   return (
@@ -88,8 +88,8 @@ interface ToastProps<T> extends AriaToastProps<T> {
   state: ToastState<T>;
 }
 
-function Toast<T extends ToastContents>({ state, ...props }: ToastProps<T>) {
-  const ref = useRef<HTMLDivElement>(null);
+function Toast<T extends ToastContents>({ state, ...props }: Readonly<ToastProps<T>>) {
+  const ref = useRef<HTMLDivElement>(null) as RefObject<HTMLDivElement>; // Note(raix): Remove when fixed in react-aria
   const { toastProps, titleProps, closeButtonProps, descriptionProps } = useToast(props, state, ref);
   const { content } = props.toast;
 
@@ -166,7 +166,7 @@ type ToastActionProps = {
   children: React.ReactNode;
 };
 
-export function ToastAction({ children }: ToastActionProps) {
+export function ToastAction({ children }: Readonly<ToastActionProps>) {
   const { variant } = useContext(toastContext);
   return (
     <AriaButton className={(renderProps) => toastActionStyles({ ...renderProps, variant })}>{children}</AriaButton>

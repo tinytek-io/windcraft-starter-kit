@@ -30,7 +30,7 @@ type AccordionProps<T> = {
 
 export function Accordion<T extends object>({ className, ...props }: AccordionProps<T>) {
   const state = useTreeState<T>(props);
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>; // Note(raix): Remove when fixed in react-aria
   const { accordionProps } = useAccordion<T>(props, state, ref);
 
   return (
@@ -55,7 +55,7 @@ type AccordionItemInstanceProps<T> = {
 } & AccordionItemAriaProps<T>;
 
 function AccordionItemInstance<T>({ state, ...props }: AccordionItemInstanceProps<T>) {
-  const ref = useRef<HTMLButtonElement>(null);
+  const ref = useRef<HTMLButtonElement>(null) as React.RefObject<HTMLButtonElement>; // Note(raix): Remove when fixed in react-aria
   const { item } = props;
   const { buttonProps, regionProps } = useAccordionItem<T>(props, state, ref);
   const isOpen = state.expandedKeys.has(item.key);
