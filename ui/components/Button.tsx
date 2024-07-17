@@ -21,7 +21,7 @@ export interface ButtonProps extends AriaButtonProps, React.RefAttributes<HTMLBu
 
 const button = tv({
   extend: focusRing,
-  base: "inline-flex gap-1 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+  base: "inline-flex gap-1 items-center justify-center w-fit whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
   variants: {
     variant: {
       primary: "bg-primary text-primary-foreground hover:bg-primary/90 pressed:bg-primary/80",
