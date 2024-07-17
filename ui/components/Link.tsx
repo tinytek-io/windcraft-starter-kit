@@ -14,7 +14,7 @@ interface LinkProps extends AriaLinkProps {
 
 const styles = tv({
   extend: focusRing,
-  base: "inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors cursor-default",
+  base: "inline-flex gap-2 items-center justify-center whitespace-nowrap rounded-md font-medium transition-colors cursor-default",
   variants: {
     variant: {
       primary: "text-primary hover:text-primary/90",
