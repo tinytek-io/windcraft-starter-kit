@@ -15,7 +15,8 @@ const styles = tv({
       danger: "bg-danger text-danger-foreground",
       info: "bg-info text-info-foreground",
       primary: "bg-primary text-primary-foreground",
-      secondary: "bg-secondary text-secondary-foreground"
+      secondary: "bg-secondary text-secondary-foreground",
+      outline: "border border-muted-foreground text-muted-foreground"
     }
   },
   defaultVariants: {
