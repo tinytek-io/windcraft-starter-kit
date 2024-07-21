@@ -1,3 +1,4 @@
+import type { RefAttributes } from "react";
 /**
  * ref: https://react-spectrum.adobe.com/react-aria-tailwind-starter/?path=/docs/textfield--docs
  */
@@ -10,7 +11,7 @@ const styles = tv({
   extend: focusRing,
   base: "flex rounded-md border-2 border-border [&>*:not(:last-child)]:border-r-2 [&>*:not(:last-child)]:rounded-r-none"
 });
-export function Group({ className, children, ...props }: Readonly<GroupProps>) {
+export function Group({ className, children, ...props }: Readonly<GroupProps & RefAttributes<HTMLDivElement>>) {
   return (
     <AriaGroup
       {...props}
