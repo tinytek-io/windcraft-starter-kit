@@ -1,4 +1,4 @@
-import { FocusScope, useFocusManager, useKeyboard } from "react-aria";
+import { FocusScope, useFocusManager, useFocusVisible, useKeyboard } from "react-aria";
 import { Button } from "./Button";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import { tv } from "tailwind-variants";
@@ -49,15 +49,17 @@ export function Pagination({
         <ArrowLeftIcon className="w-4 h-4" />
         {previousLabel && <span className="hidden sm:block">{previousLabel}</span>}
       </Button>
-      {isEdge && !isSmall && (
-        <EdgePagination size={size} currentPage={currentPage} onPageChange={onPageChange} totalPages={totalPages} />
-      )}
-      {!isEdge && !isSmall && (
-        <CenterPagination size={size} currentPage={currentPage} onPageChange={onPageChange} totalPages={totalPages} />
-      )}
-      {isSmall && (
-        <SmallPagination size={size} currentPage={currentPage} onPageChange={onPageChange} totalPages={totalPages} />
-      )}
+      <FocusScope>
+        {isEdge && !isSmall && (
+          <EdgePagination size={size} currentPage={currentPage} onPageChange={onPageChange} totalPages={totalPages} />
+        )}
+        {!isEdge && !isSmall && (
+          <CenterPagination size={size} currentPage={currentPage} onPageChange={onPageChange} totalPages={totalPages} />
+        )}
+        {isSmall && (
+          <SmallPagination size={size} currentPage={currentPage} onPageChange={onPageChange} totalPages={totalPages} />
+        )}
+      </FocusScope>
 
       <Button variant="secondary" className="" onPress={handleNext} isDisabled={isLastPage}>
         {nextLabel && <span className="hidden sm:block">{nextLabel}</span>}
@@ -80,33 +82,31 @@ function CenterPagination({ currentPage, onPageChange, totalPages, size }: Reado
   const pages = Array.from({ length: centerCount }, (_, i) => currentPage - sideCount + i);
   return (
     <ul className={pageBackgroundStyle()}>
-      <FocusScope>
+      <PageNumberButton
+        key={1}
+        currentPage={currentPage}
+        onPageChange={onPageChange}
+        page={1}
+        totalPages={totalPages}
+      />
+      <Separator />
+      {pages.map((page) => (
         <PageNumberButton
-          key={1}
+          key={page}
           currentPage={currentPage}
           onPageChange={onPageChange}
-          page={1}
+          page={page}
           totalPages={totalPages}
         />
-        <Separator />
-        {pages.map((page) => (
-          <PageNumberButton
-            key={page}
-            currentPage={currentPage}
-            onPageChange={onPageChange}
-            page={page}
-            totalPages={totalPages}
-          />
-        ))}
-        <Separator />
-        <PageNumberButton
-          key={totalPages}
-          currentPage={currentPage}
-          onPageChange={onPageChange}
-          page={totalPages}
-          totalPages={totalPages}
-        />
-      </FocusScope>
+      ))}
+      <Separator />
+      <PageNumberButton
+        key={totalPages}
+        currentPage={currentPage}
+        onPageChange={onPageChange}
+        page={totalPages}
+        totalPages={totalPages}
+      />
     </ul>
   );
 }
@@ -117,27 +117,25 @@ function EdgePagination({ currentPage, onPageChange, totalPages, size }: Readonl
   const endPages = Array.from({ length: edgeCount }, (_, i) => totalPages - edgeCount + i + 1);
   return (
     <ul className={pageBackgroundStyle()}>
-      <FocusScope>
-        {startPages.map((page) => (
-          <PageNumberButton
-            key={page}
-            currentPage={currentPage}
-            onPageChange={onPageChange}
-            page={page}
-            totalPages={totalPages}
-          />
-        ))}
-        <Separator />
-        {endPages.map((page) => (
-          <PageNumberButton
-            key={page}
-            currentPage={currentPage}
-            onPageChange={onPageChange}
-            page={page}
-            totalPages={totalPages}
-          />
-        ))}
-      </FocusScope>
+      {startPages.map((page) => (
+        <PageNumberButton
+          key={page}
+          currentPage={currentPage}
+          onPageChange={onPageChange}
+          page={page}
+          totalPages={totalPages}
+        />
+      ))}
+      <Separator />
+      {endPages.map((page) => (
+        <PageNumberButton
+          key={page}
+          currentPage={currentPage}
+          onPageChange={onPageChange}
+          page={page}
+          totalPages={totalPages}
+        />
+      ))}
     </ul>
   );
 }
@@ -146,17 +144,15 @@ function SmallPagination({ currentPage, onPageChange, totalPages }: Readonly<Pag
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
   return (
     <ul className={pageBackgroundStyle()}>
-      <FocusScope>
-        {pages.map((page) => (
-          <PageNumberButton
-            key={page}
-            currentPage={currentPage}
-            onPageChange={onPageChange}
-            page={page}
-            totalPages={totalPages}
-          />
-        ))}
-      </FocusScope>
+      {pages.map((page) => (
+        <PageNumberButton
+          key={page}
+          currentPage={currentPage}
+          onPageChange={onPageChange}
+          page={page}
+          totalPages={totalPages}
+        />
+      ))}
     </ul>
   );
 }
@@ -170,6 +166,8 @@ type PageNumberButtonProps = {
 
 function PageNumberButton({ currentPage, totalPages, onPageChange, page }: Readonly<PageNumberButtonProps>) {
   const focusManager = useFocusManager();
+  const { isFocusVisible } = useFocusVisible();
+
   const { keyboardProps } = useKeyboard({
     onKeyUp(event) {
       if (event.key === "ArrowLeft") {
@@ -194,13 +192,13 @@ function PageNumberButton({ currentPage, totalPages, onPageChange, page }: Reado
   });
 
   return (
-    <li key={page} {...keyboardProps} className="flex-1 grow">
+    <li key={page} {...keyboardProps} className="flex flex-1 grow justify-center">
       <Button
         aria-label={`Page number ${page}`}
         onPress={() => onPageChange(page)}
         variant={page === currentPage ? "primary" : "ghost"}
         size="sm"
-        autoFocus={page === currentPage}
+        autoFocus={page === currentPage && isFocusVisible}
         className="tabular-nums duration-0"
       >
         {page}
@@ -211,10 +209,10 @@ function PageNumberButton({ currentPage, totalPages, onPageChange, page }: Reado
 
 function Separator() {
   return (
-    <div className="flex-1 grow">
+    <li className="flex-1 grow">
       <Button isDisabled variant="ghost" className="font-bold text-lg tabular-nums">
         ..
       </Button>
-    </div>
+    </li>
   );
 }
