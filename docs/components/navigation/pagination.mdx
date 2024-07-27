@@ -1,0 +1,85 @@
+# Pagination
+
+Pagination is a component that allows users to navigate through pages of content.
+
+```tsx preview
+import { useState } from "react";
+import { Pagination } from "@/ui/components/Pagination"
+ 
+export default function Example() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 3;
+  return (
+    <div className="w-fit">
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+      />
+    </div>
+  )
+}
+```
+
+```tsx preview
+import { useState } from "react";
+import { Pagination } from "@/ui/components/Pagination"
+ 
+export default function Example() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 10;
+  return (
+    <div className="w-auto">
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+      />
+    </div>
+  )
+}
+```
+
+```tsx preview
+import { useState } from "react";
+import { Pagination } from "@/ui/components/Pagination"
+ 
+export default function Example() {
+  const [currentPage, setCurrentPage] = useState(50);
+  const totalPages = 100;
+  return (
+    <div className="flex flex-col gap-8">
+      <div className="w-fit">
+        <Pagination
+          size={7}
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
+      </div>
+      <div className="w-full text-center">Current page: {currentPage} - last page: {totalPages}</div>
+    </div>
+  )
+}
+```
+
+```tsx preview
+import { useState } from "react";
+import { Pagination } from "@/ui/components/Pagination"
+ 
+export default function Example() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 3;
+  return (
+    <div className="w-fit">
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+        previousLabel="Previous"
+        nextLabel="Next"
+      />
+    </div>
+  )
+}
+```

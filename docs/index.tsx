@@ -55,6 +55,7 @@ import { BoldIcon, HelpCircleIcon, ItalicIcon, MoreHorizontalIcon, Pencil, Under
 import type { ReactNode } from "react";
 import { DialogTrigger, FileTrigger, MenuTrigger, TableBody, Text, TooltipTrigger } from "react-aria-components";
 import { chartDataMedium, radarDataMedium } from "./charts/_lib/data";
+import { Pagination } from "@/ui/components/Pagination";
 
 export const frontmatter = {
   pageType: "custom"
@@ -416,6 +417,9 @@ export default function Home() {
               <TabPanel id="MaR">Senatus Populusque Romanus.</TabPanel>
               <TabPanel id="Emp">Alea jacta est.</TabPanel>
             </Tabs>
+          </ComponentExample>
+          <ComponentExample name="Pagination" href="/components/navigation/pagination.html">
+            <Pagination currentPage={2} totalPages={3} onPageChange={() => {}} />
           </ComponentExample>
 
           <ComponentExample name="AlertDialog" href="/components/overlays/alert-dialog.html">
