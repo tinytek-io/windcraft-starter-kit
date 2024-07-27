@@ -83,3 +83,43 @@ export default function Example() {
   )
 }
 ```
+
+```tsx preview
+import { useState } from "react";
+import { Pagination } from "@/ui/components/Pagination"
+ 
+export default function Example() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 5;
+  return (
+    <div className="w-fit">
+      <Pagination
+        size={5}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+      />
+    </div>
+  )
+}
+```
+
+```tsx preview
+import { useState } from "react";
+import { Pagination } from "@/ui/components/Pagination"
+ 
+export default function Example() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 10;
+  return (
+    <div className="w-fit">
+      <Pagination
+        size={5}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+      />
+    </div>
+  )
+}
+```

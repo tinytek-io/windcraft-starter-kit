@@ -8,6 +8,10 @@ const pageBackgroundStyle = tv({
   base: "flex gap-1 rounded-md h-10 w-full items-center"
 });
 
+const paginationStyles = tv({
+  base: "flex gap-4 w-full justify-between"
+});
+
 type PaginationProps = {
   size?: number;
   currentPage: number;
@@ -15,6 +19,7 @@ type PaginationProps = {
   previousLabel?: ReactNode;
   nextLabel?: ReactNode;
   onPageChange: (page: number) => void;
+  className?: string;
 };
 
 export function Pagination({
@@ -23,14 +28,15 @@ export function Pagination({
   totalPages,
   onPageChange,
   previousLabel,
-  nextLabel
+  nextLabel,
+  className
 }: Readonly<PaginationProps>) {
   if (size % 2 === 0) {
     throw new Error("Pagination size must be an odd number");
   }
 
   const isEdge = currentPage < Math.floor(size / 2) || currentPage > totalPages - Math.floor(size / 2);
-  const isSmall = totalPages <= size;
+  const isSmall = totalPages <= size || (size <= 5 && totalPages <= 5);
 
   const handlePrevious = () => {
     onPageChange(currentPage - 1);
@@ -44,7 +50,7 @@ export function Pagination({
   const isLastPage = currentPage === totalPages;
 
   return (
-    <nav aria-label="Pagination" className="flex gap-4 w-full justify-between">
+    <nav aria-label="Pagination" className={paginationStyles({ className })}>
       <Button variant="secondary" className="" onPress={handlePrevious} isDisabled={isFirstPage}>
         <ArrowLeftIcon className="w-4 h-4" />
         {previousLabel && <span className="hidden sm:block">{previousLabel}</span>}
