@@ -16,6 +16,7 @@ import { DateField } from "@/ui/components/DateField";
 import { DatePicker } from "@/ui/components/DatePicker";
 import { DateRangePicker } from "@/ui/components/DateRangePicker";
 import { Dialog } from "@/ui/components/Dialog";
+import { DomainInputField } from "@/ui/components/DomainInputField";
 import { DropZone } from "@/ui/components/DropZone";
 import { Form } from "@/ui/components/Form";
 import { GridList, GridListItem } from "@/ui/components/GridList";
@@ -38,6 +39,7 @@ import { RangeCalendar } from "@/ui/components/RangeCalendar";
 import { SearchField } from "@/ui/components/SearchField";
 import { Select, SelectItem } from "@/ui/components/Select";
 import { Separator } from "@/ui/components/Separator";
+import { MenuButton, SideMenu, SideMenuSeparator } from "@/ui/components/SideMenu";
 import { Slider } from "@/ui/components/Slider";
 import { StatusLight } from "@/ui/components/StatusLight";
 import { Switch } from "@/ui/components/Switch";
@@ -52,7 +54,17 @@ import { Toolbar, ToolbarGroup } from "@/ui/components/Toolbar";
 import { Tooltip } from "@/ui/components/Tooltip";
 import { parseDate } from "@internationalized/date";
 import NoSearchResults from "@spectrum-icons/illustrations/NoSearchResults";
-import { BoldIcon, HelpCircleIcon, ItalicIcon, MoreHorizontalIcon, Pencil, UnderlineIcon } from "lucide-react";
+import {
+  BoldIcon,
+  CircleUserIcon,
+  HelpCircleIcon,
+  HomeIcon,
+  ItalicIcon,
+  MoreHorizontalIcon,
+  Pencil,
+  UnderlineIcon,
+  UsersIcon
+} from "lucide-react";
 import type { ReactNode } from "react";
 import { DialogTrigger, FileTrigger, MenuTrigger, TableBody, Text, TooltipTrigger } from "react-aria-components";
 import { chartDataMedium, radarDataMedium } from "./charts/_lib/data";
@@ -345,6 +357,16 @@ export default function Home() {
               </div>
             </Form>
           </ComponentExample>
+          <ComponentExample name="DomainInputField" href="/components/forms/domain-input-field.html">
+            <DomainInputField
+              domain="example.com"
+              label="Subdomain"
+              placeholder="Subdomain"
+              errorMessage="Subdomain is required"
+              description="Enter subdomain for your account"
+              isSubdomainFree
+            />
+          </ComponentExample>
           <ComponentExample name="Input" href="/components/forms/input.html">
             <TextField className="grid gap-1.5">
               <Label>First name</Label>
@@ -420,6 +442,14 @@ export default function Home() {
           </ComponentExample>
           <ComponentExample name="Pagination" href="/components/navigation/pagination.html">
             <Pagination currentPage={2} totalPages={3} onPageChange={() => {}} />
+          </ComponentExample>
+          <ComponentExample name="SideMenu" href="/components/navigation/side-menu.html">
+            <SideMenu>
+              <MenuButton icon={HomeIcon} label="Home" href="/" />
+              <SideMenuSeparator>Organization</SideMenuSeparator>
+              <MenuButton icon={CircleUserIcon} label="Account" href="/" />
+              <MenuButton icon={UsersIcon} label="Users" href="/" />
+            </SideMenu>
           </ComponentExample>
 
           <ComponentExample name="AlertDialog" href="/components/overlays/alert-dialog.html">
