@@ -1,0 +1,23 @@
+# SideMenu
+
+The `SideMenu` component is a container for a list of links that can be used for navigation. It is typically used in a sidebar.
+
+## Usage
+
+```tsx
+import { SideMenu, MenuButton, SideMenuSeparator } from '@/ui/components/SideMenu';
+import { HomeIcon, CircleUserIcon, UsersIcon } from "lucide-react"
+
+export default function Example() {
+  return (
+    <div className="w-full h-full">
+      <SideMenu>
+        <MenuButton icon={HomeIcon} label="Home" href="/" />
+        <SideMenuSeparator>Organization</SideMenuSeparator>
+        <MenuButton icon={CircleUserIcon} label="Account" href="/" />
+        <MenuButton icon={UsersIcon} label="Users" href="/" />
+      </SideMenu>
+    </div>
+  );
+}
+```
