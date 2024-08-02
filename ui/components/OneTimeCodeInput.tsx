@@ -59,7 +59,7 @@ export function OneTimeCodeInput({
     setFocus(nextFocusIndex);
   };
   return (
-    <div className="flex flex-row gap-4" aria-label="One time code">
+    <div className="flex w-full min-w-80 flex-row justify-center gap-4" aria-label="One time code">
       {digits.map((digit, i) => (
         <Digit
           // biome-ignore lint/suspicious/noArrayIndexKey: The index is used as a unique key for the digit
