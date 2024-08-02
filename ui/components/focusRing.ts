@@ -13,3 +13,8 @@ export const focusRing = tv({
     }
   }
 });
+
+export const focusRingBorderedField = tv({
+  extend: focusRing,
+  base: "leading-none flex items-center min-h-9 max-h-9 px-2 bg-background text-foreground border border-input rounded-md placeholder:text-muted-foreground text-sm"
+});

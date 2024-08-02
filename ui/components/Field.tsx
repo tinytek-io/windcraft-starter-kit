@@ -3,7 +3,7 @@
  */
 import { Group, type GroupProps, composeRenderProps } from "react-aria-components";
 import { tv } from "tailwind-variants";
-import { focusRing } from "./focusRing";
+import { focusRingBorderedField } from "./focusRing";
 
 export const fieldBorderStyles = tv({
   variants: {
@@ -21,8 +21,8 @@ export const fieldBorderStyles = tv({
 });
 
 export const fieldGroupStyles = tv({
-  extend: focusRing,
-  base: "group flex items-center h-9 bg-background forced-colors:bg-[Field] border-2 rounded-md overflow-hidden",
+  extend: focusRingBorderedField,
+  base: "group forced-colors:bg-[Field] overflow-hidden gap-1",
   variants: fieldBorderStyles.variants
 });
 

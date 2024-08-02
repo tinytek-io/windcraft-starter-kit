@@ -28,8 +28,8 @@ export type { Key } from "react-aria-components";
 const buttonStyles = tv({
   extend: focusRing,
   base: [
-    "flex items-center h-9 text-start gap-4 w-full min-w-[150px] cursor-default pl-3 pr-2 py-2 transition",
-    "border-2 border-border rounded-md text-foreground"
+    "flex min-h-9 max-h-9 items-center text-start gap-4 w-full min-w-[150px] cursor-default pl-2 pr-2 transition",
+    "border border-border rounded-md text-foreground"
   ],
   variants: {
     isInvalid: {
@@ -67,7 +67,7 @@ export function Select<T extends object>({
     <AriaSelect {...props} name={name} className={composeTailwindRenderProps(className, "group flex flex-col gap-1")}>
       {label && <Label>{label}</Label>}
       <Button className={(renderProps) => buttonStyles({ ...renderProps, isInvalid })}>
-        <SelectValue className="flex-1 text-sm placeholder-shown:italic" />
+        <SelectValue className="flex-1 text-muted-foreground text-sm" />
         <ChevronDown
           aria-hidden
           className="h-4 w-4 text-muted-foreground group-disabled:text-muted forced-colors:text-[ButtonText] forced-colors:group-disabled:text-[GrayText]"
