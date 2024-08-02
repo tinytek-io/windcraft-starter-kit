@@ -2,6 +2,7 @@ import { DotIcon } from "lucide-react";
 import { TextField } from "react-aria-components";
 import { Button } from "../components/Button";
 import { Description } from "../components/Description";
+import { DomainInputField } from "../components/DomainInputField";
 import { FieldError } from "../components/FieldError";
 import { Form } from "../components/Form";
 import { Heading } from "../components/Heading";
@@ -9,7 +10,6 @@ import { Input } from "../components/Input";
 import { Label } from "../components/Label";
 import { Link } from "../components/Link";
 import { Select, SelectItem } from "../components/Select";
-import { DomainInput } from "./components/DomainInput";
 import logoMarkUrl from "./images/logo-mark.svg";
 import poweredByUrl from "./images/powered-by.svg";
 
@@ -35,7 +35,7 @@ export function AccountRegistrationForm() {
       </TextField>
       <TextField className="flex w-full flex-col">
         <Label>Subdomain</Label>
-        <DomainInput name="subdomain" domain=".platformplatform.com" required placeholder="subdomain" />
+        <DomainInputField name="subdomain" domain=".windcraft.dev" isRequired placeholder="subdomain" />
         <FieldError />
       </TextField>
       <TextField className="flex w-full flex-col">
