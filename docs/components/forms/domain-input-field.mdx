@@ -1,0 +1,93 @@
+# DomainInputField
+
+The `DomainInputField` component is a text input field that is used to capture domain names.
+
+```tsx
+import { DomainInputField } from '@/ui/components/DomainInputField';
+
+export default function Example() {
+  return (
+    <DomainInputField
+      domain="example.com"
+      label="Subdomain"
+      placeholder="Subdomain"
+      errorMessage="Subdomain is required"
+      description="Enter subdomain for your account"
+    />
+  );
+}
+```
+
+## Available
+```tsx
+import { DomainInputField } from '@/ui/components/DomainInputField';
+
+export default function Example() {
+  return (
+    <DomainInputField
+      domain="example.com"
+      label="Subdomain"
+      placeholder="Subdomain"
+      errorMessage="Subdomain is required"
+      description="Enter subdomain for your account"
+      isSubdomainFree
+    />
+  );
+}
+```
+
+## Not available
+```tsx
+import { DomainInputField } from '@/ui/components/DomainInputField';
+
+export default function Example() {
+  return (
+    <DomainInputField
+      domain="example.com"
+      label="Subdomain"
+      placeholder="Subdomain"
+      errorMessage="Subdomain is required"
+      description="Enter subdomain for your account"
+      isSubdomainFree={false}
+    />
+  );
+}
+```
+
+## Invalid
+
+```tsx
+import { DomainInputField } from '@/ui/components/DomainInputField';
+
+export default function Example() {
+  return (
+    <DomainInputField
+      domain="example.com"
+      label="Subdomain"
+      placeholder="Subdomain"
+      errorMessage="Subdomain is required"
+      description="Enter subdomain for your account"
+      isInvalid
+    />
+  );
+}
+```
+
+## Disabled
+
+```tsx
+import { DomainInputField } from '@/ui/components/DomainInputField';
+
+export default function Example() {
+  return (
+    <DomainInputField
+      domain="example.com"
+      label="Subdomain"
+      placeholder="Subdomain"
+      errorMessage="Subdomain is required"
+      description="Enter subdomain for your account"
+      isDisabled
+    />
+  );
+}
+```
