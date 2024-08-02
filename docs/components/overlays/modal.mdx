@@ -37,3 +37,119 @@ export default function Example() {
   );
 }
 ```
+
+## Distance to the edge
+
+```tsx
+import { Heading } from '@/ui/components/Heading';
+import { Dialog, DialogTrigger } from '@/ui/components/Dialog';
+import { Form } from '@/ui/components/Form';
+import { TextField } from '@/ui/components/TextField';
+import { Modal } from '@/ui/components/Modal';
+import { Button } from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <>
+      <DialogTrigger>
+        <Button>Top</Button>
+        <Modal position="top" isDismissable>
+          <Dialog>
+            {({ close }) => (<Heading slot="title">Hello</Heading>)}
+          </Dialog>
+        </Modal>
+      </DialogTrigger>
+      <DialogTrigger>
+        <Button>Buttom</Button>
+        <Modal position="bottom" isDismissable>
+          <Dialog>
+            {({ close }) => (<Heading slot="title">Hello</Heading>)}
+          </Dialog>
+        </Modal>
+      </DialogTrigger>
+      <DialogTrigger>
+        <Button>Left</Button>
+        <Modal position="left" isDismissable>
+          <Dialog>
+            {({ close }) => (<Heading slot="title">Hello</Heading>)}
+          </Dialog>
+        </Modal>
+      </DialogTrigger>
+      <DialogTrigger>
+        <Button>Right</Button>
+        <Modal position="right" isDismissable>
+          <Dialog>
+            {({ close }) => (<Heading slot="title">Hello</Heading>)}
+          </Dialog>
+        </Modal>
+      </DialogTrigger>
+      <DialogTrigger>
+        <Button>Center</Button>
+        <Modal position="center" isDismissable>
+          <Dialog>
+            {({ close }) => (<Heading slot="title">Hello</Heading>)}
+          </Dialog>
+        </Modal>
+      </DialogTrigger>
+    </>
+  );
+}
+```
+
+## FullSize / No Distance to the edge
+
+```tsx
+import { Heading } from '@/ui/components/Heading';
+import { Dialog, DialogTrigger } from '@/ui/components/Dialog';
+import { Form } from '@/ui/components/Form';
+import { TextField } from '@/ui/components/TextField';
+import { Modal } from '@/ui/components/Modal';
+import { Button } from '@/ui/components/Button';
+
+export default function Example() {
+  return (
+    <>
+      <DialogTrigger>
+        <Button>Top</Button>
+        <Modal position="top" isDismissable fullSize>
+          <Dialog>
+            {({ close }) => (<Heading slot="title">Hello</Heading>)}
+          </Dialog>
+        </Modal>
+      </DialogTrigger>
+      <DialogTrigger>
+        <Button>Buttom</Button>
+        <Modal position="bottom" isDismissable fullSize>
+          <Dialog>
+            {({ close }) => (<Heading slot="title">Hello</Heading>)}
+          </Dialog>
+        </Modal>
+      </DialogTrigger>
+      <DialogTrigger>
+        <Button>Left</Button>
+        <Modal position="left" isDismissable fullSize>
+          <Dialog>
+            {({ close }) => (<Heading slot="title">Hello</Heading>)}
+          </Dialog>
+        </Modal>
+      </DialogTrigger>
+      <DialogTrigger>
+        <Button>Right</Button>
+        <Modal position="right" isDismissable fullSize>
+          <Dialog>
+            {({ close }) => (<Heading slot="title">Hello</Heading>)}
+          </Dialog>
+        </Modal>
+      </DialogTrigger>
+      <DialogTrigger>
+        <Button>Center</Button>
+        <Modal position="center" isDismissable fullSize>
+          <Dialog>
+            {({ close }) => (<Heading slot="title">Hello</Heading>)}
+          </Dialog>
+        </Modal>
+      </DialogTrigger>
+    </>
+  );
+}
+```
