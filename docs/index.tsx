@@ -30,6 +30,7 @@ import { Menu, MenuItem, MenuSeparator } from "@/ui/components/Menu";
 import { Meter } from "@/ui/components/Meter";
 import { Modal } from "@/ui/components/Modal";
 import { NumberField } from "@/ui/components/NumberField";
+import { Pagination } from "@/ui/components/Pagination";
 import { Popover } from "@/ui/components/Popover";
 import { ProgressBar } from "@/ui/components/ProgressBar";
 import { Radio, RadioGroup } from "@/ui/components/RadioGroup";
@@ -55,7 +56,6 @@ import { BoldIcon, HelpCircleIcon, ItalicIcon, MoreHorizontalIcon, Pencil, Under
 import type { ReactNode } from "react";
 import { DialogTrigger, FileTrigger, MenuTrigger, TableBody, Text, TooltipTrigger } from "react-aria-components";
 import { chartDataMedium, radarDataMedium } from "./charts/_lib/data";
-import { Pagination } from "@/ui/components/Pagination";
 
 export const frontmatter = {
   pageType: "custom"

@@ -1,8 +1,8 @@
-import { FocusScope, useFocusManager, useFocusVisible, useKeyboard } from "react-aria";
-import { Button } from "./Button";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
-import { tv } from "tailwind-variants";
 import type { ReactNode } from "react";
+import { FocusScope, useFocusManager, useFocusVisible, useKeyboard } from "react-aria";
+import { tv } from "tailwind-variants";
+import { Button } from "./Button";
 
 const pageBackgroundStyle = tv({
   base: "flex gap-1 rounded-md h-10 w-full items-center"
@@ -52,7 +52,7 @@ export function Pagination({
   return (
     <nav aria-label="Pagination" className={paginationStyles({ className })}>
       <Button variant="secondary" className="" onPress={handlePrevious} isDisabled={isFirstPage}>
-        <ArrowLeftIcon className="w-4 h-4" />
+        <ArrowLeftIcon className="h-4 w-4" />
         {previousLabel && <span className="hidden sm:block">{previousLabel}</span>}
       </Button>
       <FocusScope>
@@ -69,7 +69,7 @@ export function Pagination({
 
       <Button variant="secondary" className="" onPress={handleNext} isDisabled={isLastPage}>
         {nextLabel && <span className="hidden sm:block">{nextLabel}</span>}
-        <ArrowRightIcon className="w-4 h-4" />
+        <ArrowRightIcon className="h-4 w-4" />
       </Button>
     </nav>
   );
