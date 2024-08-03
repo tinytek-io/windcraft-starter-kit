@@ -1,5 +1,6 @@
 import logoWrapUrl from "@/docs/public/windcraft-logo-text.webp";
 import logoMarkUrl from "@/docs/public/windcraft-logo.webp";
+import { useRouter } from "@/lib/useRouter";
 import { ChevronsLeftIcon, type LucideIcon } from "lucide-react";
 import { createContext, useCallback, useContext, useState } from "react";
 import { tv } from "tailwind-variants";
@@ -7,7 +8,6 @@ import { Button } from "./Button";
 import { Dialog, DialogTrigger } from "./Dialog";
 import { Modal } from "./Modal";
 import { Tooltip, TooltipTrigger } from "./Tooltip";
-import { useRouter } from "@/lib/useRouter";
 
 const collapsedContext = createContext(false);
 
@@ -128,7 +128,7 @@ export function SideMenu({ className, children }: Readonly<SideMenuProps>) {
     <>
       <collapsedContext.Provider value={isCollapsed}>
         <div className={sideMenuStyles({ isCollapsed, className })}>
-          <div className="h-20 px-2 w-full">
+          <div className="h-20 w-full px-2">
             <Button
               variant="ghost"
               size="sm"
@@ -155,7 +155,7 @@ export function SideMenu({ className, children }: Readonly<SideMenuProps>) {
             </Button>
             <Modal position="left" fullSize isDismissable>
               <Dialog className="w-60 p-0">
-                <div className="pb-8 px-2 pt-2">
+                <div className="px-2 pt-2 pb-8">
                   <img src={logoWrapUrl} alt="Logo Wrap" />
                 </div>
                 {children}
@@ -185,7 +185,7 @@ type SideMenuSeparatorProps = {
 export function SideMenuSeparator({ children }: Readonly<SideMenuSeparatorProps>) {
   const isCollapsed = useContext(collapsedContext);
   return (
-    <div className="pl-6 pr-2">
+    <div className="pr-2 pl-6">
       <div className={sideMenuSeparatorStyles({ isCollapsed })}>{children}</div>
     </div>
   );
