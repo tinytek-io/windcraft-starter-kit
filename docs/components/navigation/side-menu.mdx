@@ -5,18 +5,56 @@ The `SideMenu` component is a container for a list of links that can be used for
 ## Usage
 
 ```tsx
-import { SideMenu, MenuButton, SideMenuSeparator } from '@/ui/components/SideMenu';
 import { HomeIcon, CircleUserIcon, UsersIcon } from "lucide-react"
+import { SideMenu, MenuButton, SideMenuSeparator } from '@/ui/components/SideMenu';
+import { Tabs, TabList, Tab, TabPanel } from '@/ui/components/Tabs';
+import { Card } from '@/ui/components/Card';
+import { StatusLight } from '@/ui/components/StatusLight';
+import { Meter } from '@/ui/components/Meter';
 
 export default function Example() {
+  const usage = 54;
+  const total = 60;
   return (
-    <div className="w-full h-full">
+    <div className="flex gap-2 w-full h-full">
       <SideMenu>
         <MenuButton icon={HomeIcon} label="Home" isSelected />
         <SideMenuSeparator>Organization</SideMenuSeparator>
         <MenuButton icon={CircleUserIcon} label="Account" />
         <MenuButton icon={UsersIcon} label="Users" />
       </SideMenu>
+      <div className="flex flex-col">
+        <Tabs>
+          <TabList aria-label="History of Ancient Rome">
+            <Tab>
+              Dashboard
+            </Tab>
+            <Tab>
+              Users
+            </Tab>
+            <Tab>
+              Settings
+            </Tab>
+          </TabList>
+        </Tabs>
+        <div className="flex flex-col gap-2 h-full w-full p-4">
+          <div className="text-lg font-semibold">Usage</div>
+          <Card className="w-fit">
+            <div className="flex justify-between items-center text-sm w-full">
+              Disk
+              <StatusLight variant="success">Ready</StatusLight>
+            </div>
+            <Meter
+              label="Storage space"
+              maxValue={total}
+              valueLabel={`${usage} of ${total} Gb`}
+              value={usage}
+              showIndicators
+              className="w-full"
+            />
+          </Card>
+        </div>
+      </div>
     </div>
   );
 }

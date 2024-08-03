@@ -15,7 +15,7 @@ export interface MeterProps extends AriaMeterProps {
 
 export function Meter({ label, warnAt, dangerAt, showIndicators, ...props }: Readonly<MeterProps>) {
   return (
-    <AriaMeter {...props} className={composeTailwindRenderProps(props.className, "flex flex-col gap-1")}>
+    <AriaMeter {...props} className={composeTailwindRenderProps(props.className, "flex flex-col gap-1 w-64")}>
       {({ percentage, valueText }) => (
         <>
           <div className="flex justify-between gap-2">
@@ -29,7 +29,7 @@ export function Meter({ label, warnAt, dangerAt, showIndicators, ...props }: Rea
               {` ${valueText}`}
             </span>
           </div>
-          <div className="-outline-offset-1 relative h-2 w-64 rounded-full bg-muted outline outline-1 outline-transparent">
+          <div className="-outline-offset-1 relative h-2 w-full rounded-full bg-muted outline outline-1 outline-transparent">
             <div
               className={`absolute top-0 left-0 h-full rounded-full ${getTrackColor({ percentage, warnAt, dangerAt })} forced-colors:bg-[Highlight]`}
               style={{ width: `${percentage}%` }}
