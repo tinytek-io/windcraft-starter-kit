@@ -11,6 +11,7 @@
     "lint": "biome lint --write"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.0.20",
     "@internationalized/date": "^3.5.5",
     "@react-aria/accordion": "^3.0.0-alpha.30",
     "@react-aria/toast": "^3.0.0-beta.13",
@@ -42,5 +43,11 @@
     "typescript": "^5.5.4",
     "viridis": "^1.1.4",
     "zod": "^3.23.8"
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
   }
 }

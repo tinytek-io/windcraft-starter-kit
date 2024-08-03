@@ -6,12 +6,20 @@
  * Please give due credit and support the Open Source Community :)
  */
 
+@import '@fontsource/inter/300.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/inter/800.css';
+@import '@fontsource/inter/900.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
+  :root, .light {
     --background: 0 0% 100%;
     --foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
@@ -646,6 +654,18 @@
   .dark.panel-solid {
     --panel-opacity: 1;
   }
+
+  @media (prefers-color-scheme: dark) {
+    html:not(.light) {
+      @apply dark;
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    html:not(.dark) {
+      @apply light;
+    }
+  }
 }
 
 @layer base {
@@ -655,6 +675,9 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  html {
+    font-family: "Inter", sans-serif;
   }
 }
 
