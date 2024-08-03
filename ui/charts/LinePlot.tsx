@@ -6,12 +6,13 @@ import { type GroupedData, getChartColor } from "./util";
 type LinePlotProps<T extends string> = {
   data: GroupedData<T>[];
   isAnimationActive?: boolean;
+  className?: string;
 };
 
-export function LinePlot<T extends string>({ data, isAnimationActive }: LinePlotProps<T>) {
+export function LinePlot<T extends string>({ data, isAnimationActive, className }: LinePlotProps<T>) {
   const dataKeys = Object.keys(data[0]).filter((key) => key !== "name") as T[];
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="100%" height="100%" className={className}>
       <LineChart data={data}>
         <CartesianGrid />
         <Tooltip />

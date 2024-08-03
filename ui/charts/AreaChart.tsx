@@ -6,12 +6,13 @@ import { type GroupedData, getChartColor } from "./util";
 type AreaChartProps<T extends string> = {
   data: GroupedData<T>[];
   isAnimationActive?: boolean;
+  className?: string;
 };
 
-export function AreaChart<T extends string>({ data, isAnimationActive }: AreaChartProps<T>) {
+export function AreaChart<T extends string>({ data, isAnimationActive, className }: AreaChartProps<T>) {
   const dataKeys = Object.keys(data[0]).filter((key) => key !== "name") as T[];
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="100%" height="100%" className={className}>
       <ReAreaChart data={data}>
         <CartesianGrid />
         <Tooltip />

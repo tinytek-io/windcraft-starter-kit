@@ -6,12 +6,13 @@ import { type GroupedData, getChartColor } from "./util";
 type BarChartProps<T extends string> = {
   data: GroupedData<T>[];
   isAnimationActive?: boolean;
+  className?: string;
 };
 
-export function BarChart<T extends string>({ data, isAnimationActive }: BarChartProps<T>) {
+export function BarChart<T extends string>({ data, isAnimationActive, className }: BarChartProps<T>) {
   const dataKeys = Object.keys(data[0]).filter((key) => key !== "name") as T[];
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="100%" height="100%" className={className}>
       <ReBarChart data={data}>
         <CartesianGrid />
         <Tooltip />

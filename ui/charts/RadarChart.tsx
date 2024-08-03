@@ -5,9 +5,7 @@ import {
   PolarRadiusAxis,
   Radar,
   RadarChart as ReRadarChart,
-  ResponsiveContainer,
-  XAxis,
-  YAxis
+  ResponsiveContainer
 } from "recharts";
 import type { AxisDomain } from "recharts/types/util/types";
 import { Tooltip } from "./Tooltip";
@@ -18,17 +16,19 @@ type RadarChartProps<T extends string> = {
   domain: AxisDomain;
   isAnimationActive?: boolean;
   fillOpacity?: number;
+  className?: string;
 };
 
 export function RadarChart<T extends string>({
   data,
   domain,
   isAnimationActive,
-  fillOpacity = 0.3
+  fillOpacity = 0.3,
+  className
 }: RadarChartProps<T>) {
   const dataKeys = Object.keys(data[0]).filter((key) => key !== "name") as T[];
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="100%" height="100%" className={className}>
       <ReRadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
         <PolarGrid />
         <PolarAngleAxis dataKey="name" className="!text-sm" stroke="hsl(var(--foreground))" />
