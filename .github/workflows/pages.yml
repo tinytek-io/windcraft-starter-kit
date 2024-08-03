@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   build:
-    name: Build WindCraftUI documentation
+    name: Build WindCraft Starter Kit documentation
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -42,7 +42,7 @@ jobs:
           path: "doc_build/"
 
   deploy:
-    name: Deploy WindCraftUI documentation
+    name: Deploy WindCraft Starter Kit documentation
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:

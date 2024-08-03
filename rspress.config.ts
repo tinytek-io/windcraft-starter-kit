@@ -11,7 +11,7 @@ export default defineConfig({
   route: {
     exclude: ["**/_lib/*.*"]
   },
-  title: "WindCraftUI",
+  title: "WindCraft Starter Kit",
   description: "React Template Components",
   icon: "/windcraft-logo.webp",
   logo: {
