@@ -15,7 +15,7 @@ export interface MeterProps extends AriaMeterProps {
 
 export function Meter({ label, warnAt, dangerAt, showIndicators, ...props }: Readonly<MeterProps>) {
   return (
-    <AriaMeter {...props} className={composeTailwindRenderProps(props.className, "flex flex-col gap-1 w-64")}>
+    <AriaMeter {...props} className={composeTailwindRenderProps(props.className, "flex w-64 flex-col gap-1")}>
       {({ percentage, valueText }) => (
         <>
           <div className="flex justify-between gap-2">
