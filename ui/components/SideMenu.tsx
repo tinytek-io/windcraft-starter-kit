@@ -7,6 +7,7 @@ import { Button } from "./Button";
 import { Dialog, DialogTrigger } from "./Dialog";
 import { Modal } from "./Modal";
 import { Tooltip, TooltipTrigger } from "./Tooltip";
+import { useRouter } from "@/lib/useRouter";
 
 const collapsedContext = createContext(false);
 
@@ -30,50 +31,53 @@ const menuTextStyles = tv({
   }
 });
 
+const menuButtonContainerStyles = tv({
+  base: "px-2 border-r-2 w-full",
+  variants: {
+    isSelected: {
+      true: "border-primary",
+      false: "border-transparent"
+    }
+  }
+});
+
 type MenuButtonProps = {
   icon: LucideIcon;
   label: string;
-  href?: string;
+  href: string;
+  isSelected?: boolean;
+  onPress?: () => void;
 };
 
-type NavigateProps = {
-  to: string;
-};
-
-const navigate = ({ to }: NavigateProps) => {
-  window.location.href = to;
-};
-
-const useRouter = () => {
-  return { navigate };
-};
-
-export function MenuButton({ icon: Icon, label, href: to }: Readonly<MenuButtonProps>) {
+export function MenuButton({ icon: Icon, label, href: to, onPress, isSelected }: Readonly<MenuButtonProps>) {
   const isCollapsed = useContext(collapsedContext);
   const { navigate } = useRouter();
-  const onPress = useCallback(() => {
-    if (to) {
-      navigate({ to });
-    }
-  }, [to, navigate]);
+  const onPressHandle = useCallback(() => {
+    if (to != null) navigate({ to });
+    if (onPress != null) onPress();
+  }, [to, onPress, navigate]);
 
   return (
     <TooltipTrigger delay={300}>
-      <Button variant="link" className={menuButtonStyles({ isCollapsed })} onPress={onPress}>
-        <Icon className="h-6 w-6 shrink-0 grow-0" />
-        <div className={menuTextStyles({ isCollapsed })}>{label}</div>
-      </Button>
-      {isCollapsed && <Tooltip placement="right">{label}</Tooltip>}
+      <div
+        className={menuButtonContainerStyles({ isSelected: to != null ? to === window.location.pathname : isSelected })}
+      >
+        <Button variant="link" className={menuButtonStyles({ isCollapsed })} onPress={onPressHandle}>
+          <Icon className="h-6 w-6 shrink-0 grow-0 stroke-foreground" />
+          <div className={menuTextStyles({ isCollapsed })}>{label}</div>
+        </Button>
+        {isCollapsed && <Tooltip placement="right">{label}</Tooltip>}
+      </div>
     </TooltipTrigger>
   );
 }
 
 const sideMenuStyles = tv({
-  base: "relative hidden sm:flex flex-col pr-2 py-4 transition-all duration-300 items-start shrink-0 grow-0 z-50",
+  base: "relative hidden sm:flex flex-col py-4 transition-all duration-300 items-start shrink-0 grow-0 z-50 bg-white/80 dark:bg-black/20 backdrop-blur-sm",
   variants: {
     isCollapsed: {
-      true: "w-[72px] gap-2 pl-2 ease-out",
-      false: "w-72 gap-4 pl-8 ease-in"
+      true: "w-[72px] gap-2 ease-out",
+      false: "w-72 gap-4 pl-6 ease-in"
     }
   }
 });
@@ -124,7 +128,7 @@ export function SideMenu({ className, children }: Readonly<SideMenuProps>) {
     <>
       <collapsedContext.Provider value={isCollapsed}>
         <div className={sideMenuStyles({ isCollapsed, className })}>
-          <div className="h-20">
+          <div className="h-20 px-2 w-full">
             <Button
               variant="ghost"
               size="sm"
@@ -149,9 +153,9 @@ export function SideMenu({ className, children }: Readonly<SideMenuProps>) {
             <Button aria-label="Help" variant="icon">
               <img src={logoMarkUrl} alt="Logo" className="h-8 w-8" />
             </Button>
-            <Modal position="left" fullSize>
-              <Dialog className="w-60">
-                <div className="pb-8">
+            <Modal position="left" fullSize isDismissable>
+              <Dialog className="w-60 p-0">
+                <div className="pb-8 px-2 pt-2">
                   <img src={logoWrapUrl} alt="Logo Wrap" />
                 </div>
                 {children}
@@ -181,7 +185,7 @@ type SideMenuSeparatorProps = {
 export function SideMenuSeparator({ children }: Readonly<SideMenuSeparatorProps>) {
   const isCollapsed = useContext(collapsedContext);
   return (
-    <div className="pl-4">
+    <div className="pl-6 pr-2">
       <div className={sideMenuSeparatorStyles({ isCollapsed })}>{children}</div>
     </div>
   );
