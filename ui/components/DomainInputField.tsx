@@ -57,7 +57,14 @@ export function DomainInputField({
       {label && <Label>{label}</Label>}
       <Group className={inputStyles({ isInvalid, isFocusVisible })}>
         <div className="flex grow overflow-hidden">
-          <Input {...focusProps} isEmbedded placeholder={placeholder} autoComplete={autocomplete} autoCorrect="off" />
+          <Input
+            {...focusProps}
+            isEmbedded
+            placeholder={placeholder}
+            autoComplete={autocomplete}
+            autoCorrect="off"
+            spellCheck="false"
+          />
         </div>
         <div className="flex w-fit items-center gap-1 px-1 text-muted-foreground text-xs">
           {domain}
