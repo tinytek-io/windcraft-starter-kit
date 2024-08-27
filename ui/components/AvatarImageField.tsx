@@ -1,7 +1,7 @@
+import { useMemo, useState } from "react";
 import { FileTrigger, type FileTriggerProps, InputContext } from "react-aria-components";
 import { Avatar } from "./Avatar";
 import { Button } from "./Button";
-import { useMemo, useState } from "react";
 
 type AvatarImageFieldProps = {
   name: string;
@@ -30,7 +30,7 @@ export function AvatarImageField({
     <div className="flex flex-col gap-3">
       {label && <label>{label}</label>}
       <InputContext.Provider value={inputContext}>
-        <div className="flex flex-row gap-4 items-center">
+        <div className="flex flex-row items-center gap-4">
           <FileTrigger
             {...props}
             acceptedFileTypes={acceptedFileTypes}

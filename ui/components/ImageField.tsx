@@ -1,6 +1,6 @@
+import { useMemo, useState } from "react";
 import { FileTrigger, type FileTriggerProps, InputContext } from "react-aria-components";
 import { Button } from "./Button";
-import { useMemo, useState } from "react";
 
 type ImageFieldProps = {
   name: string;
@@ -29,7 +29,7 @@ export function ImageField({
     <div className="flex flex-col gap-3">
       {label && <label>{label}</label>}
       <InputContext.Provider value={inputContext}>
-        <div className="flex flex-row gap-4 items-center">
+        <div className="flex flex-row items-center gap-4">
           <FileTrigger
             {...props}
             acceptedFileTypes={acceptedFileTypes}
@@ -42,7 +42,7 @@ export function ImageField({
               }
             }}
           >
-            <Button variant="icon" className="rounded-md w-fit h-fit p-1">
+            <Button variant="icon" className="h-fit w-fit rounded-md p-1">
               <img src={previewUrl ?? imageUrl} alt={name} height={height} width={width} />
             </Button>
           </FileTrigger>
