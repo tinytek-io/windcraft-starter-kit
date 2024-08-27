@@ -1,0 +1,63 @@
+# ImageField
+
+The `ImageField` component is used to upload an image.
+
+```tsx
+import { ImageField } from '@/ui/components/ImageField';
+
+export default function Example() {
+  return (
+    <ImageField
+      name="image"
+      label="Image"
+      placeholder="Upload a logo (46x46px png)"
+      imageUrl={"/windcraft-logo.webp"}
+      height={46}
+      width={46}
+      acceptedFileTypes={["image/png"]}
+    />
+  );
+}
+```
+
+## Invalid
+
+```tsx
+import { ImageField } from '@/ui/components/ImageField';
+
+export default function Example() {
+  return (
+    <ImageField
+      name="image"
+      label="Image"
+      placeholder="Upload a logo (46x46px png)"
+      imageUrl={undefined}
+      height={46}
+      width={46}
+      acceptedFileTypes={["image/png"]}
+      isInvalid
+    />
+  );
+}
+```
+
+## Disabled
+
+```tsx
+import { ImageField } from '@/ui/components/ImageField';
+
+export default function Example() {
+  return (
+    <ImageField
+      name="image"
+      label="Image"
+      placeholder="Upload a logo (46x46px png)"
+      imageUrl={undefined}
+      height={46}
+      width={46}
+      acceptedFileTypes={["image/png"]}
+      isDisabled
+    />
+  );
+}
+```

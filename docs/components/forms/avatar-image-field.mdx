@@ -1,0 +1,60 @@
+# AvatarImageField
+
+The `AvatarImageField` component is used to upload an image and display it as an avatar.
+
+```tsx
+import { AvatarImageField } from '@/ui/components/AvatarImageField';
+
+export default function Example() {
+  return (
+    <AvatarImageField
+      name="image"
+      label="Photo"
+      placeholder="Upload an image"
+      avatarUrl={"/windcraft-logo.webp"}
+      initials={"W"}
+      acceptedFileTypes={["image/png"]}
+    />
+  );
+}
+```
+
+## Invalid
+
+```tsx
+import { AvatarImageField } from '@/ui/components/AvatarImageField';
+
+export default function Example() {
+  return (
+    <AvatarImageField
+      name="image"
+      label="Photo"
+      placeholder="Upload an image"
+      avatarUrl={undefined}
+      initials={"W"}
+      acceptedFileTypes={["image/png"]}
+      isInvalid
+    />
+  );
+}
+```
+
+## Disabled
+
+```tsx
+import { AvatarImageField } from '@/ui/components/AvatarImageField';
+
+export default function Example() {
+  return (
+    <AvatarImageField
+      name="image"
+      label="Photo"
+      placeholder="Upload an image"
+      avatarUrl={undefined}
+      initials={"W"}
+      acceptedFileTypes={["image/png"]}
+      isDisabled
+    />
+  );
+}
+```
