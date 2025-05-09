@@ -41,7 +41,7 @@ export function PieChart<T extends string>({ data, isAnimationActive, className 
             stroke={getChartColor(index, dataKeys.length)}
             fill={getChartColor(index, dataKeys.length)}
             {...radius[index]}
-            className="!stroke-border"
+            className="stroke-border!"
             paddingAngle={1}
             isAnimationActive={isAnimationActive}
           />

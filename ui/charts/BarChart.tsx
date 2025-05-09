@@ -21,12 +21,12 @@ export function BarChart<T extends string>({ data, isAnimationActive, className 
             key={key}
             dataKey={key}
             fill={getChartColor(index, dataKeys.length)}
-            className="!stroke-border"
+            className="stroke-border!"
             isAnimationActive={isAnimationActive}
           />
         ))}
-        <XAxis dataKey="name" className="!text-sm" stroke="hsl(var(--muted-foreground))" />
-        <YAxis className="!text-sm" stroke="hsl(var(--muted-foreground))" />
+        <XAxis dataKey="name" className="text-sm!" stroke="hsl(var(--muted-foreground))" />
+        <YAxis className="text-sm!" stroke="hsl(var(--muted-foreground))" />
         <Legend stroke="hsl(var(--muted-foreground))" />
       </ReBarChart>
     </ResponsiveContainer>
