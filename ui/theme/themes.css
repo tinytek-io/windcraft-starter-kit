@@ -6,25 +6,25 @@
  * Please give due credit and support the Open Source Community :)
  */
 
-@import '@fontsource/inter/300.css' layer(base);
-@import '@fontsource/inter/400.css' layer(base);
-@import '@fontsource/inter/500.css' layer(base);
-@import '@fontsource/inter/600.css' layer(base);
-@import '@fontsource/inter/700.css' layer(base);
-@import '@fontsource/inter/800.css' layer(base);
-@import '@fontsource/inter/900.css' layer(base);
+@import "@fontsource/inter/300.css" layer(base);
+@import "@fontsource/inter/400.css" layer(base);
+@import "@fontsource/inter/500.css" layer(base);
+@import "@fontsource/inter/600.css" layer(base);
+@import "@fontsource/inter/700.css" layer(base);
+@import "@fontsource/inter/800.css" layer(base);
+@import "@fontsource/inter/900.css" layer(base);
 
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin 'tailwindcss-animate';
 @plugin 'tailwindcss-react-aria-components';
 
 @custom-variant dark (&:is(.dark *));
+/*@custom-variant dark (&:where(.dark, .dark *));*/
 
 @theme {
-  --font-sans:
-    Inter, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
 
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
@@ -120,7 +120,8 @@
 }
 
 @layer base {
-  :root, .light {
+  :root,
+  .light {
     --background: 0 0% 100%;
     --foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
@@ -756,17 +757,18 @@
     --panel-opacity: 1;
   }
 
+  /*
   @media (prefers-color-scheme: dark) {
-    /* html:not(.light) {
+    html:not(.light) {
       @apply dark;
-    }*/
+    }
   }
 
   @media (prefers-color-scheme: light) {
-    /*html:not(.dark) {
+    html:not(.dark) {
       @apply light;
-    }*/
-  }
+    }
+  }*/
 }
 
 @layer base {
@@ -782,7 +784,9 @@
   }
 }
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   width: 100%;
   padding: 0;
