@@ -28,12 +28,12 @@ const styles = tv({
   base: "inline-flex gap-1 items-center justify-center whitespace-nowrap rounded-md px-5 py-2 text-sm transition forced-colors:border-[ButtonBorder] forced-color-adjust-none cursor-pointer",
   variants: {
     variant: {
-      primary: "[--text-color:theme(colors.primary.foreground)] [--color:theme(colors.primary.DEFAULT)]",
-      secondary: "[--text-color:theme(colors.secondary.foreground)] [--color:theme(colors.secondary.DEFAULT)]",
-      destructive: "[--text-color:theme(colors.destructive.foreground)] [--color:theme(colors.destructive.DEFAULT)]",
+      primary: "[--text-color:var(--color-primary-foreground)] [--color:var(--color-primary)]",
+      secondary: "[--text-color:var(--color-secondary-foreground)] [--color:var(--color-secondary)]",
+      destructive: "[--text-color:var(--color-destructive-foreground)] [--color:var(--color-destructive)]",
       outline:
-        "border border-input [--text-color:theme(colors.accent.foreground)] [--color:theme(colors.accent.DEFAULT)]",
-      ghost: "[--text-color:theme(colors.accent.foreground)] [--color:theme(colors.accent.DEFAULT)]"
+        "border border-input [--text-color:var(--color-accent-foreground)] [--color:var(--color-accent)]",
+      ghost: "[--text-color:var(--color-accent-foreground)] [--color:var(--color-accent)]"
     },
     size: {
       sm: "h-9 px-3",
@@ -45,8 +45,8 @@ const styles = tv({
     },
     isSelected: {
       false:
-        "bg-background text-foreground hover:bg-[--color] hover:text-[--text-color] pressed:opacity-90 hover:opacity-50",
-      true: "text-[--text-color] bg-[--color] border-[--color] pressed:opacity-80 hover:opacity-90"
+        "bg-background text-foreground hover:bg-(--color) hover:text-(--text-color) pressed:opacity-90 hover:opacity-50",
+      true: "text-(--text-color) bg-(--color) border-(--color) pressed:opacity-80 hover:opacity-90"
     }
   },
   defaultVariants: {

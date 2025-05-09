@@ -75,7 +75,7 @@ export function Select<T extends object>({
       </Button>
       {description && <Description>{description}</Description>}
       <FieldError>{errorMessage}</FieldError>
-      <Popover className="min-w-[--trigger-width]">
+      <Popover className="min-w-(--trigger-width)">
         <ListBox
           items={items}
           className="max-h-[inherit] overflow-auto p-1 outline-none [clip-path:inset(0_0_0_0_round_.75rem)]"

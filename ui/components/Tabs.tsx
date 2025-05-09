@@ -41,8 +41,8 @@ const tabListStyles = tv({
   base: "flex gap-1 border-border",
   variants: {
     orientation: {
-      horizontal: "flex-row border-b [&>*]:border-b-2",
-      vertical: "flex-col items-start border-r [&>*]:border-r-2 [&>*]:w-full"
+      horizontal: "flex-row border-b *:border-b-2",
+      vertical: "flex-col items-start border-r *:border-r-2 *:w-full"
     }
   }
 });

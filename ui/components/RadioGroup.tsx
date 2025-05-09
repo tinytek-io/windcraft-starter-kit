@@ -37,11 +37,11 @@ const indicatorStyles = tv({
   base: "flex w-5 h-5 items-center justify-center rounded-full border-2 bg-accent/50 transition-all",
   variants: {
     isSelected: {
-      false: "bg-background border-[--color] [--color:theme(colors.foreground)] group-pressed:opacity-90",
-      true: "border-[7px] border-[--color] [--color:theme(colors.primary.DEFAULT)] group-pressed:group-pressed:opacity-90"
+      false: "bg-background border-(--color) [--color:var(--color-foreground)] group-pressed:opacity-90",
+      true: "border-[7px] border-(--color) [--color:var(--color-primary)] group-pressed:group-pressed:opacity-90"
     },
     isInvalid: {
-      true: "text-destructive-foreground [--color:theme(colors.destructive.DEFAULT)] group-pressed:group-pressed:opacity-90"
+      true: "text-destructive-foreground [--color:var(--color-destructive)] group-pressed:group-pressed:opacity-90"
     },
     isDisabled: {
       true: "opacity-50 cursor-not-allowed"

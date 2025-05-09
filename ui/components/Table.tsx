@@ -56,7 +56,7 @@ export function Column({ children, className, ...props }: Readonly<ColumnProps>)
       {...props}
       className={composeTailwindRenderProps(
         className,
-        "cursor-default text-start font-semibold text-muted-foreground [&:focus-within]:z-20 [&:hover]:z-20"
+        "cursor-default text-start font-semibold text-muted-foreground focus-within:z-20 [&:hover]:z-20"
       )}
     >
       {composeRenderProps(children, (children, { allowsSorting, sortDirection }) => (
@@ -144,7 +144,7 @@ export function Row<T extends object>({ id, columns, children, ...otherProps }: 
 
 const cellStyles = tv({
   extend: focusRing,
-  base: "border-b border-b-border group-first/row:border-y group-first/row:border-t-border group-last/row:border-b-0 group-selected/row:border-ring [:has(+[data-selected])_&]:border-ring p-4 truncate -outline-offset-2"
+  base: "border-b border-b-border group-first/row:border-y group-first/row:border-t-border group-last/row:border-b-0 group-selected/row:border-ring in-[:has(+[data-selected])]:border-ring p-4 truncate -outline-offset-2"
 });
 
 export function Cell(props: Readonly<CellProps>) {

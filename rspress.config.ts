@@ -6,7 +6,7 @@ import { defineConfig } from "rspress/config";
 
 export default defineConfig({
   ssg: false,
-  globalStyles: path.join(__dirname, "styles", "index.css"),
+  globalStyles: path.join(__dirname, "styles", "rspress.css"),
   root: path.join(__dirname, "docs"),
   route: {
     exclude: ["**/_lib/*.*"]

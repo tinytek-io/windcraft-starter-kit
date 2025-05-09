@@ -23,13 +23,13 @@ export function AreaChart<T extends string>({ data, isAnimationActive, className
             type="monotone"
             stroke={getChartColor(index, dataKeys.length)}
             fill={getChartColor(index, dataKeys.length)}
-            className="!stroke-border"
+            className="stroke-border!"
             activeDot={{ r: 4 }}
             isAnimationActive={isAnimationActive}
           />
         ))}
-        <XAxis dataKey="name" className="!text-sm" stroke="hsl(var(--muted-foreground))" />
-        <YAxis className="!text-sm" stroke="hsl(var(--muted-foreground))" />
+        <XAxis dataKey="name" className="text-sm!" stroke="hsl(var(--muted-foreground))" />
+        <YAxis className="text-sm!" stroke="hsl(var(--muted-foreground))" />
         <Legend stroke="hsl(var(--muted-foreground))" />
       </ReAreaChart>
     </ResponsiveContainer>

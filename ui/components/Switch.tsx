@@ -18,7 +18,7 @@ const trackStyles = tv({
   variants: {
     isSelected: {
       false: "bg-input group-pressed:bg-input/80",
-      true: "bg-primary forced-colors:!bg-[Highlight] group-pressed:bg-primary/80"
+      true: "bg-primary forced-colors:bg-[Highlight]! group-pressed:bg-primary/80"
     },
     isDisabled: {
       true: "opacity-50 cursor-not-allowed"

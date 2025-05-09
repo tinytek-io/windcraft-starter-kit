@@ -1,6 +1,6 @@
 /**
-* Rspress theme variables
-*/
+ * Rspress theme variables
+ */
 
 :root {
   --rp-nav-height: 57px;
@@ -33,8 +33,8 @@
 }
 
 /**
-* Rspress theme mode variables
-*/
+ * Rspress theme mode variables
+ */
 :root {
   --rp-c-bg: hsl(var(--background));
   --rp-c-bg-soft: hsl(var(--secondary));
@@ -55,8 +55,8 @@
 }
 
 /**
-*
-*/
+ *
+ */
 
 .rspress-preview-card {
   height: 370px;
@@ -71,7 +71,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px
+  gap: 8px;
 }
 
 button.outline {

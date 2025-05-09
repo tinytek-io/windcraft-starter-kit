@@ -31,11 +31,11 @@ export function RadarChart<T extends string>({
     <ResponsiveContainer width="100%" height="100%" className={className}>
       <ReRadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
         <PolarGrid />
-        <PolarAngleAxis dataKey="name" className="!text-sm" stroke="hsl(var(--foreground))" />
+        <PolarAngleAxis dataKey="name" className="text-sm!" stroke="hsl(var(--foreground))" />
         <PolarRadiusAxis
           angle={360 / data.length}
           domain={domain}
-          className="!text-sm"
+          className="text-sm!"
           stroke="hsl(var(--muted-foreground))"
         />
 

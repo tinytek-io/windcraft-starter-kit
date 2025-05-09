@@ -1,12 +1,12 @@
 import { CustomizeThemeButton } from "@/ui/theme/CustomizeThemeButton";
 import { ThemeProvider } from "@/ui/theme/ThemeContext";
 import { ThemeModeProvider } from "@/ui/theme/mode/ThemeMode";
-import Theme from "rspress/theme";
+import { Layout as BasicLayout } from "rspress/theme";
 
-const Layout = () => (
+export const Layout = () => (
   <ThemeModeProvider>
     <ThemeProvider>
-      <Theme.Layout
+      <BasicLayout
         afterNavMenu={
           <div className="px-4">
             <CustomizeThemeButton />
@@ -16,10 +16,5 @@ const Layout = () => (
     </ThemeProvider>
   </ThemeModeProvider>
 );
-
-export default {
-  ...Theme,
-  Layout
-};
 
 export * from "rspress/theme";

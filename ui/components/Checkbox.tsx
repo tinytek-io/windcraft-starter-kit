@@ -49,14 +49,14 @@ const checkboxStyles = tv({
 
 const boxStyles = tv({
   extend: focusRing,
-  base: "w-5 h-5 flex-shrink-0 rounded flex items-center justify-center border-2 transition",
+  base: "w-5 h-5 shrink-0 rounded flex items-center justify-center border-2 transition",
   variants: {
     isSelected: {
-      false: "bg-background border-[--color] [--color:theme(colors.foreground)] group-pressed:opacity-90",
-      true: "text-primary-foreground bg-[--color] border-[--color] [--color:theme(colors.primary.DEFAULT)] group-pressed:group-pressed:opacity-90"
+      false: "bg-background border-(--color) [--color:var(--color-foreground)] group-pressed:opacity-90",
+      true: "text-primary-foreground bg-(--color) border-(--color) [--color:var(--color-primary)] group-pressed:group-pressed:opacity-90"
     },
     isInvalid: {
-      true: "text-destructive-foreground [--color:theme(colors.destructive.DEFAULT)] group-pressed:group-pressed:opacity-90"
+      true: "text-destructive-foreground [--color:var(--color-destructive)] group-pressed:group-pressed:opacity-90"
     },
     isDisabled: {
       true: "opacity-50 cursor-not-allowed"
